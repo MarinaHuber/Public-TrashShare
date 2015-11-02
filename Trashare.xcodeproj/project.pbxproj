@@ -193,11 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				9CEF78F51BE7B25A002AC095 /* DetailViewController.m in Sources */,
-=======
 				EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */,
->>>>>>> caf2785222fc00d1701587e443211f80691688ed
 				EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */,
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
