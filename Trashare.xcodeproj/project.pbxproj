@@ -13,6 +13,8 @@
 		EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */; };
 		EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */; };
 		EA1FB8B31BE79C3700CFFAD2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */; };
+		EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */; };
+		EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTrashareViewController.h; sourceTree = "<group>"; };
+		EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTrashareViewController.m; sourceTree = "<group>"; };
+		EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTrashareViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,9 @@
 				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
 				EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */,
 				EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */,
+				EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */,
+				EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */,
+				EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */,
 				EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */,
 				EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */,
 				EA1FB8A91BE7774600CFFAD2 /* Info.plist */,
@@ -137,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */,
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
 				EA1FB8B31BE79C3700CFFAD2 /* HomeViewController.xib in Resources */,
@@ -150,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */,
 				EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */,
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
