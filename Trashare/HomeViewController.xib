@@ -15,20 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-<<<<<<< HEAD
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
-                    <rect key="frame" x="0.0" y="44" width="600" height="292"/>
-                    <animations/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="XR4-yn-6ZZ"/>
-                    </connections>
-                </mapView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
-                    <rect key="frame" x="0.0" y="344" width="600" height="256"/>
-=======
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
                     <rect key="frame" x="0.0" y="344" width="600" height="191"/>
->>>>>>> caf2785222fc00d1701587e443211f80691688ed
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -49,7 +37,7 @@
                         <barButtonItem systemItem="camera" id="XMK-YZ-gFG"/>
                     </items>
                 </toolbar>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
                     <rect key="frame" x="8" y="44" width="584" height="292"/>
                     <animations/>
                 </mapView>
