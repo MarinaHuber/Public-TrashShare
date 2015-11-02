@@ -7,8 +7,9 @@
 //
 
 #import "HomeViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController ()
+@interface HomeViewController () <CLLocationManagerDelegate>
 
 @end
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

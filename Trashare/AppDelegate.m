@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate () <CLLocationManagerDelegate>
-
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation AppDelegate
@@ -20,36 +20,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-     HomeViewController *mvc = [[HomeViewController alloc] init];
-    self.window.rootViewController = mvc;
     
     // Create location manager object
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    self.locationManager = [[CLLocationManager alloc] init];
     
     // There will be a warning from this line of code; ignore it for now
-    [locationManager setDelegate:self];
+    [self.locationManager setDelegate:self];
     
     // And we want it to be as accurate as possible
     // regardless of how much time/power it takes
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     // Tell our manager to start looking for its location immediately
     //[locationManager startUpdatingLocation];
     
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
     
     CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
     
     if (authorizationStatus == kCLAuthorizationStatusAuthorized ||
         authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
         authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingLocation];
     }
 
-
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    HomeViewController *mvc = [[HomeViewController alloc] init];
+    self.window.rootViewController = mvc;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
