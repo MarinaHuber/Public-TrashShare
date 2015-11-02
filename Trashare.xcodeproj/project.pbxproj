@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CEF78E41BE7A55F002AC095 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; };
+		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
+		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
+		9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */; };
+		9CEF78F51BE7B25A002AC095 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78F31BE7B25A002AC095 /* DetailViewController.m */; };
+		9CEF78F61BE7B25A002AC095 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */; };
 		EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB89F1BE7774600CFFAD2 /* main.m */; };
 		EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */; };
 		EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */; };
@@ -16,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
+		9CEF78EE1BE7B191002AC095 /* TrashareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashareCell.m; sourceTree = "<group>"; };
+		9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrashareCell.xib; sourceTree = "<group>"; };
+		9CEF78F21BE7B25A002AC095 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9CEF78F31BE7B25A002AC095 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EA1FB89B1BE7774600CFFAD2 /* Trashare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trashare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FB89F1BE7774600CFFAD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,16 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */,
+				9CEF78E41BE7A55F002AC095 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CEF78E71BE7A583002AC095 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */,
+				9CEF78E31BE7A55F002AC095 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA1FB8921BE7774600CFFAD2 = {
 			isa = PBXGroup;
 			children = (
 				EA1FB89D1BE7774600CFFAD2 /* Trashare */,
+				9CEF78E71BE7A583002AC095 /* Frameworks */,
 				EA1FB89C1BE7774600CFFAD2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +86,12 @@
 			children = (
 				EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */,
 				EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */,
+				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
+				9CEF78F21BE7B25A002AC095 /* DetailViewController.h */,
+				9CEF78F31BE7B25A002AC095 /* DetailViewController.m */,
+				9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */,
+				9CEF78EE1BE7B191002AC095 /* TrashareCell.m */,
+				9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */,
 				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
 				EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */,
 				EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */,
@@ -110,7 +142,7 @@
 				TargetAttributes = {
 					EA1FB89A1BE7774600CFFAD2 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = RXADJ92M7T;
+						DevelopmentTeam = HBS2B82CVU;
 					};
 				};
 			};
@@ -139,7 +171,9 @@
 			files = (
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
+				9CEF78F61BE7B25A002AC095 /* DetailViewController.xib in Resources */,
 				EA1FB8B31BE79C3700CFFAD2 /* HomeViewController.xib in Resources */,
+				9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEF78F51BE7B25A002AC095 /* DetailViewController.m in Sources */,
 				EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */,
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
+				9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,10 +290,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -265,10 +304,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -291,6 +333,7 @@
 				EA1FB8AE1BE7774600CFFAD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

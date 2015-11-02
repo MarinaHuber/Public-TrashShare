@@ -15,25 +15,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
                     <rect key="frame" x="0.0" y="44" width="600" height="292"/>
                     <animations/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="XR4-yn-6ZZ"/>
+                    </connections>
                 </mapView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
                     <rect key="frame" x="0.0" y="344" width="600" height="256"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="256" id="Whe-rj-xvd"/>
+                    </constraints>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <animations/>
                     <items>
-                        <navigationItem title="Title" id="8ju-TV-HqU"/>
+                        <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
                 </navigationBar>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" constant="8" symbolic="YES" id="3By-PH-nOk"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3DH-Tc-4k3"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="7ey-Fe-IVY"/>
+                <constraint firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="DjR-3C-cIu"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="LHe-vb-diX"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M6g-Ak-O8G"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="Stf-ix-ako"/>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="mnC-IS-wa4" secondAttribute="leading" id="TgA-l3-MUs"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="kMY-H0-z1V" secondAttribute="leading" id="dP8-BR-7vI"/>
+                <constraint firstAttribute="bottom" secondItem="tMF-Dq-gxq" secondAttribute="bottom" id="ddM-w7-ffN"/>
+            </constraints>
         </view>
     </objects>
 </document>
