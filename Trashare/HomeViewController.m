@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController () <CLLocationManagerDelegate>
+- (IBAction)cameraButton:(id)sender;
 
 @end
 
@@ -36,4 +37,18 @@
 }
 */
 
+- (IBAction)cameraButton:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    //If the device has a camera, take a picture. Otherwise, just pick from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    imagePicker.delegate = self;
+    
+    //Place image picker on the screen
+    [self presentViewController:imagePicker animated:YES completion:NULL];
+}
 @end
