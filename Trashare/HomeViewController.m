@@ -9,7 +9,8 @@
 #import "HomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController () <CLLocationManagerDelegate>
+@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 - (IBAction)cameraButton:(id)sender;
 
 @end
