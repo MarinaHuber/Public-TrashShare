@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController () <CLLocationManagerDelegate>
+
 - (IBAction)cameraButton:(id)sender;
 
 @end
@@ -21,6 +22,7 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
