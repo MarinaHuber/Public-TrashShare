@@ -15,13 +15,49 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepage-1" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-Q5-J2j">
+                    <rect key="frame" x="236" y="484" width="128" height="52"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="5od-zK-dwm"/>
+                        <constraint firstAttribute="width" constant="128" id="CIK-g4-9xc"/>
+                    </constraints>
+                    <state key="normal" image="arimo-button-how-it-works"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-ev-o3d">
+                    <rect key="frame" x="230" y="426" width="141" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="141" id="DL3-hm-Tv7"/>
+                        <constraint firstAttribute="height" constant="50" id="hSf-m1-3pi"/>
+                    </constraints>
+                    <state key="normal" image="start"/>
+                    <connections>
+                        <action selector="authorizationButton:" destination="-1" eventType="touchUpInside" id="WwF-ua-Asu"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7TI-My-YzX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3ce-eC-jei"/>
+                <constraint firstItem="q4o-Q5-J2j" firstAttribute="top" secondItem="Aha-ev-o3d" secondAttribute="bottom" constant="8" symbolic="YES" id="GEM-GM-j7q"/>
+                <constraint firstAttribute="trailing" secondItem="7TI-My-YzX" secondAttribute="trailing" id="M9x-MY-3aq"/>
+                <constraint firstItem="q4o-Q5-J2j" firstAttribute="centerX" secondItem="7TI-My-YzX" secondAttribute="centerX" id="ZMI-Rm-M2U"/>
+                <constraint firstAttribute="bottom" secondItem="q4o-Q5-J2j" secondAttribute="bottom" constant="64" id="cRH-Pv-bYm"/>
+                <constraint firstItem="7TI-My-YzX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="caG-5c-8kK"/>
+                <constraint firstAttribute="bottom" secondItem="7TI-My-YzX" secondAttribute="bottom" id="hzK-4h-lGW"/>
+                <constraint firstItem="q4o-Q5-J2j" firstAttribute="centerX" secondItem="Aha-ev-o3d" secondAttribute="centerX" id="owh-vP-1gH"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="arimo-button-how-it-works" width="298" height="106"/>
+        <image name="homepage-1" width="1163" height="1299"/>
+        <image name="start" width="270" height="96"/>
+    </resources>
 </document>

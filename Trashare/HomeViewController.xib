@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -16,12 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
                     <rect key="frame" x="0.0" y="344" width="600" height="191"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="191" id="hbE-mb-56m"/>
+                        <constraint firstAttribute="height" constant="256" id="Whe-rj-xvd"/>
                     </constraints>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
@@ -31,7 +30,7 @@
                         <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
                 </navigationBar>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cae-Nt-Zsc">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cae-Nt-Zsc">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <animations/>
                     <items>
@@ -42,7 +41,7 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
                     <rect key="frame" x="8" y="44" width="584" height="292"/>
                     <animations/>
                 </mapView>
@@ -50,19 +49,16 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1WD-mm-uie"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="3uI-5o-j2g"/>
-                <constraint firstItem="cae-Nt-Zsc" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="5d8-MN-mNP"/>
-                <constraint firstItem="cae-Nt-Zsc" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="6hh-Yk-Bma"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BJS-ly-mGN"/>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="HQ0-pB-hBy"/>
-                <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="IPe-MO-qBd"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="LIe-hs-WNd"/>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="centerX" secondItem="mnC-IS-wa4" secondAttribute="centerX" id="X36-nU-KoV"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="Z2M-2N-04t"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" constant="8" symbolic="YES" id="jD9-L0-yDa"/>
-                <constraint firstAttribute="trailing" secondItem="cae-Nt-Zsc" secondAttribute="trailing" id="r7K-bl-kEY"/>
-                <constraint firstItem="cae-Nt-Zsc" firstAttribute="top" secondItem="tMF-Dq-gxq" secondAttribute="bottom" constant="21" id="tqJ-AS-xjg"/>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" constant="8" symbolic="YES" id="3By-PH-nOk"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3DH-Tc-4k3"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="7ey-Fe-IVY"/>
+                <constraint firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="DjR-3C-cIu"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="LHe-vb-diX"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M6g-Ak-O8G"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="Stf-ix-ako"/>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="mnC-IS-wa4" secondAttribute="leading" id="TgA-l3-MUs"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="kMY-H0-z1V" secondAttribute="leading" id="dP8-BR-7vI"/>
+                <constraint firstAttribute="bottom" secondItem="tMF-Dq-gxq" secondAttribute="bottom" id="ddM-w7-ffN"/>
             </constraints>
         </view>
     </objects>
