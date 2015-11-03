@@ -33,7 +33,7 @@
     // Tell our manager to start looking for its location immediately
     //[locationManager startUpdatingLocation];
     
-    [self.locationManager requestWhenInUseAuthorization];
+//    [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestAlwaysAuthorization];
     
     CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];

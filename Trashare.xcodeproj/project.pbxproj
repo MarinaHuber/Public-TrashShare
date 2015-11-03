@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */; };
+		9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */; };
 		9CEF78E41BE7A55F002AC095 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; };
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
@@ -90,10 +95,13 @@
 			children = (
 				EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */,
 				EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */,
+				9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */,
+				9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */,
+				9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */,
+				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
 				9CEF78F21BE7B25A002AC095 /* DetailViewController.h */,
 				9CEF78F31BE7B25A002AC095 /* DetailViewController.m */,
 				9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */,
-				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
 				9CEF78EE1BE7B191002AC095 /* TrashareCell.m */,
 				9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */,
 				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
@@ -149,7 +157,7 @@
 				TargetAttributes = {
 					EA1FB89A1BE7774600CFFAD2 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = RXADJ92M7T;
+						DevelopmentTeam = HBS2B82CVU;
 					};
 				};
 			};
@@ -177,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */,
+				9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */,
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
 				9CEF78F61BE7B25A002AC095 /* DetailViewController.xib in Resources */,
@@ -197,6 +206,7 @@
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
 				9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */,
+				9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +312,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -316,7 +326,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
