@@ -7,6 +7,7 @@
 //
 
 #import "AddTrashareViewController.h"
+#import "HomeViewController.h"
 
 @interface AddTrashareViewController ()
 
