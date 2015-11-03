@@ -10,4 +10,6 @@
 
 @interface HomeViewController : UIViewController
 
+@property UIImage *takenPicture;
+
 @end
