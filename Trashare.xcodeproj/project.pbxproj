@@ -13,7 +13,6 @@
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
 		9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */; };
-		9CEF78F61BE7B25A002AC095 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */; };
 		EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB89F1BE7774600CFFAD2 /* main.m */; };
 		EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */; };
 		EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */; };
@@ -33,9 +32,6 @@
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
 		9CEF78EE1BE7B191002AC095 /* TrashareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashareCell.m; sourceTree = "<group>"; };
 		9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrashareCell.xib; sourceTree = "<group>"; };
-		9CEF78F21BE7B25A002AC095 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		9CEF78F31BE7B25A002AC095 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EA1FB89B1BE7774600CFFAD2 /* Trashare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trashare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FB89F1BE7774600CFFAD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,9 +95,6 @@
 				9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */,
 				9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */,
 				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
-				9CEF78F21BE7B25A002AC095 /* DetailViewController.h */,
-				9CEF78F31BE7B25A002AC095 /* DetailViewController.m */,
-				9CEF78F41BE7B25A002AC095 /* DetailViewController.xib */,
 				9CEF78EE1BE7B191002AC095 /* TrashareCell.m */,
 				9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */,
 				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
@@ -188,7 +181,6 @@
 				9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */,
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
-				9CEF78F61BE7B25A002AC095 /* DetailViewController.xib in Resources */,
 				EA1FB8B31BE79C3700CFFAD2 /* HomeViewController.xib in Resources */,
 				9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */,
 			);
