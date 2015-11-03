@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 
 @interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
-- (IBAction)takePhoto:(UIButton *)sender;
+//- (IBAction)takePhoto:(UIButton *)sender;
 
 
 
