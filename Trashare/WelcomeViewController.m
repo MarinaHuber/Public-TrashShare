@@ -23,13 +23,14 @@
     
     [self.mapView setShowsUserLocation:YES];
     // Do any additional setup after loading the view from its nib.
+    self.navigationController.navigationBarHidden = YES;
     
 }
 
 - (IBAction)authorizationButton:(id)sender {
     
     HomeViewController *map = [[HomeViewController alloc] init];
-    [self presentViewController:map animated:YES completion:NULL];
+    [self.navigationController pushViewController:map animated:YES];
     
     // Create location manager object
     self.locationManager = [[CLLocationManager alloc] init];
@@ -63,7 +64,7 @@
    
     CLLocation *currentLocations = locations [0];
 }
-  //zoom
+  //zoom not working
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation
 
@@ -71,6 +72,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     CLLocationCoordinate2D loc = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     [mapView setRegion:region animated:YES];
+    [self.locationManager stopUpdatingLocation];
 }
 
 

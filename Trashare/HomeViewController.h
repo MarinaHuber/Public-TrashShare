@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UINavigationControllerDelegate>
 
 @property UIImage *takenPicture;
+
 
 @end

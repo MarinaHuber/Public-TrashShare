@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "AddTrashareViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -54,17 +55,24 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
+      didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Get picked image from info dictionary
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
+    AddTrashareViewController *createNew = [[AddTrashareViewController alloc]init];
+    
+    createNew.picture = image;
     // Put that image onto the screen in our image view
     //self.imageView.image = image;
         
     // Dismiss the modal image picker
     [self dismissViewControllerAnimated:YES completion:NULL];
     
+    [self.navigationController showViewController:createNew sender:NULL];
+    
+    
 }
+
 
 @end

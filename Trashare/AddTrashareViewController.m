@@ -31,7 +31,7 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
     
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+   [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
 
@@ -48,10 +48,10 @@
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                              message:@"Device has no camera"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
+                        message:@"Device has no camera"
+                        delegate:nil
+                       cancelButtonTitle:@"OK"
+                    otherButtonTitles: nil];
         
         [myAlertView show];
         

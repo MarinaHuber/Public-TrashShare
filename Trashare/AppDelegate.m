@@ -20,40 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-    
-//    // Create location manager object
-//    self.locationManager = [[CLLocationManager alloc] init];
-//    
-//    // There will be a warning from this line of code; ignore it for now
-//    [self.locationManager setDelegate:self];
-//    
-//    // And we want it to be as accurate as possible
-//    // regardless of how much time/power it takes
-//    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-//    // Tell our manager to start looking for its location immediately
-//    //[locationManager startUpdatingLocation];
-//    
-////    [self.locationManager requestWhenInUseAuthorization];
-//    [self.locationManager requestAlwaysAuthorization];
-//    
-//    CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
-//    
-//    if (authorizationStatus == kCLAuthorizationStatusAuthorized ||
-//        authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
-//        authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-//        [self.locationManager startUpdatingLocation];
-//    }
 
-    
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    WelcomeViewController *mvc = [[WelcomeViewController alloc] init];
-    self.window.rootViewController = mvc;
+    
+     WelcomeViewController *mvc = [[WelcomeViewController alloc] init];
+
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mvc];
+
+         self.window.rootViewController = nav;
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+     self.window.backgroundColor = [UIColor whiteColor];
+     [self.window makeKeyAndVisible];
+     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTrashareViewController">
             <connections>
-                <outlet property="imageView" destination="90n-HO-xmI" id="Mey-Lg-K9W"/>
+                <outlet property="imageView" destination="90n-HO-xmI" id="tSu-Pf-0SZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
