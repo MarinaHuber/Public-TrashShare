@@ -15,6 +15,10 @@
 
 @implementation AddTrashareViewController
 
+- (IBAction)cancelButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 //- (IBAction)takePhoto:(UIButton *)sender {
 //    
 //    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -45,6 +49,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.imageView.image = self.picture;
+    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -53,7 +59,7 @@
                        cancelButtonTitle:@"OK"
                     otherButtonTitles: nil];
         
-        [myAlertView show];
+       // [myAlertView show];
         
     }
 }

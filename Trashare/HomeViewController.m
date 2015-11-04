@@ -69,7 +69,8 @@
     // Dismiss the modal image picker
     [self dismissViewControllerAnimated:YES completion:NULL];
     
-    [self.navigationController showViewController:createNew sender:NULL];
+    [self.navigationController presentViewController:createNew animated:YES completion:nil];
+     
     
     
 }

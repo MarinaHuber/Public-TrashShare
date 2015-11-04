@@ -22,7 +22,11 @@
                     <animations/>
                     <items>
                         <navigationItem title="Title" id="qsk-i1-aSA">
-                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="v95-wP-mER"/>
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="v95-wP-mER">
+                                <connections>
+                                    <action selector="cancelButton:" destination="-1" id="2rB-Im-F0D"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
