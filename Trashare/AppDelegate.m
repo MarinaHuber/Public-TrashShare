@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -18,9 +19,11 @@
 
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
  
-
+    [Parse setApplicationId:@"kOOs7L2Oxn1mCavhD6fsFO7EB6qt2eNOCYTTA9oR"
+                  clientKey:@"CGxfJflFGVP7BFg1cuWRAILuLWJLo3o9Oj82P4VX"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     
@@ -34,6 +37,8 @@
     // Override point for customization after application launch.
      self.window.backgroundColor = [UIColor whiteColor];
      [self.window makeKeyAndVisible];
+    
+
      return YES;
 }
 

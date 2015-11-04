@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+// connecting images and parse
 @interface HomeViewController : UIViewController <UINavigationControllerDelegate>
+{
+    NSMutableArray *imagesArray;
+}
 
 @property UIImage *takenPicture;
 
+@property (weak, nonatomic) IBOutlet UITableView *imageCollection;
 
 @end
