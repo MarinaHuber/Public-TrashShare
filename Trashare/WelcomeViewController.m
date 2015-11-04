@@ -50,10 +50,12 @@
     
    CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
     
-    if (authorizationStatus == kCLAuthorizationStatusAuthorized ||
+    if (
      authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
       authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-       [self.locationManager startUpdatingLocation];
+       
+        [self.locationManager startUpdatingLocation];
+       // [self.mapView didUpdateFocusInContext:<#(nonnull UIFocusUpdateContext *)#> withAnimationCoordinator:<#(nonnull UIFocusAnimationCoordinator *)#>];
     
     }
 }
@@ -62,7 +64,7 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations {
    
-    CLLocation *currentLocations = locations [0];
+//    CLLocation *currentLocations = locations [0];
 }
   //zoom not working
 - (void)mapView:(MKMapView *)mapView
@@ -70,9 +72,9 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
 
 {
     CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
     [mapView setRegion:region animated:YES];
-    [self.locationManager stopUpdatingLocation];
+
 }
 
 

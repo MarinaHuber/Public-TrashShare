@@ -18,6 +18,8 @@
 
 @implementation HomeViewController
 
+@synthesize imageCollection;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
