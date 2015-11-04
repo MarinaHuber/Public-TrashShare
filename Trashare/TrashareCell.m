@@ -7,6 +7,7 @@
 //
 
 #import "TrashareCell.h"
+#import <Parse/Parse.h>
 
 @implementation TrashareCell
 

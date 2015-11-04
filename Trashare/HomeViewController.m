@@ -10,15 +10,16 @@
 #import "AddTrashareViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate>
 
-- (IBAction)cameraButton:(id)sender;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation HomeViewController
 
-@synthesize imageCollection;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +41,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
 
 - (IBAction)cameraButton:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -55,6 +60,18 @@
     //Place image picker on the screen
     [self presentViewController:imagePicker animated:YES completion:NULL];
 }
+
+//zoom not working
+- (void)mapView:(MKMapView *)mapView
+didUpdateUserLocation:(MKUserLocation *)userLocation
+
+{
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [self.mapView setRegion:region animated:YES];
+    
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker
       didFinishPickingMediaWithInfo:(NSDictionary *)info

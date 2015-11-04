@@ -66,17 +66,7 @@
    
 //    CLLocation *currentLocations = locations [0];
 }
-  //zoom not working
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation
-
-{
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [mapView setRegion:region animated:YES];
-
-}
-
+  
 
 
 

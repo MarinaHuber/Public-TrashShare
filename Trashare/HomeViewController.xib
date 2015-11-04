@@ -8,7 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="imageCollection" destination="tMF-Dq-gxq" id="kQH-JJ-g1x"/>
+                <outlet property="mapView" destination="mnC-IS-wa4" id="S77-qU-Q6a"/>
+                <outlet property="tableView" destination="tMF-Dq-gxq" id="Hit-yA-Rni"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +25,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="191" id="7WU-gc-uTT"/>
                     </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zyI-WN-9KA"/>
+                        <outlet property="delegate" destination="-1" id="deT-E3-7dw"/>
+                    </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
