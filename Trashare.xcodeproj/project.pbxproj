@@ -16,6 +16,7 @@
 		9C39E5231BEA1E4E00658F0E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5221BEA1E4E00658F0E /* libsqlite3.tbd */; };
 		9C39E5251BEA1E8400658F0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */; };
 		9C39E5271BEA1EC200658F0E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */; };
+		9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5291BEA4B5100658F0E /* TrashareData.m */; };
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
 		9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */; };
@@ -39,6 +40,8 @@
 		9C39E5221BEA1E4E00658F0E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9C39E5281BEA4B5100658F0E /* TrashareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareData.h; sourceTree = "<group>"; };
+		9C39E5291BEA4B5100658F0E /* TrashareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashareData.m; sourceTree = "<group>"; };
 		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 			children = (
 				EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */,
 				EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */,
+				9C39E5281BEA4B5100658F0E /* TrashareData.h */,
+				9C39E5291BEA4B5100658F0E /* TrashareData.m */,
 				9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */,
 				9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */,
 				9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */,
@@ -217,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */,
 				EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */,
 				EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */,
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,

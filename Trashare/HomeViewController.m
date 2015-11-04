@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic)  NSMutableArray *namesArray;
+@property (strong, nonatomic)  NSArray *objectsArray;
 
 
 @end
@@ -22,20 +22,15 @@
 @implementation HomeViewController
 
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.namesArray = @[@"Marina", @"Ikalef", @"Alex", @"Martijn"];
-        
-    }
-    return self;
-}
-
+#pragma mark -viewDidLoad
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self.naviagtionItem] create a title
     [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"simpleTable"];
+     PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
+     self.objectsArray = [query findObjects];
+    
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -43,37 +38,46 @@
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark -UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView
 {
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView
+ numberOfRowsInSection:(NSInteger)section{
+    
+    return self.objectsArray.count;
+}
 
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView
                   cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
+    PFObject *object = self.objectsArray[indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
-    //    if (cell == nil) {
-    //
-    //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"simpleTable"];
-    //    }
-    cell.textLabel.text = self.namesArray[indexPath.row];
-    // the same as- cell.textLabel.text = [self.namesArray objectAtIndex:indexPath.row];
+  
+    if (cell == nil) {
+        
+    }
+   
+    
+    // Configure the cell
+     PFFile *thumbnail = [object objectForKey:@"imageFile"];
+     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
+    thumbnailImageView.image = [UIImage imageNamed:@"placeholder.png"];
+    thumbnailImageView.file = thumbnail;
+    [thumbnailImageView loadInBackground];
+    
+    UILabel *titleTrashare = (UILabel*) [cell viewWithTag:100];
+    titleTrashare.text = [object objectForKey:@"name"];
+    
+    cell.textLabel.text = @"test";
     
     return cell;
 }
-//data source
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView
- numberOfRowsInSection:(NSInteger)section{
-    return self.namesArray.count;
-}
+
 
 
 - (IBAction)cameraButton:(id)sender {
@@ -91,7 +95,7 @@
     [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
-//zoom not working
+//zoom working
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation
 

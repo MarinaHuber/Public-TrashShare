@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     [self.mapView setShowsUserLocation:YES];
+    
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
     
