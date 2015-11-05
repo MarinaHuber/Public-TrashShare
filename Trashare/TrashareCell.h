@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 
 @interface TrashareCell : UITableViewCell
+
+@property (strong, nonatomic) UIImage *thumbnail;
+
 
 @end

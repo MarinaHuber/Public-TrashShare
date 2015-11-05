@@ -6,6 +6,7 @@
 //  Copyright © 2015 The App Academy. All rights reserved.
 //
 
+#import "TrashareCell.h"
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
