@@ -16,6 +16,7 @@
 
 @implementation AddTrashareViewController
 
+
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -54,11 +55,17 @@
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                        message:@"Device has no camera"
-                        delegate:nil
-                       cancelButtonTitle:@"OK"
-                    otherButtonTitles: nil];
+        UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        
         
        // [myAlertView show];
         
@@ -73,15 +80,26 @@
     
     [textField resignFirstResponder];
     return NO;
-    
-    NSLog(@"%@", textField.text);
+
     return YES;
 }
 
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    
-//    return YES;
-//}
 
+
+- (IBAction)addTrashare:(id)sender {
+    
+    PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
+    //   NSLog(@"%@", self.addDescription.text);
+    
+    
+    [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+    NSUUID *randomName = [NSUUID UUID];
+    PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
+    [trashare setObject:imageFile forKey:@"imageFile"];
+
+    [trashare saveInBackground];
+
+}
 @end

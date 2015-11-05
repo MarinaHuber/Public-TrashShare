@@ -59,6 +59,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    //forcing xcode to keep fpimageview valid
+    [PFImageView class];
+    
     PFObject *object = self.objectsArray[indexPath.row];
     
     TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];

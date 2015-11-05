@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTrashareViewController">
             <connections>
+                <outlet property="addDescription" destination="gW5-dX-lN8" id="vl9-dQ-eaI"/>
                 <outlet property="imageView" destination="90n-HO-xmI" id="tSu-Pf-0SZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,7 +44,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="gW5-dX-lN8">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Trashare" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="gW5-dX-lN8">
                     <rect key="frame" x="24" y="450" width="273" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
@@ -61,6 +62,9 @@
                     <state key="normal" title="Add Trashare">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addTrashare:" destination="-1" eventType="touchUpInside" id="Mb2-Hf-D79"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
