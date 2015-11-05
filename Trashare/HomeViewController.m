@@ -58,6 +58,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //forcing xcode to keep pfimageview valid
+    [PFImageView class];
     
     //forcing xcode to keep fpimageview valid
     [PFImageView class];
@@ -65,6 +67,10 @@
     PFObject *object = self.objectsArray[indexPath.row];
     
     TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
+    }
     
     // Configure the cell
      PFFile *thumbnail = [object objectForKey:@"imageFile"];
@@ -74,7 +80,9 @@
     
     NSString *currentTitle = object[@"titleTrashare"];
     
-    cell.textLabel.text = currentTitle;
+    cell.descriptionLabel.text = currentTitle;
+    
+    //cell.textLabel.text = currentTitle;
     //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
 
     

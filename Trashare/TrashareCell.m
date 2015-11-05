@@ -14,11 +14,12 @@
 
 
 
-//
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//    
-//}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+}
+
 //
 //    - (void)setThumbnailFromImage:(UIImage *)image {
 //        
