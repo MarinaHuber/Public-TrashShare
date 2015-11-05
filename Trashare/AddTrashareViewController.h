@@ -11,7 +11,7 @@
 #import <ParseUI/ParseUI.h>
 #import "HomeViewController.h"
 
-@interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) UIImage *picture;
 
 @property(nonatomic, readonly, strong) UINavigationController *navigationController;

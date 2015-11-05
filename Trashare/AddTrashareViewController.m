@@ -8,7 +8,7 @@
 
 #import "AddTrashareViewController.h"
 #import "HomeViewController.h"
-#import <UIKIT/UIKIT.h>
+#import <UIKit/UIKit.h>
 
 @interface AddTrashareViewController () <UITextFieldDelegate>
 
@@ -21,16 +21,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//- (IBAction)takePhoto:(UIButton *)sender {
-//    
-//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//    picker.delegate = self;
-//    picker.allowsEditing = YES;
-//    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    
-//    [self presentViewController:picker animated:YES completion:NULL];
-//    
-//}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
@@ -65,28 +55,21 @@
         [self presentViewController:alert animated:YES completion:nil];
         
         
-        
-        
-       // [myAlertView show];
-        
+    
     }
 }
 
 
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField
 {
-    textField.delegate = self;
-    
-    [textField resignFirstResponder];
-    return NO;
-
+    [self.addDescription resignFirstResponder];
     return YES;
 }
 
 
-
 - (IBAction)addTrashare:(id)sender {
+    
+    //[self.navigationController pushViewController:map animated:YES];
     
     PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
     //   NSLog(@"%@", self.addDescription.text);
@@ -99,7 +82,11 @@
     PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
     [trashare setObject:imageFile forKey:@"imageFile"];
 
-    [trashare saveInBackground];
+    [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        HomeViewController *map = [[HomeViewController alloc] init];
+       [self presentViewController:map animated:YES completion:nil];
+    }];
 
 }
 @end

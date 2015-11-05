@@ -31,16 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"simpleTable"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
+    
      PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
      self.objectsArray = [query findObjects];
-    
-    
-    // Do any additional setup after loading the view from its nib.
+
 }
-
-
 
 
 #pragma mark - UITableViewDataSource
@@ -82,14 +78,11 @@
     
     cell.descriptionLabel.text = currentTitle;
     
-    //cell.textLabel.text = currentTitle;
-    //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-
     
     return cell;
 }
 
-
+#pragma mark - ImagePicker
 
 - (IBAction)cameraButton:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -106,17 +99,6 @@
     [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
-//zoom working
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation
-
-{
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [self.mapView setRegion:region animated:YES];
-    
-}
-
 - (void)imagePickerController:(UIImagePickerController *)picker
       didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -127,12 +109,22 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     
     createNew.picture = image;
     // Put that image onto the screen in our image view
-    //self.imageView.image = image;
         
     // Dismiss the modal image picker
     [self dismissViewControllerAnimated:YES completion:NULL];
     
-    [self.navigationController presentViewController:createNew animated:YES completion:nil];
+    [self presentViewController:createNew animated:YES completion:nil];
+    
+}
+
+//zoom working
+- (void)mapView:(MKMapView *)mapView
+didUpdateUserLocation:(MKUserLocation *)userLocation
+
+{
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [self.mapView setRegion:region animated:YES];
     
 }
 
