@@ -20,7 +20,10 @@
 @end
 
 @implementation HomeViewController
-
+//{
+//    NSArray *tableData;
+//    NSArray *thumbnails;
+//}
 
 #pragma mark -viewDidLoad
 
@@ -51,8 +54,8 @@
     return self.objectsArray.count;
 }
 
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView
-                  cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     PFObject *object = self.objectsArray[indexPath.row];
     
@@ -70,10 +73,9 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-    UILabel *titleTrashare = (UILabel*) [cell viewWithTag:100];
-    titleTrashare.text = [object objectForKey:@"name"];
+    NSString *currentTitle = object[@"titleTrashare"];
     
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = currentTitle;
     
     return cell;
 }
@@ -106,7 +108,6 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     
 }
 
-
 - (void)imagePickerController:(UIImagePickerController *)picker
       didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -123,14 +124,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     [self.navigationController presentViewController:createNew animated:YES completion:nil];
-     
-    
     
 }
-
-
-
-
-
 
 @end
