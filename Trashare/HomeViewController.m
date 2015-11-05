@@ -15,14 +15,15 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)  NSArray *objectsArray;
-@property (strong, nonatomic) UIImage *thumbnail;
-
 
 
 @end
 
 @implementation HomeViewController
-
+//{
+//    NSArray *tableData;
+//    NSArray *thumbnails;
+//}
 
 #pragma mark -viewDidLoad
 
@@ -30,30 +31,15 @@
     [super viewDidLoad];
     //[self.naviagtionItem] create a title
     [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"simpleTable"];
-//    [self.tableView registerNib:<#(nullable UINib *)#> forCellReuseIdentifier:<#(nonnull NSString *)#>];
      PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
      self.objectsArray = [query findObjects];
     
-#pragma mark - Navigation
-
+    
     // Do any additional setup after loading the view from its nib.
-    
-    self.navigationItem.hidesBackButton = YES;
-    
-    UINavigationItem *trashNavigation = self.navigationItem;
-    trashNavigation.title = @"Trashare";}
-
-   //zoom animated
-
-- (void)mapView:(MKMapView *)mapView
- didUpdateUserLocation:(MKUserLocation *)userLocation
-
-{
-    CLLocationCoordinate2D loc = [userLocation coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [self.mapView setRegion:region animated:YES];
-    
 }
+
+
+
 
 #pragma mark - UITableViewDataSource
 
@@ -68,8 +54,8 @@
     return self.objectsArray.count;
 }
 
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView
-                  cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     PFObject *object = self.objectsArray[indexPath.row];
     
@@ -82,18 +68,14 @@
     
     // Configure the cell
      PFFile *thumbnail = [object objectForKey:@"imageFile"];
-     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:102];
+     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
     thumbnailImageView.image = [UIImage imageNamed:@"placeholder.png"];
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-    UILabel *titleTrashare = (UILabel*) [cell viewWithTag:100];
-    titleTrashare.text = [object objectForKey:@"titleTrashare"];
+    NSString *currentTitle = object[@"titleTrashare"];
     
-    cell.textLabel.text = [tabeData ];
- //   cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-
-
+    cell.textLabel.text = currentTitle;
     
     return cell;
 }
@@ -115,16 +97,22 @@
     [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
+//zoom working
+- (void)mapView:(MKMapView *)mapView
+didUpdateUserLocation:(MKUserLocation *)userLocation
 
+{
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+    [self.mapView setRegion:region animated:YES];
+    
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker
       didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Get picked image from info dictionary
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
-    //to add a thumbnail
- //  [self.item setThumbnailFromImage:image];
     
     AddTrashareViewController *createNew = [[AddTrashareViewController alloc]init];
     
@@ -136,9 +124,7 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     [self.navigationController presentViewController:createNew animated:YES completion:nil];
-     
     
 }
-
 
 @end
