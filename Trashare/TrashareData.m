@@ -8,7 +8,7 @@
 
 #import "TrashareData.h"
 
-@implementation TrashareData
+@implementation TrashareData 
 
 
 @end

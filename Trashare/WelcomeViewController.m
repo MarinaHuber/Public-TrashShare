@@ -27,7 +27,7 @@
     self.navigationController.navigationBarHidden = YES;
     
 }
-
+// shows map location
 - (IBAction)authorizationButton:(id)sender {
     
     HomeViewController *map = [[HomeViewController alloc] init];
@@ -56,7 +56,6 @@
       authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
        
         [self.locationManager startUpdatingLocation];
-       // [self.mapView didUpdateFocusInContext:<#(nonnull UIFocusUpdateContext *)#> withAnimationCoordinator:<#(nonnull UIFocusAnimationCoordinator *)#>];
     
     }
 }
