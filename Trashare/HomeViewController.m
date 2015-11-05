@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "TrashareCell.h"
 
 @interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate>
 
@@ -29,8 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.naviagtionItem] create a title
-    [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"simpleTable"];
+    
+   // [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"simpleTable"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
      PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
      self.objectsArray = [query findObjects];
     
@@ -59,23 +61,19 @@
     
     PFObject *object = self.objectsArray[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
-  
-    if (cell == nil) {
-        
-    }
-   
+    TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
     
     // Configure the cell
      PFFile *thumbnail = [object objectForKey:@"imageFile"];
-     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
-    thumbnailImageView.image = [UIImage imageNamed:@"placeholder.png"];
-    thumbnailImageView.file = thumbnail;
-    [thumbnailImageView loadInBackground];
+ 
+    cell.thumbnailImageView.file = thumbnail;
+    [cell.thumbnailImageView loadInBackground];
     
     NSString *currentTitle = object[@"titleTrashare"];
     
     cell.textLabel.text = currentTitle;
+    //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+
     
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "TrashareCell.h"
 #import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
 
 @implementation TrashareCell
 

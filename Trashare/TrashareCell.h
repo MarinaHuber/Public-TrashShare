@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HomeViewController.h"
+#import <ParseUI/ParseUI.h>
 
 @interface TrashareCell : UITableViewCell
 
-@property (strong, nonatomic) UIImage *thumbnail;
-
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet PFImageView *thumbnailImageView;
 
 @end
