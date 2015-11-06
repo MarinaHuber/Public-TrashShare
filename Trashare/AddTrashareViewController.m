@@ -85,7 +85,7 @@
         {
             if (!error) {
                 // Show success message
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the trash" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved your Trashare!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 
                 // Notify table view to reload the recipes from Parse cloud
