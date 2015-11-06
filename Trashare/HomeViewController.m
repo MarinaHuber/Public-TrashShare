@@ -29,6 +29,7 @@
 #pragma mark -viewDidLoad
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
@@ -38,6 +39,17 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
+    self.objectsArray = [query findObjects];
+    
+    [self.tableView reloadData];
+
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -57,8 +69,6 @@
     //forcing xcode to keep pfimageview valid
     [PFImageView class];
     
-    //forcing xcode to keep fpimageview valid
-    [PFImageView class];
     
     PFObject *object = self.objectsArray[indexPath.row];
     
