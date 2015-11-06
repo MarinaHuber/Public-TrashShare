@@ -17,6 +17,8 @@
 		9C39E5251BEA1E8400658F0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */; };
 		9C39E5271BEA1EC200658F0E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */; };
 		9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5291BEA4B5100658F0E /* TrashareData.m */; };
+		9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5441BECAE7400658F0E /* DetailViewController.m */; };
+		9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C39E5451BECAE7400658F0E /* DetailViewController.xib */; };
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
 		9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */; };
@@ -42,6 +44,9 @@
 		9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9C39E5281BEA4B5100658F0E /* TrashareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareData.h; sourceTree = "<group>"; };
 		9C39E5291BEA4B5100658F0E /* TrashareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashareData.m; sourceTree = "<group>"; };
+		9C39E5431BECAE7400658F0E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9C39E5441BECAE7400658F0E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9C39E5451BECAE7400658F0E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
@@ -132,6 +137,9 @@
 				EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */,
 				EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */,
 				EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */,
+				9C39E5431BECAE7400658F0E /* DetailViewController.h */,
+				9C39E5441BECAE7400658F0E /* DetailViewController.m */,
+				9C39E5451BECAE7400658F0E /* DetailViewController.xib */,
 				EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */,
 				EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */,
 				EA1FB8A91BE7774600CFFAD2 /* Info.plist */,
@@ -207,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */,
+				9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */,
 				9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */,
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
@@ -225,6 +234,7 @@
 				9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */,
 				EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */,
 				EA1FB8A31BE7774600CFFAD2 /* AppDelegate.m in Sources */,
+				9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */,
 				EA1FB8A01BE7774600CFFAD2 /* main.m in Sources */,
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
 				9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */,

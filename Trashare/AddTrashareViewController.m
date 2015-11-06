@@ -25,7 +25,7 @@
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
-        UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your Trashare post!" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {}];
@@ -58,6 +58,7 @@
     
 }
 
+//to make keyboard disapear
 
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField
 {
@@ -71,9 +72,7 @@
     //[self.navigationController pushViewController:map animated:YES];
     
     PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
-    //   NSLog(@"%@", self.addDescription.text);
-    
-    
+   
     [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
     
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);

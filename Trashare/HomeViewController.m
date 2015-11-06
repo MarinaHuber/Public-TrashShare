@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TrashareCell.h"
 
-@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate>
+@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -34,6 +34,8 @@
      PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
      self.objectsArray = [query findObjects];
 
+
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -45,6 +47,7 @@
     self.objectsArray = [query findObjects];
     
     [self.tableView reloadData];
+    
 
 }
 
@@ -61,6 +64,7 @@
     return self.objectsArray.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //forcing xcode to keep pfimageview valid
@@ -75,8 +79,6 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
     }
     
-    
-    
     // Configure the cell
      PFFile *thumbnail = [object objectForKey:@"imageFile"];
  
@@ -90,6 +92,30 @@
     
     return cell;
 }
+
+#pragma mark - UITableVIewDelegate
+
+- (void)tableView:(UITableView * _Nonnull)tableView
+didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
+    //selects the objects we selected touched
+
+    
+    PFObject *object = self.objectsArray[indexPath.row];
+    
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    
+    NSString *descriptionString = object[@"titleTrashare"];
+    
+    
+    detailVC.titleTrash.text = descriptionString;
+    
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
+    
+    
+}
+
 
 #pragma mark - ImagePicker
 
