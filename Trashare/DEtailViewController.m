@@ -7,13 +7,9 @@
 //
 
 #import "DetailViewController.h"
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
-#import "HomeViewController.h"
-#import "AddTrashareViewController.h"
 
-@interface DetailViewController () <UINavigationControllerDelegate, UITableViewDelegate>
+
+@interface DetailViewController () 
 
 
 @end
@@ -25,7 +21,7 @@
 
     self.titleTrash.text = self.descriptionString;
    
-    //self.showImage.image = self.newImage;
+    self.showImage.file = self.file;
 
 
 }

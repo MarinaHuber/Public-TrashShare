@@ -7,16 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
+#import "HomeViewController.h"
+#import "AddTrashareViewController.h"
 
 
 
-@interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *showImage;
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet PFImageView *showImage;
 @property (strong, nonatomic) IBOutlet UILabel *titleTrash;
 
 @property (nonatomic, strong) NSString *descriptionString;
-//@property (nonatomic, strong) UIImage *newImage;
+@property (nonatomic, strong) PFFile *file;
 
 
 @end

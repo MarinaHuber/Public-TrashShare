@@ -108,13 +108,18 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSString *descriptionString1 = object[@"titleTrashare"];
     
+    PFFile *showImage = object[@"imageFile"];
+    
+    detailVC.file = showImage;
+    
     detailVC.descriptionString = descriptionString1;
+    
     
    [self.navigationController pushViewController:detailVC animated:YES];
     
     // this is declared as @property in detailviewcontroller and passed on in view did load
     //for image
-     UIImage *images = object[@"imageFile"];
+    
      //detailVC.newImage = images;
 }
 

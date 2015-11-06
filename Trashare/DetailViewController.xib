@@ -28,13 +28,20 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_8540" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
                     <rect key="frame" x="0.0" y="44" width="320" height="289"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="289" id="MZ0-Cr-gh9"/>
                     </constraints>
                 </imageView>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <animations/>
+                    <items>
+                        <navigationItem title="Trashare" id="L8h-JR-MOE"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +55,4 @@
             <point key="canvasLocation" x="444" y="-48"/>
         </view>
     </objects>
-    <resources>
-        <image name="IMG_8540" width="583" height="592"/>
-    </resources>
 </document>
