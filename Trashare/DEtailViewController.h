@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleTrash;
 
 @property (nonatomic, strong) NSString *descriptionString;
+//@property (nonatomic, strong) UIImage *newImage;
 
 
 @end

@@ -34,6 +34,7 @@
      PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
      self.objectsArray = [query findObjects];
 
+    
 
 
 }
@@ -99,21 +100,22 @@
 didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     //selects the objects we selected touched
 
-    
+    // this is declared as @property in detailviewcontroller and passed on in view did load
+    //for string (lable)
     PFObject *object = self.objectsArray[indexPath.row];
     
     DetailViewController *detailVC = [[DetailViewController alloc] init];
     
-    NSString *descriptionString = object[@"titleTrashare"];
+    NSString *descriptionString1 = object[@"titleTrashare"];
     
+    detailVC.descriptionString = descriptionString1;
     
-    detailVC.titleTrash.text = descriptionString;
+   [self.navigationController pushViewController:detailVC animated:YES];
     
-    
-    [self.navigationController pushViewController:detailVC animated:YES];
-    
-    
-    
+    // this is declared as @property in detailviewcontroller and passed on in view did load
+    //for image
+     UIImage *images = object[@"imageFile"];
+     //detailVC.newImage = images;
 }
 
 

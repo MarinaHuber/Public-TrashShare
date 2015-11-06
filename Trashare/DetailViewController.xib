@@ -28,7 +28,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_8540" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW">
                     <rect key="frame" x="0.0" y="44" width="320" height="289"/>
                     <animations/>
                     <constraints>
@@ -48,4 +48,7 @@
             <point key="canvasLocation" x="444" y="-48"/>
         </view>
     </objects>
+    <resources>
+        <image name="IMG_8540" width="583" height="592"/>
+    </resources>
 </document>

@@ -22,9 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    detailVC.titleTrash.text = descriptionString;
 
-    // Do any additional setup after loading the view from its nib.
+    self.titleTrash.text = self.descriptionString;
+   
+    //self.showImage.image = self.newImage;
+
+
 }
 
 - (void) viewWillAppear:(BOOL)animated {
