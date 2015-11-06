@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  Trashare
 //
-//  Created by Alex Vuijsje on 02-11-15.
+//  Created by Marina Huber on 02-11-15.
 //  Copyright © 2015 The App Academy. All rights reserved.
 //
 
@@ -21,10 +21,7 @@
 @end
 
 @implementation HomeViewController
-//{
-//    NSArray *tableData;
-//    NSArray *thumbnails;
-//}
+
 
 #pragma mark -viewDidLoad
 
@@ -59,7 +56,7 @@
 }
 
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView
- numberOfRowsInSection:(NSInteger)section{
+ numberOfRowsInSection:(NSInteger)section {
     
     return self.objectsArray.count;
 }
@@ -77,6 +74,8 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
     }
+    
+    
     
     // Configure the cell
      PFFile *thumbnail = [object objectForKey:@"imageFile"];

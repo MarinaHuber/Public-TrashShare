@@ -7,9 +7,6 @@
 //
 
 #import "WelcomeViewController.h"
-#import "HomeViewController.h"
-#import <CoreLocation/CoreLocation.h>
-
 
 @interface WelcomeViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -49,7 +46,7 @@
     //    [self.locationManager requestAlwaysAuthorization];
    
     
-   CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
+   CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
     
     if (
      authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||

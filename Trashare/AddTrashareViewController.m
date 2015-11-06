@@ -17,6 +17,27 @@
 @implementation AddTrashareViewController
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    self.imageView.image = self.picture;
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+     
+    }
+}
+
+
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -35,28 +56,6 @@
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    self.imageView.image = self.picture;
-    
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
-        UIAlertController *alert = [UIAlertController  alertControllerWithTitle: @"Upload Complete" message: @"Successfully saved your #Lekker post!" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
-        
-        [alert addAction:defaultAction];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        
-    
-    }
 }
 
 
@@ -82,11 +81,34 @@
     PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
     [trashare setObject:imageFile forKey:@"imageFile"];
 
-    [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        
-        HomeViewController *map = [[HomeViewController alloc] init];
-       [self presentViewController:map animated:YES completion:nil];
-    }];
-
+    [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error)
+     
+        {
+            if (!error) {
+                // Show success message
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the trash" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                
+                // Notify table view to reload the recipes from Parse cloud
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
+                
+                // Dismiss the controller
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            
+            }
+        }];
 }
+
 @end
+
+       
+        
+        
+        
+        
+        
+            
