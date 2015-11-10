@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)  NSArray *objectsArray;
+@property (strong, nonatomic) NSArray *sortedArray;
+
 
 
 @end
@@ -31,11 +33,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
     
-     PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
-     self.objectsArray = [query findObjects];
-
-    
-
+    [self reloadParseData];
 
 }
 
@@ -43,13 +41,21 @@
 {
     [super viewDidAppear:YES];
     
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
-    self.objectsArray = [query findObjects];
+    [self reloadParseData];
     
     [self.tableView reloadData];
     
+}
 
+- (void)reloadParseData
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
+    self.objectsArray = [query findObjects];
+    
+    //sort by date
+    NSSortDescriptor *ageDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
+    NSArray *sortDescriptors = @[ageDescriptor];
+    self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 #pragma mark - UITableViewDataSource
@@ -62,7 +68,7 @@
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-    return self.objectsArray.count;
+    return self.sortedArray.count;
 }
 
 
@@ -71,8 +77,7 @@
     //forcing xcode to keep pfimageview valid
     [PFImageView class];
     
-    
-    PFObject *object = self.objectsArray[indexPath.row];
+    PFObject *object = self.sortedArray[indexPath.row];
     
     TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
     
