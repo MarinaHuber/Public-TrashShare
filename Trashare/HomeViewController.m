@@ -107,7 +107,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 
     // this is declared as @property in detailviewcontroller and passed on in view did load
     //for string (lable)
-    PFObject *object = self.objectsArray[indexPath.row];
+    PFObject *object = self.sortedArray[indexPath.row];
     
     DetailViewController *detailVC = [[DetailViewController alloc] init];
     
