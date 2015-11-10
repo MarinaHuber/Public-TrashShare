@@ -1,5 +1,5 @@
 //
-//  DEtailViewController.h
+//  DetailViewController.h
 //  Trashare
 //
 //  Created by Marina Huber on 11/6/15.
