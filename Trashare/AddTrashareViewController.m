@@ -16,6 +16,9 @@
 
 @implementation AddTrashareViewController
 
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
