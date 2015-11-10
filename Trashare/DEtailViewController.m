@@ -7,10 +7,9 @@
 //
 
 #import "DetailViewController.h"
-
+#import <UIKit/UIKit.h>
 
 @interface DetailViewController () 
-
 
 @end
 
@@ -23,7 +22,11 @@
    
     self.showImage.file = self.file;
 
+}
 
+- (IBAction)cancelButton:(id)sender {
+     HomeViewController *back = [[HomeViewController alloc] init];
+    [self presentViewController:back animated:YES completion:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

@@ -25,7 +25,7 @@
                         <constraint firstAttribute="width" constant="120" id="KYx-cs-jVn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
@@ -39,7 +39,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <animations/>
                     <items>
-                        <navigationItem title="Trashare" id="L8h-JR-MOE"/>
+                        <navigationItem title="Trashare" id="L8h-JR-MOE">
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="B3r-gA-7Nw">
+                                <connections>
+                                    <action selector="cancelButton:" destination="-1" id="GMv-F3-VrH"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
             </subviews>
