@@ -15,7 +15,8 @@
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.titleTrash.text = self.descriptionString;
@@ -24,12 +25,13 @@
 
 }
 
-- (IBAction)cancelButton:(id)sender {
-     HomeViewController *back = [[HomeViewController alloc] init];
-    [self presentViewController:back animated:YES completion:nil];
+- (IBAction)cancelButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:YES];
     
 }
