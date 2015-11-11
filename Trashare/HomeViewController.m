@@ -166,7 +166,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-        [dateFormatter setDateFormat:@"dd-MM-yyyy mm:HH"];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
     NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
     
     detailVC.descriptionString = descriptionString1;
