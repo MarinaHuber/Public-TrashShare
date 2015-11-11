@@ -7,26 +7,31 @@
 //
 
 #import "DetailViewController.h"
-
+#import <UIKit/UIKit.h>
 
 @interface DetailViewController () 
-
 
 @end
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.titleTrash.text = self.descriptionString;
    
     self.showImage.file = self.file;
 
-
 }
 
-- (void) viewWillAppear:(BOOL)animated {
+- (IBAction)cancelButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:YES];
     
 }
