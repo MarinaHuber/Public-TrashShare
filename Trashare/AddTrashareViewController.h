@@ -16,6 +16,10 @@
 @property (strong, nonatomic) UIImage *picture;
 
 @property(nonatomic, readonly, strong) UINavigationController *navigationController;
+
+//@property(strong, nonatomic) UIScrollView *scrollView;
+//@property(strong, nonatomic) UITextField *textField;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)addTrashare:(id)sender;

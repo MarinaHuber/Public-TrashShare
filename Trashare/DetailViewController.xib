@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
+                <outlet property="dateTrash" destination="PMd-2g-5oL" id="DSY-3X-8JJ"/>
                 <outlet property="showImage" destination="DcR-ar-6AW" id="hyS-bk-e47"/>
                 <outlet property="titleTrash" destination="fJ2-91-Yxn" id="UI1-yH-nmg"/>
                 <outlet property="view" destination="hOD-SH-a1w" id="xiH-eO-Hpg"/>
@@ -48,6 +49,13 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-2g-5oL">
+                    <rect key="frame" x="130" y="496" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -113,9 +113,13 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSString *descriptionString1 = object[@"titleTrashare"];
     
+   // NSDate *trashDate = object[@"createdAt"];
+    
     PFFile *showImage = object[@"imageFile"];
     
     detailVC.file = showImage;
+    
+ //   detailVC.dateCreated = trashDate;
     
     detailVC.descriptionString = descriptionString1;
     
