@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //[self.registerForKeyboardNotifications];
+    
     self.imageView.image = self.picture;
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -38,6 +40,12 @@
         [self presentViewController:alert animated:YES completion:nil];
      
     }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self registerForKeyboardNotifications];
 }
 
 
@@ -115,62 +123,33 @@
     }];
 }
 
-//// Call this method somewhere in your view controller setup code.
-//- (void)registerForKeyboardNotifications
-//{
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWasShown:)
-//                                                 name:UIKeyboardDidShowNotification object:nil];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillBeHidden:)
-//                                                 name:UIKeyboardWillHideNotification object:nil];
-//    
-//}
-//
-//// Called when the UIKeyboardDidShowNotification is sent.
-//- (void)keyboardWasShown:(NSNotification*)aNotification
-//{
-//    NSDictionary* info = [aNotification userInfo];
-//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    
-//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-//    scrollView.contentInset = contentInsets;
-//    scrollView.scrollIndicatorInsets = contentInsets;
-//    
-//    // If active text field is hidden by keyboard, scroll it so it's visible. Your app might not need or want this behavior.
-//    CGRect aRect = self.view.frame;
-//    aRect.size.height -= kbSize.height;
-//    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-//        [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
-//    }
-//}
-//
-//// Called when the UIKeyboardWillHideNotification is sent
-//- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-//{
-//    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-//    scrollView.contentInset = contentInsets;
-//    scrollView.scrollIndicatorInsets = contentInsets;
-//}
-//
-//- (void)textFieldDidBeginEditing:(UITextField *)textField
-//{
-//    activeField = textField;
-//}
-//
-//- (void)textFieldDidEndEditing:(UITextField *)textField
-//{
-//    activeField = nil;
-//}
+- (void)registerForKeyboardNotifications {
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(keyboardWillShow)
+                                             name:UIKeyboardWillShowNotification
+                                           object:nil];
 
-//- (void)keyboardWasShown:(NSNotification*)aNotification {
-//    NSDictionary* info = [aNotification userInfo];
-//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-//    CGRect bkgndRect = activeField.superview.frame;
-//    bkgndRect.size.height += kbSize.height;
-//    [activeField.superview setFrame:bkgndRect];
-//    [scrollView setContentOffset:CGPointMake(0.0, activeField.frame.origin.y-kbSize.height) animated:YES];
-//}
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(keyboardWillHide)
+                                             name:UIKeyboardWillHideNotification
+                                           object:nil];
+    
+    // If you want to remove the listener completely just use this one line
+    [[NSNotificationCenter defaultCenter] removeObserver:self.view];
+}
+
+-(void)keyboardWillShow {
+    // Animate the current view out of the way
+    [UIView animateWithDuration:0.3f animations:^ {
+        self.view.frame = CGRectMake(0, -160, 320, 480);
+    }];
+}
+
+-(void)keyboardWillHide {
+    // Animate the current view back to its original position
+    [UIView animateWithDuration:0.3f animations:^ {
+        self.view.frame = CGRectMake(0, 0, 320, 480);
+    }];
+}
 
 @end

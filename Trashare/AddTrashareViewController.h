@@ -14,8 +14,9 @@
 
 @interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) UIImage *picture;
-
 @property(nonatomic, readonly, strong) UINavigationController *navigationController;
+
+//@property (strong, nonatomic) UITextField *textField;
 
 //@property(strong, nonatomic) UIScrollView *scrollView;
 //@property(strong, nonatomic) UITextField *textField;
@@ -28,6 +29,6 @@
 
 //- (IBAction)takePhoto:(UIButton *)sender;
 
-
+//@property CGRect frame;
 
 @end
