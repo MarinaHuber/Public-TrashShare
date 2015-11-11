@@ -166,7 +166,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-        [dateFormatter setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy mm:HH"];
     NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
     
     detailVC.descriptionString = descriptionString1;
@@ -254,7 +254,7 @@ if (hasZoomed == NO) {
             pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:@"CustomPinAnnotationView"];
         
-            pinView.pinTintColor = UIColor.redColor;
+            pinView.pinTintColor = UIColor.greenColor;
             pinView.animatesDrop = YES;
             pinView.canShowCallout = YES;
             pinView.image = [UIImage imageNamed:@"my.png"];
