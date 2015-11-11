@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
@@ -18,12 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-91-Yxn">
-                    <rect key="frame" x="130" y="385" width="120" height="62"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-91-Yxn">
+                    <rect key="frame" x="8" y="385" width="304" height="62"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="62" id="DtV-O6-TWm"/>
-                        <constraint firstAttribute="width" constant="120" id="KYx-cs-jVn"/>
+                        <constraint firstAttribute="height" constant="62" id="dgq-tY-Nzz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +36,7 @@
                         <constraint firstAttribute="height" constant="289" id="MZ0-Cr-gh9"/>
                     </constraints>
                 </imageView>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <animations/>
                     <items>
@@ -49,8 +49,8 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-2g-5oL">
-                    <rect key="frame" x="130" y="496" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-2g-5oL">
+                    <rect key="frame" x="8" y="496" width="304" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,10 +61,17 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="DcR-ar-6AW" firstAttribute="top" secondItem="hOD-SH-a1w" secondAttribute="top" constant="44" id="GWG-ZY-fHB"/>
+                <constraint firstItem="PMd-2g-5oL" firstAttribute="top" secondItem="fJ2-91-Yxn" secondAttribute="bottom" constant="49" id="J2V-o2-9Ep"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="top" secondItem="DcR-ar-6AW" secondAttribute="bottom" constant="52" id="KIk-P0-GwG"/>
                 <constraint firstAttribute="trailing" secondItem="DcR-ar-6AW" secondAttribute="trailing" id="SjQ-Jl-Y5N"/>
-                <constraint firstAttribute="trailing" secondItem="fJ2-91-Yxn" secondAttribute="trailing" constant="70" id="ncv-sh-sZ4"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="top" secondItem="DcR-ar-6AW" secondAttribute="bottom" constant="52" id="sgT-es-VKf"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="trailing" secondItem="PMd-2g-5oL" secondAttribute="trailing" id="auN-zK-GV9"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="bottom" secondItem="DcR-ar-6AW" secondAttribute="top" id="gKI-Xb-vT1"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="DcR-ar-6AW" secondAttribute="leading" id="jwQ-uT-34I"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="DcR-ar-6AW" secondAttribute="centerX" id="lw9-OG-gY1"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="baW-vm-NOK" secondAttribute="centerX" id="q0c-oD-m21"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="PMd-2g-5oL" secondAttribute="leading" id="qwv-ax-YDD"/>
                 <constraint firstItem="DcR-ar-6AW" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" id="tUU-yI-XF4"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leadingMargin" id="xPc-4Z-IXn"/>
             </constraints>
             <point key="canvasLocation" x="444" y="-48"/>
         </view>
