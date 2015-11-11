@@ -11,12 +11,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TrashareCell.h"
 
-@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate, UITableViewDelegate>
+@interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate, UITableViewDelegate, MKAnnotation>
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)  NSArray *objectsArray;
 @property (strong, nonatomic) NSArray *sortedArray;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic) CLLocationCoordinate2D userLocation;
+@property (nonatomic) PFObject *originalObject;
 
 
 
@@ -31,11 +35,44 @@
     
     [super viewDidLoad];
     
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
     
     [self reloadParseData];
+    
+ //for every PFObject loop over and find elements in mapObject
+    
+    NSMutableArray *pinArray = [[NSMutableArray alloc] init];
+    
+    
+    for (PFObject *pfObjectDictionary in self.objectsArray) {
+        
+        
+        PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
+        
+        // pin.latitude
+        // pin.longitude
+        if (pin) {
+            
+            //   NSLog(@"%@", pin);
+            
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
+            
+            // pin.center.latitude =
+            //this creates corresponding map object
+            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:@"titleTrashare"];
+            
+          
+            [pinArray addObject:annotation];
+            
+        }
+        
+        [self.mapView addAnnotations:pinArray];
+        
+    }
 
-}
+    }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -56,6 +93,8 @@
     NSSortDescriptor *ageDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
     NSArray *sortDescriptors = @[ageDescriptor];
     self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
+    
+    
 }
 
 #pragma mark - UITableViewDataSource
@@ -123,9 +162,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
    [self.navigationController pushViewController:detailVC animated:YES];
     
     // this is declared as @property in detailviewcontroller and passed on in view did load
-    //for image
-    
-     //detailVC.newImage = images;
+  
 }
 
 
@@ -157,13 +194,16 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     createNew.picture = image;
     // Put that image onto the screen in our image view
         
-    // Dismiss the modal image picker
+    // Dismiss the modal image picker, there are few ways to do it (push/pop, present/dismiss)
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     [self presentViewController:createNew animated:YES completion:nil];
     
 }
+#pragma mark - Annoting Maps
+
 //zoom working
+
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation
 
@@ -172,6 +212,47 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
     [self.mapView setRegion:region animated:YES];
     
+ }
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If the annotation is the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MapAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+                                                                 dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                      reuseIdentifier:@"CustomPinAnnotationView"];
+        
+            pinView.pinTintColor = UIColor.redColor;
+            pinView.animatesDrop = YES;
+            pinView.canShowCallout = YES;
+            
+            // If appropriate, customize the callout by adding accessory views (code not shown).
+        }
+        else
+            pinView.annotation = annotation;
+        
+        return pinView;
+    }
+    
+    return nil;
 }
+
+
+//example
+
+
 
 @end

@@ -12,10 +12,12 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "MapAnnotation.h"
 
 // connecting images and parse
 
 @interface HomeViewController : UIViewController <UINavigationControllerDelegate>
+
 
 
 @end

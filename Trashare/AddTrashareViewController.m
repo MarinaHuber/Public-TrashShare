@@ -73,33 +73,41 @@
     
     PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
    
-    [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
-    
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     NSUUID *randomName = [NSUUID UUID];
     PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
-    [trashare setObject:imageFile forKey:@"imageFile"];
-
-    [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error)
-     
-        {
-            if (!error) {
-                // Show success message
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved your Trashare!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
-                
-                // Notify table view to reload the recipes from Parse cloud
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
-                
-                // Dismiss the controller
-                [self dismissViewControllerAnimated:YES completion:nil];
-                
-            } else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
+    //saving geo points from parse
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint * _Nullable geoPoint, NSError * _Nullable error) {
+        
+        if (geoPoint) {
             
-            }
-        }];
+            [trashare setObject:geoPoint forKey:@"annotationPoint"];
+            [trashare setObject:imageFile forKey:@"imageFile"];
+            [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
+
+            
+            [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error)
+             
+             {
+                 if (!error) {
+                     // Show success message
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved your Trashare!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                     [alert show];
+                     
+                     // Notify table view to reload the recipes from Parse cloud
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshTable" object:self];
+                     
+                     // Dismiss the controller
+                     [self dismissViewControllerAnimated:YES completion:nil];
+                     
+                 } else {
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Failure" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                     [alert show];
+                     
+                 }
+             }];
+        }
+    }];
 }
 
 @end
