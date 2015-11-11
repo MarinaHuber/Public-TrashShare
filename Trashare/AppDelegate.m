@@ -28,7 +28,7 @@
     
     
      WelcomeViewController *mvc = [[WelcomeViewController alloc] init];
-
+     //create as much view cotroller as initwithroot as you want using UINavigationControllerDelegate
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mvc];
 

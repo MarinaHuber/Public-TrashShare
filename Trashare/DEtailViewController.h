@@ -18,11 +18,13 @@
 
 @interface DetailViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate>
 
+//@property (nonatomic, strong) UIScrollView *scrolling;
 @property (strong, nonatomic) IBOutlet PFImageView *showImage;
 @property (strong, nonatomic) IBOutlet UILabel *titleTrash;
+
 @property (strong, nonatomic) IBOutlet UILabel *dateTrash;
 
-@property (nonatomic, strong) NSDate *dateCreated;
+@property (nonatomic, strong) NSString *dateCreated;
 @property (nonatomic, strong) NSString *descriptionString;
 @property (nonatomic, strong) PFFile *file;
 

@@ -21,13 +21,22 @@
 
     self.titleTrash.text = self.descriptionString;
    
-  //  self.dateTrash.text = self.dateCreated;
+    self.dateTrash.text = self.dateCreated;
     
     self.showImage.file = self.file;
     
     
 
 }
+
+//- (NSString *)stringFromDate:(NSDate *)date {
+//    NSDateFormatter *date=[[NSDateFormatter alloc]init]; {
+//        
+//    }
+//    
+//}
+
+
 
 - (IBAction)cancelButton:(id)sender
 {

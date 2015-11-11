@@ -22,6 +22,10 @@
 @property (nonatomic) CLLocationCoordinate2D userLocation;
 @property (nonatomic) PFObject *originalObject;
 
+@property (strong, nonatomic) IBOutlet UILabel *dateTrash;
+
+@property (nonatomic, strong) NSDate *dateCreated;
+
 
 
 @end
@@ -39,6 +43,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
     
     [self reloadParseData];
+    
     
  //for every PFObject loop over and find elements in mapObject
     
@@ -70,8 +75,7 @@
         [self.mapView addAnnotations:pinArray];
         
     }
-
-    }
+}
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -133,7 +137,7 @@
     NSString *currentTitle = object[@"titleTrashare"];
     
     cell.descriptionLabel.text = currentTitle;
-    
+
     
     return cell;
 }
@@ -152,20 +156,25 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSString *descriptionString1 = object[@"titleTrashare"];
     
-   // NSDate *trashDate = object[@"createdAt"];
     
     PFFile *showImage = object[@"imageFile"];
     
     detailVC.file = showImage;
+   
     
- //   detailVC.dateCreated = trashDate;
+    NSDate *trashDate = object.createdAt;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
+        [dateFormatter setDateFormat:@"yyyy-MM-ddHH:mm:ss"];
+    NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
     
     detailVC.descriptionString = descriptionString1;
+    detailVC.dateCreated = dateCreated;
     
+   // this is declared as @property in detailviewcontroller and passed on in view did load
     
    [self.navigationController pushViewController:detailVC animated:YES];
-    
-    // this is declared as @property in detailviewcontroller and passed on in view did load
   
 }
 
@@ -209,14 +218,19 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 //zoom working
 
 - (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation
+didUpdateUserLocation:(MKUserLocation *)userLocation {
 
-{
+if (hasZoomed == NO) {
+    
     CLLocationCoordinate2D loc = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
     [self.mapView setRegion:region animated:YES];
     
- }
+    hasZoomed = YES;
+  }
+    
+}
+
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
@@ -233,6 +247,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
         MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
                                                                  dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
+        
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
@@ -242,6 +257,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
             pinView.pinTintColor = UIColor.redColor;
             pinView.animatesDrop = YES;
             pinView.canShowCallout = YES;
+            pinView.image = [UIImage imageNamed:@"my.png"];
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
         }

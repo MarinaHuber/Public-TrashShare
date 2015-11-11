@@ -16,8 +16,10 @@
 
 // connecting images and parse
 
-@interface HomeViewController : UIViewController <UINavigationControllerDelegate>
+@interface HomeViewController : UIViewController <UINavigationControllerDelegate> {
+BOOL hasZoomed;
+}
 
-
+@property (nonatomic) BOOL hasZoomed;
 
 @end
