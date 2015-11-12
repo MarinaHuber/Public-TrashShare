@@ -16,17 +16,22 @@
 
 
 
-@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate>
+@interface DetailViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UIScrollViewDelegate> {
+    UIPinchGestureRecognizer *tap;
+    BOOL isFullScreen;
+    CGRect prevFrame;
+}
 
-
-@property (strong, nonatomic) IBOutlet PFImageView *showImage;
-@property (strong, nonatomic) IBOutlet UILabel *titleTrash;
-
+@property (nonatomic) UIScrollView *myScrollView;
 @property (strong, nonatomic) IBOutlet UILabel *dateTrash;
 
 @property (nonatomic, strong) NSString *dateCreated;
 @property (nonatomic, strong) NSString *descriptionString;
 @property (nonatomic, strong) PFFile *file;
 
+@property (strong, nonatomic) IBOutlet PFImageView *showImage;
+@property (strong, nonatomic) IBOutlet UILabel *titleTrash;
+
+- (IBAction)tap:(id)sender;
 
 @end

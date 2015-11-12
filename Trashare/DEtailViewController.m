@@ -15,6 +15,9 @@
 
 @implementation DetailViewController
 
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,16 +28,8 @@
     
     self.showImage.file = self.file;
     
-    
 
 }
-
-//- (NSString *)stringFromDate:(NSDate *)date {
-//    NSDateFormatter *date=[[NSDateFormatter alloc]init]; {
-//        
-//    }
-//    
-//}
 
 
 
@@ -49,5 +44,38 @@
     
 }
 
+- (IBAction)tap:(id)sender {
+
+    
+        self.showImage.contentMode = UIViewContentModeScaleAspectFit;
+        self.view.backgroundColor = [UIColor blackColor];
+    
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+        if (!isFullScreen) {
+            [UIView animateWithDuration:0.4 delay:0 options:0 animations:^{
+                prevFrame = self.showImage.frame;
+                [self.showImage setFrame:[[UIScreen mainScreen] bounds]];
+            }completion:^(BOOL finished){
+                isFullScreen = YES;
+            }];
+            return;
+        }
+        else{
+            self.titleTrash.alpha = 1.0;
+            self.dateTrash.alpha = 1.0;
+            self.showImage.contentMode = UIViewContentModeScaleAspectFill;
+            self.view.backgroundColor = [UIColor blackColor];
+    
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+            [UIView animateWithDuration:4 delay:0 options:0 animations:^{
+                [self.showImage setFrame:prevFrame];
+            }completion:^(BOOL finished){
+                isFullScreen = NO;
+            }];
+            return;
+        }
+    
+}
 
 @end

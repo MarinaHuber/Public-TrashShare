@@ -54,6 +54,7 @@
         
         
         PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
+        NSString *title = pfObjectDictionary[@"titleTrashare"];
         
         // pin.latitude
         // pin.longitude
@@ -65,7 +66,7 @@
             
             // pin.center.latitude =
             //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:@"titleTrashare"];
+            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
             
           
             [pinArray addObject:annotation];

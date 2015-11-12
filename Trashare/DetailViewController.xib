@@ -29,9 +29,10 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
                     <rect key="frame" x="0.0" y="44" width="320" height="289"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="289" id="MZ0-Cr-gh9"/>
                     </constraints>
@@ -56,6 +57,13 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1n-j8-6hP">
+                    <rect key="frame" x="8" y="44" width="312" height="289"/>
+                    <animations/>
+                    <connections>
+                        <action selector="tap:" destination="-1" eventType="touchUpInside" id="Kvr-tO-VKh"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
