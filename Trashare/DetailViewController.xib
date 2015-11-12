@@ -38,8 +38,11 @@
                     </constraints>
                 </imageView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="EUQ-sK-SzY"/>
+                    </constraints>
                     <items>
                         <navigationItem title="Trashare" id="L8h-JR-MOE">
                             <barButtonItem key="leftBarButtonItem" title="Cancel" id="B3r-gA-7Nw">
@@ -57,8 +60,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1n-j8-6hP">
-                    <rect key="frame" x="8" y="44" width="312" height="289"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1n-j8-6hP">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                     <animations/>
                     <connections>
                         <action selector="tap:" destination="-1" eventType="touchUpInside" id="Kvr-tO-VKh"/>
@@ -68,20 +71,22 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="top" secondItem="hOD-SH-a1w" secondAttribute="top" id="5u1-sm-0wh"/>
                 <constraint firstItem="DcR-ar-6AW" firstAttribute="top" secondItem="hOD-SH-a1w" secondAttribute="top" constant="44" id="GWG-ZY-fHB"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="trailing" secondItem="DcR-ar-6AW" secondAttribute="trailing" id="GZg-mr-SDN"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="r1n-j8-6hP" secondAttribute="leading" id="I1Z-Xw-mgG"/>
                 <constraint firstItem="PMd-2g-5oL" firstAttribute="top" secondItem="fJ2-91-Yxn" secondAttribute="bottom" constant="49" id="J2V-o2-9Ep"/>
                 <constraint firstItem="fJ2-91-Yxn" firstAttribute="top" secondItem="DcR-ar-6AW" secondAttribute="bottom" constant="52" id="KIk-P0-GwG"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="DcR-ar-6AW" secondAttribute="leading" id="Nto-cd-FRK"/>
                 <constraint firstAttribute="trailing" secondItem="DcR-ar-6AW" secondAttribute="trailing" id="SjQ-Jl-Y5N"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="top" secondItem="r1n-j8-6hP" secondAttribute="top" id="Y9C-mt-2Ap"/>
                 <constraint firstItem="fJ2-91-Yxn" firstAttribute="trailing" secondItem="PMd-2g-5oL" secondAttribute="trailing" id="auN-zK-GV9"/>
-                <constraint firstItem="baW-vm-NOK" firstAttribute="bottom" secondItem="DcR-ar-6AW" secondAttribute="top" id="gKI-Xb-vT1"/>
-                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="DcR-ar-6AW" secondAttribute="leading" id="jwQ-uT-34I"/>
                 <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="DcR-ar-6AW" secondAttribute="centerX" id="lw9-OG-gY1"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="baW-vm-NOK" secondAttribute="centerX" id="q0c-oD-m21"/>
                 <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="PMd-2g-5oL" secondAttribute="leading" id="qwv-ax-YDD"/>
                 <constraint firstItem="DcR-ar-6AW" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" id="tUU-yI-XF4"/>
                 <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leadingMargin" id="xPc-4Z-IXn"/>
             </constraints>
-            <point key="canvasLocation" x="444" y="-48"/>
+            <point key="canvasLocation" x="378" y="-10"/>
         </view>
     </objects>
 </document>
