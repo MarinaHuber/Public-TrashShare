@@ -30,8 +30,11 @@
                     </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
-                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="qv0-KZ-fQX"/>
+                    </constraints>
                     <items>
                         <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
@@ -49,7 +52,7 @@
                     </items>
                 </toolbar>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
-                    <rect key="frame" x="0.0" y="64" width="320" height="250"/>
+                    <rect key="frame" x="0.0" y="60" width="320" height="250"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="wxw-t4-Qp6"/>
@@ -66,7 +69,8 @@
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="83A-Lx-3QS"/>
                 <constraint firstItem="cae-Nt-Zsc" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="SGL-53-xbK"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="ScY-Y5-VVs"/>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Tps-0O-rVF"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tps-0O-rVF"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W5p-aS-bHO"/>
                 <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="X96-NZ-xfl"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="id8-I6-fuk"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pbR-TF-SHX"/>

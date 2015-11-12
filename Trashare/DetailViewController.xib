@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
@@ -20,25 +19,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-91-Yxn">
-                    <rect key="frame" x="8" y="385" width="304" height="62"/>
+                    <rect key="frame" x="8" y="401" width="304" height="62"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="62" id="dgq-tY-Nzz"/>
+                        <constraint firstAttribute="width" constant="304" id="HFo-Ff-yqq"/>
+                        <constraint firstAttribute="height" constant="62" id="qDs-6P-CZw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
-                    <rect key="frame" x="0.0" y="44" width="320" height="289"/>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="289" id="MZ0-Cr-gh9"/>
+                        <constraint firstAttribute="width" constant="320" id="NIN-uk-TcT"/>
+                        <constraint firstAttribute="height" constant="60" id="o69-0H-zLQ"/>
                     </constraints>
-                </imageView>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-vm-NOK">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <animations/>
                     <items>
                         <navigationItem title="Trashare" id="L8h-JR-MOE">
                             <barButtonItem key="leftBarButtonItem" title="Cancel" id="B3r-gA-7Nw">
@@ -50,28 +47,40 @@
                     </items>
                 </navigationBar>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMd-2g-5oL">
-                    <rect key="frame" x="8" y="496" width="304" height="21"/>
+                    <rect key="frame" x="8" y="512" width="304" height="21"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="nho-kc-vqs"/>
+                        <constraint firstAttribute="width" constant="304" id="xen-ZV-pHo"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-ar-6AW" customClass="PFImageView">
+                    <rect key="frame" x="0.0" y="60" width="320" height="289"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="RQj-C6-5as"/>
+                        <constraint firstAttribute="height" constant="289" id="fd6-hK-BYd"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="DcR-ar-6AW" firstAttribute="top" secondItem="hOD-SH-a1w" secondAttribute="top" constant="44" id="GWG-ZY-fHB"/>
-                <constraint firstItem="PMd-2g-5oL" firstAttribute="top" secondItem="fJ2-91-Yxn" secondAttribute="bottom" constant="49" id="J2V-o2-9Ep"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="top" secondItem="DcR-ar-6AW" secondAttribute="bottom" constant="52" id="KIk-P0-GwG"/>
-                <constraint firstAttribute="trailing" secondItem="DcR-ar-6AW" secondAttribute="trailing" id="SjQ-Jl-Y5N"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="trailing" secondItem="PMd-2g-5oL" secondAttribute="trailing" id="auN-zK-GV9"/>
-                <constraint firstItem="baW-vm-NOK" firstAttribute="bottom" secondItem="DcR-ar-6AW" secondAttribute="top" id="gKI-Xb-vT1"/>
-                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="DcR-ar-6AW" secondAttribute="leading" id="jwQ-uT-34I"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="DcR-ar-6AW" secondAttribute="centerX" id="lw9-OG-gY1"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="centerX" secondItem="baW-vm-NOK" secondAttribute="centerX" id="q0c-oD-m21"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="PMd-2g-5oL" secondAttribute="leading" id="qwv-ax-YDD"/>
-                <constraint firstItem="DcR-ar-6AW" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" id="tUU-yI-XF4"/>
-                <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leadingMargin" id="xPc-4Z-IXn"/>
+                <constraint firstItem="DcR-ar-6AW" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" id="E6I-N6-iPw"/>
+                <constraint firstAttribute="trailing" secondItem="DcR-ar-6AW" secondAttribute="trailing" id="Hge-0o-NXP"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="top" secondItem="hOD-SH-a1w" secondAttribute="top" id="Jvp-G6-ans"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" constant="8" id="Nod-Hx-Nnl"/>
+                <constraint firstItem="PMd-2g-5oL" firstAttribute="top" secondItem="fJ2-91-Yxn" secondAttribute="bottom" constant="49" id="R5O-1e-Kzm"/>
+                <constraint firstItem="baW-vm-NOK" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" id="UcM-1u-4Lo"/>
+                <constraint firstAttribute="trailing" secondItem="baW-vm-NOK" secondAttribute="trailing" id="Ucq-Tb-lBR"/>
+                <constraint firstAttribute="trailing" secondItem="PMd-2g-5oL" secondAttribute="trailing" constant="8" id="dxT-lI-aU6"/>
+                <constraint firstItem="PMd-2g-5oL" firstAttribute="leading" secondItem="hOD-SH-a1w" secondAttribute="leading" constant="8" id="lW1-uc-9yL"/>
+                <constraint firstItem="DcR-ar-6AW" firstAttribute="top" secondItem="baW-vm-NOK" secondAttribute="bottom" id="o0w-Vl-imT"/>
+                <constraint firstAttribute="trailing" secondItem="fJ2-91-Yxn" secondAttribute="trailing" constant="8" id="rPR-Oa-Pob"/>
+                <constraint firstItem="fJ2-91-Yxn" firstAttribute="top" secondItem="DcR-ar-6AW" secondAttribute="bottom" constant="52" id="zkh-Ns-6yt"/>
             </constraints>
             <point key="canvasLocation" x="444" y="-48"/>
         </view>
