@@ -25,8 +25,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateTrash;
 
 @property (nonatomic, strong) NSDate *dateCreated;
+@property (nonatomic, strong) NSDate *timeCreated;
 
-
+@property NSDateFormatterStyle dateStyle;
+@property NSDateFormatterStyle timeStyle;
 
 @end
 
@@ -167,11 +169,16 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy "];
     NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
     
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
+    
     detailVC.descriptionString = descriptionString1;
-    detailVC.dateCreated = dateCreated;
+    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@ at %@", dateCreated, timeCreated];
     
    // this is declared as @property in detailviewcontroller and passed on in view did load
     

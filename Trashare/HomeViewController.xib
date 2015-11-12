@@ -22,7 +22,7 @@
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="191" id="EqE-sg-Rfa"/>
+                        <constraint firstAttribute="height" constant="191" id="OpI-F5-D2v"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="zyI-WN-9KA"/>
@@ -30,8 +30,11 @@
                     </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="qv0-KZ-fQX"/>
+                    </constraints>
                     <items>
                         <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
@@ -49,8 +52,11 @@
                     </items>
                 </toolbar>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
-                    <rect key="frame" x="0.0" y="44" width="320" height="260"/>
+                    <rect key="frame" x="0.0" y="60" width="320" height="250"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="wxw-t4-Qp6"/>
+                    </constraints>
                     <connections>
                         <outlet property="delegate" destination="-1" id="0KS-jJ-JX0"/>
                     </connections>
@@ -59,19 +65,19 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="1eO-AN-hF6"/>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="leading" secondItem="mnC-IS-wa4" secondAttribute="leading" id="80b-zb-2dQ"/>
-                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GcG-Hf-lwu"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="RNG-b0-KiQ"/>
-                <constraint firstItem="cae-Nt-Zsc" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="Rl2-Ka-qME"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S3a-sb-wV4"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" constant="8" symbolic="YES" id="X00-hW-pK1"/>
-                <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="a1o-po-2mf"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="cae-Nt-Zsc" secondAttribute="leading" id="ejf-4g-VKF"/>
-                <constraint firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="fzA-BL-j2t"/>
-                <constraint firstItem="cae-Nt-Zsc" firstAttribute="top" secondItem="tMF-Dq-gxq" secondAttribute="bottom" constant="21" id="g2Z-ph-4yG"/>
-                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="mnC-IS-wa4" secondAttribute="leading" id="oGa-07-wKy"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="tsx-OG-9n0"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="5vD-5P-feN"/>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="83A-Lx-3QS"/>
+                <constraint firstItem="cae-Nt-Zsc" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="SGL-53-xbK"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="ScY-Y5-VVs"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tps-0O-rVF"/>
+                <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W5p-aS-bHO"/>
+                <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="X96-NZ-xfl"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="id8-I6-fuk"/>
+                <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pbR-TF-SHX"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="kMY-H0-z1V" secondAttribute="leading" id="r8g-ic-Vgi"/>
+                <constraint firstItem="cae-Nt-Zsc" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="tX3-5i-efa"/>
+                <constraint firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="uIh-et-as6"/>
+                <constraint firstItem="cae-Nt-Zsc" firstAttribute="top" secondItem="tMF-Dq-gxq" secondAttribute="bottom" constant="21" id="uni-yD-Sjr"/>
             </constraints>
             <point key="canvasLocation" x="298" y="395"/>
         </view>

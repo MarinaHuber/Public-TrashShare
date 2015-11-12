@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-zM-BD8">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="lg3-aL-gkl"/>
+                        <constraint firstAttribute="height" constant="60" id="lg3-aL-gkl"/>
                     </constraints>
                     <items>
                         <navigationItem title="Title" id="qsk-i1-aSA">
@@ -34,7 +34,7 @@
                     </items>
                 </navigationBar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90n-HO-xmI">
-                    <rect key="frame" x="13" y="49" width="294" height="301"/>
+                    <rect key="frame" x="13" y="65" width="294" height="301"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="301" id="1op-Sh-mGB"/>
@@ -42,7 +42,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of Trashare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-Ao-urF">
-                    <rect key="frame" x="71" y="365" width="179" height="21"/>
+                    <rect key="frame" x="71" y="381" width="179" height="21"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="179" id="hTV-p3-k94"/>
@@ -53,7 +53,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe the Trashare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-dX-lN8">
-                    <rect key="frame" x="24" y="406" width="273" height="30"/>
+                    <rect key="frame" x="24" y="422" width="273" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="273" id="Zpk-1d-VcP"/>
@@ -66,7 +66,7 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ges-dJ-5Ca">
-                    <rect key="frame" x="101" y="458" width="118" height="30"/>
+                    <rect key="frame" x="101" y="474" width="118" height="30"/>
                     <animations/>
                     <color key="backgroundColor" red="0.066386950987103566" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
