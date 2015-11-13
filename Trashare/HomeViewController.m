@@ -30,14 +30,7 @@
 @property (nonatomic, strong) NSDate *dateCreated;
 @property (nonatomic, strong) NSDate *timeCreated;
 
-<<<<<<< HEAD
-=======
-@property NSDateFormatterStyle dateStyle;
-@property NSDateFormatterStyle timeStyle;
 
-@property (nonatomic, strong) UIImage *imageFile;
-
->>>>>>> 9fce8ef6facc2d066c653be53ee5f83a700fa8b4
 @end
 
 @implementation HomeViewController
@@ -63,8 +56,7 @@
     
     for (PFObject *pfObjectDictionary in self.objectsArray) {
         
-        
-<<<<<<< HEAD
+
         PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
         NSString *title = pfObjectDictionary[@"titleTrashare"];
         
@@ -96,28 +88,7 @@
 //
 //            
 //        }
-=======
-        PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
-//        NSString *title = pfObjectDictionary[@"titleTrashare"];
-//        PFFile *image = pfObjectDictionary[@"imageFile"];
-        
-        // pin.latitude
-        // pin.longitude
-        if (pin) {
-            
-            //   NSLog(@"%@", pin);
-            
-            //CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
-            
-            // pin.center.latitude =
-            //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
-            
-          
-            [pinArray addObject:annotation];
-            
-        }
->>>>>>> 9fce8ef6facc2d066c653be53ee5f83a700fa8b4
+
         
         [self.mapView addAnnotations:pointArray];
         
@@ -328,12 +299,10 @@ if (self.hasZoomed == NO) {
     if ([annotation isKindOfClass:[MapAnnotation class]])
     {
         // Try to dequeue an existing pin view first.
-<<<<<<< HEAD
+
         MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView
                                                                  dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
-=======
-        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
->>>>>>> 9fce8ef6facc2d066c653be53ee5f83a700fa8b4
+
         
         
         if (!pinView)
