@@ -20,7 +20,6 @@
 		9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5441BECAE7400658F0E /* DetailViewController.m */; };
 		9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C39E5451BECAE7400658F0E /* DetailViewController.xib */; };
 		9CAF531C1BF20E48001B615B /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF531B1BF20E48001B615B /* MapAnnotation.m */; };
-		9CD0CF5C1BF540D100E02957 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CD0CF5B1BF540D100E02957 /* icon.png */; };
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
 		9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */; };
@@ -51,7 +50,6 @@
 		9C39E5451BECAE7400658F0E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		9CAF531A1BF20E48001B615B /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		9CAF531B1BF20E48001B615B /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
-		9CD0CF5B1BF540D100E02957 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../Design/icon.png; sourceTree = "<group>"; };
 		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				9C39E5441BECAE7400658F0E /* DetailViewController.m */,
 				9C39E5451BECAE7400658F0E /* DetailViewController.xib */,
 				EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */,
-				9CD0CF5B1BF540D100E02957 /* icon.png */,
 				EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */,
 				EA1FB8A91BE7774600CFFAD2 /* Info.plist */,
 				EA1FB89E1BE7774600CFFAD2 /* Supporting Files */,
@@ -224,7 +221,6 @@
 			files = (
 				EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */,
 				9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */,
-				9CD0CF5C1BF540D100E02957 /* icon.png in Resources */,
 				9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */,
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,

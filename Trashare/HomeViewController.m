@@ -88,6 +88,27 @@
 //
 //            
 //        }
+        PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
+        //        NSString *title = pfObjectDictionary[@"titleTrashare"];
+        //        PFFile *image = pfObjectDictionary[@"imageFile"];
+        
+        // pin.latitude
+        // pin.longitude
+        if (pin) {
+            
+            //   NSLog(@"%@", pin);
+            
+            //CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
+            
+            // pin.center.latitude =
+            //this creates corresponding map object
+            MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
+            
+            
+            [pointArray addObject:annotation];
+            
+        }
+       
 
         
         [self.mapView addAnnotations:pointArray];
