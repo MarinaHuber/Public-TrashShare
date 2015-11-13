@@ -30,6 +30,8 @@
 @property NSDateFormatterStyle dateStyle;
 @property NSDateFormatterStyle timeStyle;
 
+@property (nonatomic, strong) UIImage *imageFile;
+
 @end
 
 @implementation HomeViewController
@@ -56,7 +58,8 @@
         
         
         PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
-        NSString *title = pfObjectDictionary[@"titleTrashare"];
+//        NSString *title = pfObjectDictionary[@"titleTrashare"];
+//        PFFile *image = pfObjectDictionary[@"imageFile"];
         
         // pin.latitude
         // pin.longitude
@@ -64,11 +67,11 @@
             
             //   NSLog(@"%@", pin);
             
-            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
+            //CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
             
             // pin.center.latitude =
             //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
+            MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
             
           
             [pinArray addObject:annotation];
@@ -244,6 +247,8 @@ if (hasZoomed == NO) {
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    MapAnnotation *mapAnno = (MapAnnotation *)annotation;
+    
     // If the annotation is the user location, just return nil.
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
@@ -252,8 +257,7 @@ if (hasZoomed == NO) {
     if ([annotation isKindOfClass:[MapAnnotation class]])
     {
         // Try to dequeue an existing pin view first.
-        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
-                                                                 dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
         
         if (!pinView)
@@ -268,6 +272,20 @@ if (hasZoomed == NO) {
             pinView.image = [UIImage imageNamed:@"my.png"];
             
             // If appropriate, customize the callout by adding accessory views (code not shown).
+            
+            // Add an image to the left callout.
+            //PFFile *imageFile = mapAnno.object;
+            
+//            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
+//            self.coordinate = coord;
+            
+            PFFile *file = mapAnno.object[@"imageFile"];
+            
+            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+            iconView.file = file;
+                             [iconView loadInBackground];
+            pinView.leftCalloutAccessoryView = iconView;
+            
         }
         else
             pinView.annotation = annotation;

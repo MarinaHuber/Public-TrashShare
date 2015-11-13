@@ -21,5 +21,19 @@
     }
     return self;
 }
+
+- (id)initwithObject:(PFObject *)object{
+ 
+    if (self) {
+        self.object =  object;
+    PFGeoPoint *pin = object[@"annotationPoint"];
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
+        self.coordinate = coord;
+        
+        NSString *title = object[@"titleTrashare"];
+        [self setTitle: title];
+    }
+    return self;
+}
 @end
 

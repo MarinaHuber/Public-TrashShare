@@ -12,19 +12,14 @@
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"
 
-@interface MapAnnotation : NSObject <MKAnnotation> {
-    CLLocationCoordinate2D coordinate;
-    NSString *title;
-    NSString *subtitle;
-}
+@interface MapAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
-
-
+@property (nonatomic, strong) PFObject *object;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)location title:(NSString *)titleTrash;
-
+- (id)initwithObject:(PFObject *)object;
 
 @end
