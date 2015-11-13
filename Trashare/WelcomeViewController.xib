@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepage-1" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start3app" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
                 </imageView>
@@ -58,7 +58,7 @@
     </objects>
     <resources>
         <image name="arimo-button-how-it-works" width="298" height="106"/>
-        <image name="homepage-1" width="1163" height="1299"/>
         <image name="start" width="270" height="96"/>
+        <image name="start3app" width="1163" height="1299"/>
     </resources>
 </document>
