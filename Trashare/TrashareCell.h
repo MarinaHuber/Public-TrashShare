@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet PFImageView *thumbnailImageView;
-@property (copy, nonatomic) void (^actionBlock)(void);
+@property (copy, nonatomic) void (^actionBlock)(void); //what is this?
+@property (nonatomic, weak) IBOutlet UILabel *calculateText;
 
 @end

@@ -15,12 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepage-1" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start3app" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-My-YzX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-Q5-J2j">
-                    <rect key="frame" x="96" y="452" width="128" height="52"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-Q5-J2j">
+                    <rect key="frame" x="92" y="458" width="140" height="52"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="5od-zK-dwm"/>
@@ -28,8 +28,8 @@
                     </constraints>
                     <state key="normal" image="arimo-button-how-it-works"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-ev-o3d">
-                    <rect key="frame" x="90" y="394" width="141" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-ev-o3d">
+                    <rect key="frame" x="92" y="394" width="141" height="50"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="141" id="DL3-hm-Tv7"/>
@@ -58,7 +58,7 @@
     </objects>
     <resources>
         <image name="arimo-button-how-it-works" width="298" height="106"/>
-        <image name="homepage-1" width="1163" height="1299"/>
         <image name="start" width="270" height="96"/>
+        <image name="start3app" width="1163" height="1299"/>
     </resources>
 </document>

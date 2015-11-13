@@ -32,6 +32,7 @@
     
     // Create location manager object
     self.locationManager = [[CLLocationManager alloc] init];
+    self.mapView.delegate = self;
     
     // There will be a warning from this line of code; ignore it for now
     [self.locationManager setDelegate:self];
@@ -57,13 +58,16 @@
     }
 }
 
-//this needed for storing location
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray<CLLocation *> *)locations {
-   
-//    CLLocation *currentLocations = locations [0];
-}
-  
+////this needed for storing location do get user location from this method instead of MKUserLocation
+//- (void)locationManager:(CLLocationManager * _Nonnull)manager
+//     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
+//{
+//    
+//    //HomeViewController *home = [[HomeViewController alloc] init];
+//    
+//    
+//   }
+
 
 
 

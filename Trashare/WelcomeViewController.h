@@ -15,8 +15,8 @@
 @interface WelcomeViewController : UIViewController
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 
 @end

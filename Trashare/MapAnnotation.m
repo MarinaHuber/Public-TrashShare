@@ -12,7 +12,7 @@
 @implementation MapAnnotation
 
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)location title:(NSString *)titleTrash{
+- (id)initWithCoordinate:(CLLocationCoordinate2D)location title:(NSString *)titleTrash {
     self = [super init];
     if (self) {
         self.coordinate = location;

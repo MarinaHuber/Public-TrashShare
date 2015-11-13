@@ -36,6 +36,32 @@
                         <color key="textColor" red="0.025484913793103449" green="0.73682650862068966" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwn-kX-yPW">
+                        <rect key="frame" x="214" y="18" width="98" height="33"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.8189385776" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awg-hZ-6Ck">
+                        <rect key="frame" x="223" y="25" width="56" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZa-96-xUz">
+                        <rect key="frame" x="291" y="24" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdr-G8-R8w">
+                        <rect key="frame" x="244" y="7" width="61" height="11"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.4453125" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -53,6 +79,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="calculateText" destination="awg-hZ-6Ck" id="XYy-4O-Yey"/>
                 <outlet property="descriptionLabel" destination="gG1-9e-C5S" id="HrH-D3-l4q"/>
                 <outlet property="thumbnailImageView" destination="5Pp-Bm-hHs" id="hVu-ot-1WZ"/>
             </connections>

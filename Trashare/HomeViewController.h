@@ -13,13 +13,15 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "MapAnnotation.h"
+#import "HomeViewController.h"
+#import "AddTrashareViewController.h"
 
-// connecting images and parse
 
-@interface HomeViewController : UIViewController <UINavigationControllerDelegate> {
-BOOL hasZoomed;
-}
+
+
+@interface HomeViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (nonatomic) BOOL hasZoomed;
+
 
 @end

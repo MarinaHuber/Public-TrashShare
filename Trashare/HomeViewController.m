@@ -8,27 +8,27 @@
 
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"
-#import <CoreLocation/CoreLocation.h>
 #import "TrashareCell.h"
+#import "TrashareData.h"
 
 @interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate, UITableViewDelegate, MKAnnotation>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic)  NSArray *objectsArray;
-@property (strong, nonatomic) NSArray *sortedArray;
+@property (nonatomic, strong)  NSArray *objectsArray;
+@property (nonatomic, strong) NSArray *sortedArray;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-@property (nonatomic) CLLocationCoordinate2D userLocation;
+//@property (nonatomic) CLLocationCoordinate2D userLocation;
 @property (nonatomic) PFObject *originalObject;
+@property (nonatomic) float meters;
 
+
+//are we using this date??
 @property (strong, nonatomic) IBOutlet UILabel *dateTrash;
 
 @property (nonatomic, strong) NSDate *dateCreated;
 @property (nonatomic, strong) NSDate *timeCreated;
-
-@property NSDateFormatterStyle dateStyle;
-@property NSDateFormatterStyle timeStyle;
 
 @end
 
@@ -45,37 +45,50 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
     
     [self reloadParseData];
-    
+
     
  //for every PFObject loop over and find elements in mapObject
     
-    NSMutableArray *pinArray = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *pointArray = [[NSMutableArray alloc] init];
     
     
     for (PFObject *pfObjectDictionary in self.objectsArray) {
         
         
-        PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
+        PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
         NSString *title = pfObjectDictionary[@"titleTrashare"];
         
-        // pin.latitude
-        // pin.longitude
-        if (pin) {
-            
-            //   NSLog(@"%@", pin);
-            
-            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
-            
-            // pin.center.latitude =
-            //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
-            
-          
-            [pinArray addObject:annotation];
-            
-        }
         
-        [self.mapView addAnnotations:pinArray];
+//        if (point) {
+//            
+//            
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+//
+//            //creating currentLocation and other location for calculate distance
+//         
+//            CLLocation *objectLoc = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
+//            
+//            
+//            CLLocation *userLoc = [[CLLocation alloc] initWithLatitude:(self.userLocation.latitude) longitude:(self.userLocation.longitude)];
+//            
+//            CLLocationDistance distance = [userLoc distanceFromLocation:objectLoc];
+//            
+//            NSLog(@"%f", distance);
+//    
+//
+//
+// 
+//            //this creates corresponding map object
+            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
+//
+//            
+            [pointArray addObject:annotation];
+//
+//            
+//        }
+        
+        [self.mapView addAnnotations:pointArray];
         
     }
 }
@@ -84,7 +97,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    
+    //why is this twice?
     [self reloadParseData];
     
     [self.tableView reloadData];
@@ -138,12 +151,20 @@
     [cell.thumbnailImageView loadInBackground];
     
     NSString *currentTitle = object[@"titleTrashare"];
+
     
     cell.descriptionLabel.text = currentTitle;
+    cell.calculateText.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"distance1"]];
+  
+   
+    
 
     
     return cell;
+//}  else {
+//    alert('please enable location services')
 }
+
 
 #pragma mark - UITableVIewDelegate
 
@@ -228,17 +249,39 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation {
 
-if (hasZoomed == NO) {
+if (self.hasZoomed == NO) {
     
     CLLocationCoordinate2D loc = [userLocation coordinate];
+    
+    for (PFObject *pfObjectDictionary in self.objectsArray) {
+        
+        
+        PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
+        
+        
+        if (point) {
+            
+            
+            
+            //creating currentLocation and other location for calculate distance
+            
+            CLLocation *objectLoc = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
+            
+          CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLoc];
+          //store for object
+            [pfObjectDictionary setObject:@(distance) forKey:@"distance1"];
+            
+            
+        }
+    }
+
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
     [self.mapView setRegion:region animated:YES];
     
-    hasZoomed = YES;
-  }
+    self.hasZoomed = YES;
+}
     
 }
-
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
@@ -252,7 +295,7 @@ if (hasZoomed == NO) {
     if ([annotation isKindOfClass:[MapAnnotation class]])
     {
         // Try to dequeue an existing pin view first.
-        MKPinAnnotationView*    pinView = (MKPinAnnotationView*)[mapView
+        MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView
                                                                  dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
         
         
@@ -277,9 +320,6 @@ if (hasZoomed == NO) {
     
     return nil;
 }
-
-
-//example
 
 
 

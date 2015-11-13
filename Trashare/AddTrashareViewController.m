@@ -89,7 +89,7 @@
     PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
     //saving geo points from parse
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint * _Nullable geoPoint, NSError * _Nullable error) {
-        
+    
         if (geoPoint) {
             
             [trashare setObject:geoPoint forKey:@"annotationPoint"];
