@@ -19,13 +19,10 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-//@property (nonatomic) CLLocationCoordinate2D userLocation;
+
 @property (nonatomic) PFObject *originalObject;
 @property (nonatomic) float meters;
 
-
-//are we using this date??
-@property (strong, nonatomic) IBOutlet UILabel *dateTrash;
 
 @property (nonatomic, strong) NSDate *dateCreated;
 @property (nonatomic, strong) NSDate *timeCreated;
@@ -41,7 +38,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    [self.mapView setDelegate:self];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
     
@@ -60,47 +57,18 @@
         PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
         NSString *title = pfObjectDictionary[@"titleTrashare"];
         
-        
-//        if (point) {
-//            
-//            
             CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
-//
-//            //creating currentLocation and other location for calculate distance
-//         
-//            CLLocation *objectLoc = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
-//            
-//            
-//            CLLocation *userLoc = [[CLLocation alloc] initWithLatitude:(self.userLocation.latitude) longitude:(self.userLocation.longitude)];
-//            
-//            CLLocationDistance distance = [userLoc distanceFromLocation:objectLoc];
-//            
-//            NSLog(@"%f", distance);
-//    
-//
-//
-// 
-//            //this creates corresponding map object
+
+            //this creates corresponding map object
             MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
 //
 //            
             [pointArray addObject:annotation];
-//
-//            
-//        }
+
         PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
-        //        NSString *title = pfObjectDictionary[@"titleTrashare"];
-        //        PFFile *image = pfObjectDictionary[@"imageFile"];
-        
-        // pin.latitude
-        // pin.longitude
+
         if (pin) {
-            
-            //   NSLog(@"%@", pin);
-            
-            //CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
-            
-            // pin.center.latitude =
+  
             //this creates corresponding map object
             MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
             
@@ -124,6 +92,8 @@
     [self reloadParseData];
     
     [self.tableView reloadData];
+   //[self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
+
     
 }
 
@@ -210,24 +180,32 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
    
     
     NSDate *trashDate = object.createdAt;
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-        [dateFormatter setDateFormat:@"dd-MM-yyyy "];
-    NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
-    
+
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
     [timeFormatter setDateFormat:@"HH:mm"];
     NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
     
     detailVC.descriptionString = descriptionString1;
-    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@ at %@", dateCreated, timeCreated];
+    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
     
    // this is declared as @property in detailviewcontroller and passed on in view did load
     
    [self.navigationController pushViewController:detailVC animated:YES];
   
+}
+
+//this method doesnt show
+- (NSString *)dateOnlyForTest:(NSDate *)trashDate {
+
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy "];
+    NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
+    
+    return dateCreated;
+
 }
 
 
@@ -269,12 +247,19 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 
 //zoom working
 
+
+
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation {
 
-if (self.hasZoomed == NO) {
-    
-    CLLocationCoordinate2D loc = [userLocation coordinate];
+    if (self.hasZoomed == NO) {
+        
+        CLLocationCoordinate2D loc = [userLocation coordinate];
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+        [self.mapView setRegion:region animated:YES];
+        
+        self.hasZoomed = YES;
+    }
     
     for (PFObject *pfObjectDictionary in self.objectsArray) {
         
@@ -290,21 +275,20 @@ if (self.hasZoomed == NO) {
             
             CLLocation *objectLoc = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
             
-          CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLoc];
-          //store for object
+            CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLoc];
+            //store for object
             [pfObjectDictionary setObject:@(distance) forKey:@"distance1"];
             
             
         }
     }
+    
+}
 
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
-    [self.mapView setRegion:region animated:YES];
-    
-    self.hasZoomed = YES;
-}
-    
-}
+
+
+
+
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
@@ -322,7 +306,7 @@ if (self.hasZoomed == NO) {
         // Try to dequeue an existing pin view first.
 
         MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView
-                                                                 dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+   dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
 
         
         
@@ -353,9 +337,9 @@ if (self.hasZoomed == NO) {
             pinView.leftCalloutAccessoryView = iconView;
             
         }
-        else
+        else  {
             pinView.annotation = annotation;
-        
+        }
         return pinView;
     }
     

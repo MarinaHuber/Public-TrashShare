@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *titleTrashare; // title
 @property (nonatomic, strong) PFFile *imageFile; // image
 //subclass problem
-@property (nonatomic) CLLocationDistance distance; //calculation from homevc
+//@property (nonatomic) CLLocationDistance distance; //calculation from homevc
 
 
 @end

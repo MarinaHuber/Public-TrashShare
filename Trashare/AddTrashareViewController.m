@@ -79,8 +79,9 @@
 
 
 - (IBAction)addTrashare:(id)sender {
-    
-    //[self.navigationController pushViewController:map animated:YES];
+    // here disable the button after its pressed like below
+
+    //[self.buttonName dismissViewController:map animated:YES];
     
     PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
    

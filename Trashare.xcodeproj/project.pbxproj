@@ -19,6 +19,12 @@
 		9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5291BEA4B5100658F0E /* TrashareData.m */; };
 		9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5441BECAE7400658F0E /* DetailViewController.m */; };
 		9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C39E5451BECAE7400658F0E /* DetailViewController.xib */; };
+		9CA7CA6A1BFA2B2000ED42C2 /* TrashareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */; };
+		9CA7CA711BFA2D1900ED42C2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51D1BEA1BF300658F0E /* Parse.framework */; };
+		9CA7CA721BFA2DCD00ED42C2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51E1BEA1BF300658F0E /* ParseUI.framework */; };
+		9CA7CA731BFA2DEF00ED42C2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51C1BEA1BF300658F0E /* Bolts.framework */; };
+		9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; };
+		9CA7CA751BFA2DF900ED42C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CAF531C1BF20E48001B615B /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF531B1BF20E48001B615B /* MapAnnotation.m */; };
 		9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF78EE1BE7B191002AC095 /* TrashareCell.m */; };
@@ -32,6 +38,16 @@
 		EA1FB8B71BE7A23A00CFFAD2 /* AddTrashareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */; };
 		EA1FB8B81BE7A23A00CFFAD2 /* AddTrashareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CA7CA6C1BFA2B2000ED42C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA1FB8931BE7774600CFFAD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA1FB89A1BE7774600CFFAD2;
+			remoteInfo = Trashare;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -48,6 +64,9 @@
 		9C39E5431BECAE7400658F0E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9C39E5441BECAE7400658F0E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9C39E5451BECAE7400658F0E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9CA7CA671BFA2B2000ED42C2 /* TrashareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrashareTests.m; sourceTree = "<group>"; };
+		9CA7CA6B1BFA2B2000ED42C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CAF531A1BF20E48001B615B /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		9CAF531B1BF20E48001B615B /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		9CEF78E31BE7A55F002AC095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -71,6 +90,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9CA7CA641BFA2B2000ED42C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA7CA731BFA2DEF00ED42C2 /* Bolts.framework in Frameworks */,
+				9CA7CA751BFA2DF900ED42C2 /* CoreLocation.framework in Frameworks */,
+				9CA7CA721BFA2DCD00ED42C2 /* ParseUI.framework in Frameworks */,
+				9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */,
+				9CA7CA711BFA2D1900ED42C2 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA1FB8981BE7774600CFFAD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CA7CA681BFA2B2000ED42C2 /* TrashareTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */,
+				9CA7CA6B1BFA2B2000ED42C2 /* Info.plist */,
+			);
+			path = TrashareTests;
+			sourceTree = "<group>";
+		};
 		9CEF78E71BE7A583002AC095 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1FB89D1BE7774600CFFAD2 /* Trashare */,
+				9CA7CA681BFA2B2000ED42C2 /* TrashareTests */,
 				9CEF78E71BE7A583002AC095 /* Frameworks */,
 				EA1FB89C1BE7774600CFFAD2 /* Products */,
 			);
@@ -117,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				EA1FB89B1BE7774600CFFAD2 /* Trashare.app */,
+				9CA7CA671BFA2B2000ED42C2 /* TrashareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +206,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9CA7CA661BFA2B2000ED42C2 /* TrashareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CA7CA6E1BFA2B2000ED42C2 /* Build configuration list for PBXNativeTarget "TrashareTests" */;
+			buildPhases = (
+				9CA7CA631BFA2B2000ED42C2 /* Sources */,
+				9CA7CA641BFA2B2000ED42C2 /* Frameworks */,
+				9CA7CA651BFA2B2000ED42C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CA7CA6D1BFA2B2000ED42C2 /* PBXTargetDependency */,
+			);
+			name = TrashareTests;
+			productName = TrashareTests;
+			productReference = 9CA7CA671BFA2B2000ED42C2 /* TrashareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EA1FB89A1BE7774600CFFAD2 /* Trashare */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA1FB8AC1BE7774600CFFAD2 /* Build configuration list for PBXNativeTarget "Trashare" */;
@@ -190,6 +250,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "The App Academy";
 				TargetAttributes = {
+					9CA7CA661BFA2B2000ED42C2 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 					EA1FB89A1BE7774600CFFAD2 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = HBS2B82CVU;
@@ -210,11 +273,19 @@
 			projectRoot = "";
 			targets = (
 				EA1FB89A1BE7774600CFFAD2 /* Trashare */,
+				9CA7CA661BFA2B2000ED42C2 /* TrashareTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9CA7CA651BFA2B2000ED42C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA1FB8991BE7774600CFFAD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +303,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9CA7CA631BFA2B2000ED42C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA7CA6A1BFA2B2000ED42C2 /* TrashareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA1FB8971BE7774600CFFAD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +329,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9CA7CA6D1BFA2B2000ED42C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA1FB89A1BE7774600CFFAD2 /* Trashare */;
+			targetProxy = 9CA7CA6C1BFA2B2000ED42C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -262,6 +349,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9CA7CA6F1BFA2B2000ED42C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TrashareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = b.TrashareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9CA7CA701BFA2B2000ED42C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TrashareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = b.TrashareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		EA1FB8AA1BE7774600CFFAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -354,7 +469,7 @@
 				);
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -372,7 +487,7 @@
 				);
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.theAppAcademy.Trashare;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -381,6 +496,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9CA7CA6E1BFA2B2000ED42C2 /* Build configuration list for PBXNativeTarget "TrashareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CA7CA6F1BFA2B2000ED42C2 /* Debug */,
+				9CA7CA701BFA2B2000ED42C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EA1FB8961BE7774600CFFAD2 /* Build configuration list for PBXProject "Trashare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
