@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTrashareViewController">
+            <connections>
+                <outlet property="addDescription" destination="gW5-dX-lN8" id="vl9-dQ-eaI"/>
+                <outlet property="imageView" destination="90n-HO-xmI" id="tSu-Pf-0SZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIControl">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-zM-BD8">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="lg3-aL-gkl"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Title" id="qsk-i1-aSA">
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="v95-wP-mER">
+                                <connections>
+                                    <action selector="cancelButton:" destination="-1" id="2rB-Im-F0D"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90n-HO-xmI">
+                    <rect key="frame" x="13" y="65" width="294" height="301"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="301" id="1op-Sh-mGB"/>
+                        <constraint firstAttribute="width" constant="294" id="VhE-Hu-7hg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of Trashare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-Ao-urF">
+                    <rect key="frame" x="71" y="381" width="179" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="179" id="hTV-p3-k94"/>
+                        <constraint firstAttribute="height" constant="21" id="lyi-mS-S1u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe the Trashare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-dX-lN8">
+                    <rect key="frame" x="24" y="422" width="273" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="273" id="Zpk-1d-VcP"/>
+                        <constraint firstAttribute="height" constant="30" id="aiX-2t-gxU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="sQV-IB-6DN"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ges-dJ-5Ca">
+                    <rect key="frame" x="101" y="474" width="118" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.066386950987103566" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="118" id="D1u-IV-fe6"/>
+                        <constraint firstAttribute="height" constant="30" id="lfq-VI-OLH"/>
+                    </constraints>
+                    <state key="normal" title="Add Trashare">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addTrashare:" destination="-1" eventType="touchUpInside" id="Mb2-Hf-D79"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ges-dJ-5Ca" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2uN-o4-cAs"/>
+                <constraint firstItem="90n-HO-xmI" firstAttribute="top" secondItem="YSh-zM-BD8" secondAttribute="bottom" constant="5" id="DPn-mp-KQl"/>
+                <constraint firstItem="0fa-Ao-urF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Eny-1g-qaS"/>
+                <constraint firstItem="gW5-dX-lN8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pbj-mx-LAH"/>
+                <constraint firstItem="0fa-Ao-urF" firstAttribute="top" secondItem="90n-HO-xmI" secondAttribute="bottom" constant="15" id="XXR-oP-4Ph"/>
+                <constraint firstAttribute="trailing" secondItem="YSh-zM-BD8" secondAttribute="trailing" id="YJw-Ab-N2b"/>
+                <constraint firstItem="ges-dJ-5Ca" firstAttribute="top" secondItem="gW5-dX-lN8" secondAttribute="bottom" constant="22" id="Zc1-f7-cU5"/>
+                <constraint firstItem="gW5-dX-lN8" firstAttribute="top" secondItem="0fa-Ao-urF" secondAttribute="bottom" constant="20" id="aQm-3p-yjv"/>
+                <constraint firstAttribute="trailing" secondItem="90n-HO-xmI" secondAttribute="trailing" constant="13" id="f71-aK-nhf"/>
+                <constraint firstItem="90n-HO-xmI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="jnf-8E-zmJ"/>
+                <constraint firstItem="YSh-zM-BD8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qfI-Ku-Fwa"/>
+                <constraint firstItem="YSh-zM-BD8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rZ6-8o-A4m"/>
+                <constraint firstAttribute="bottom" secondItem="ges-dJ-5Ca" secondAttribute="bottom" constant="80" id="xbx-lF-NKe"/>
+                <constraint firstItem="0fa-Ao-urF" firstAttribute="top" secondItem="90n-HO-xmI" secondAttribute="bottom" constant="15" id="yzK-7W-v0G"/>
+            </constraints>
+            <connections>
+                <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="5uM-g3-hyj"/>
+            </connections>
+            <point key="canvasLocation" x="340" y="345"/>
+        </view>
+    </objects>
+</document>
