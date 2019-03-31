@@ -10,19 +10,15 @@
 		9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */; };
 		9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */; };
 		9C39E5161BEA1AE300658F0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		9C39E51F1BEA1BF300658F0E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51C1BEA1BF300658F0E /* Bolts.framework */; };
-		9C39E5201BEA1BF300658F0E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51D1BEA1BF300658F0E /* Parse.framework */; };
-		9C39E5211BEA1BF300658F0E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51E1BEA1BF300658F0E /* ParseUI.framework */; };
 		9C39E5231BEA1E4E00658F0E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5221BEA1E4E00658F0E /* libsqlite3.tbd */; };
 		9C39E5251BEA1E8400658F0E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */; };
 		9C39E5271BEA1EC200658F0E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */; };
 		9C39E52A1BEA4B5100658F0E /* TrashareData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5291BEA4B5100658F0E /* TrashareData.m */; };
 		9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5441BECAE7400658F0E /* DetailViewController.m */; };
 		9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C39E5451BECAE7400658F0E /* DetailViewController.xib */; };
+		9C3C9F981C3D42B9002CDB3C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C9F971C3D42B9002CDB3C /* Keys.plist */; };
+		9C81D5862251454A00EFA3BA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81D5852251454A00EFA3BA /* Image.swift */; };
 		9CA7CA6A1BFA2B2000ED42C2 /* TrashareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */; };
-		9CA7CA711BFA2D1900ED42C2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51D1BEA1BF300658F0E /* Parse.framework */; };
-		9CA7CA721BFA2DCD00ED42C2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51E1BEA1BF300658F0E /* ParseUI.framework */; };
-		9CA7CA731BFA2DEF00ED42C2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C39E51C1BEA1BF300658F0E /* Bolts.framework */; };
 		9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; };
 		9CA7CA751BFA2DF900ED42C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
 		9CAF531C1BF20E48001B615B /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF531B1BF20E48001B615B /* MapAnnotation.m */; };
@@ -53,9 +49,6 @@
 		9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
-		9C39E51C1BEA1BF300658F0E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		9C39E51D1BEA1BF300658F0E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		9C39E51E1BEA1BF300658F0E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		9C39E5221BEA1E4E00658F0E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -64,6 +57,9 @@
 		9C39E5431BECAE7400658F0E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9C39E5441BECAE7400658F0E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9C39E5451BECAE7400658F0E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9C3C9F971C3D42B9002CDB3C /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		9C81D5842251454900EFA3BA /* Trashare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trashare-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C81D5852251454A00EFA3BA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9CA7CA671BFA2B2000ED42C2 /* TrashareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrashareTests.m; sourceTree = "<group>"; };
 		9CA7CA6B1BFA2B2000ED42C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,11 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA7CA731BFA2DEF00ED42C2 /* Bolts.framework in Frameworks */,
 				9CA7CA751BFA2DF900ED42C2 /* CoreLocation.framework in Frameworks */,
-				9CA7CA721BFA2DCD00ED42C2 /* ParseUI.framework in Frameworks */,
 				9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */,
-				9CA7CA711BFA2D1900ED42C2 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +102,6 @@
 				9C39E5271BEA1EC200658F0E /* AudioToolbox.framework in Frameworks */,
 				9C39E5251BEA1E8400658F0E /* SystemConfiguration.framework in Frameworks */,
 				9C39E5231BEA1E4E00658F0E /* libsqlite3.tbd in Frameworks */,
-				9C39E51F1BEA1BF300658F0E /* Bolts.framework in Frameworks */,
-				9C39E5201BEA1BF300658F0E /* Parse.framework in Frameworks */,
-				9C39E5211BEA1BF300658F0E /* ParseUI.framework in Frameworks */,
 				9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */,
 				9C39E5161BEA1AE300658F0E /* MapKit.framework in Frameworks */,
 			);
@@ -120,6 +110,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82D315BA2235C0EC005FAA40 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */,
+				9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */,
+				9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */,
+			);
+			name = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		82D315BB2235C107005FAA40 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
+				EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */,
+				EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		82D315BC2235C12B005FAA40 /* ItemsTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
+				9CEF78EE1BE7B191002AC095 /* TrashareCell.m */,
+				9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */,
+			);
+			name = ItemsTableCell;
+			sourceTree = "<group>";
+		};
+		82D315BD2235C141005FAA40 /* AddItemVC */ = {
+			isa = PBXGroup;
+			children = (
+				EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */,
+				EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */,
+				EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */,
+			);
+			name = AddItemVC;
+			sourceTree = "<group>";
+		};
+		82D315BE2235C153005FAA40 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C39E5431BECAE7400658F0E /* DetailViewController.h */,
+				9C39E5441BECAE7400658F0E /* DetailViewController.m */,
+				9C39E5451BECAE7400658F0E /* DetailViewController.xib */,
+			);
+			name = DetailVC;
+			sourceTree = "<group>";
+		};
 		9CA7CA681BFA2B2000ED42C2 /* TrashareTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +175,6 @@
 				9C39E5261BEA1EC200658F0E /* AudioToolbox.framework */,
 				9C39E5241BEA1E8400658F0E /* SystemConfiguration.framework */,
 				9C39E5221BEA1E4E00658F0E /* libsqlite3.tbd */,
-				9C39E51C1BEA1BF300658F0E /* Bolts.framework */,
-				9C39E51D1BEA1BF300658F0E /* Parse.framework */,
-				9C39E51E1BEA1BF300658F0E /* ParseUI.framework */,
 				9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */,
 				9CEF78E31BE7A55F002AC095 /* MapKit.framework */,
 			);
@@ -170,27 +207,20 @@
 				EA1FB8A21BE7774600CFFAD2 /* AppDelegate.m */,
 				9C39E5281BEA4B5100658F0E /* TrashareData.h */,
 				9C39E5291BEA4B5100658F0E /* TrashareData.m */,
-				9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */,
-				9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */,
-				9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */,
-				EA1FB8AF1BE79C3700CFFAD2 /* HomeViewController.h */,
-				EA1FB8B01BE79C3700CFFAD2 /* HomeViewController.m */,
-				EA1FB8B11BE79C3700CFFAD2 /* HomeViewController.xib */,
+				9C3C9F971C3D42B9002CDB3C /* Keys.plist */,
+				82D315BA2235C0EC005FAA40 /* WelcomeVC */,
+				82D315BB2235C107005FAA40 /* HomeVC */,
 				9CAF531A1BF20E48001B615B /* MapAnnotation.h */,
 				9CAF531B1BF20E48001B615B /* MapAnnotation.m */,
-				9CEF78ED1BE7B191002AC095 /* TrashareCell.h */,
-				9CEF78EE1BE7B191002AC095 /* TrashareCell.m */,
-				9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */,
-				EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */,
-				EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */,
-				EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */,
-				9C39E5431BECAE7400658F0E /* DetailViewController.h */,
-				9C39E5441BECAE7400658F0E /* DetailViewController.m */,
-				9C39E5451BECAE7400658F0E /* DetailViewController.xib */,
+				82D315BC2235C12B005FAA40 /* ItemsTableCell */,
+				82D315BD2235C141005FAA40 /* AddItemVC */,
+				82D315BE2235C153005FAA40 /* DetailVC */,
 				EA1FB8A41BE7774600CFFAD2 /* Assets.xcassets */,
 				EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */,
 				EA1FB8A91BE7774600CFFAD2 /* Info.plist */,
 				EA1FB89E1BE7774600CFFAD2 /* Supporting Files */,
+				9C81D5852251454A00EFA3BA /* Image.swift */,
+				9C81D5842251454900EFA3BA /* Trashare-Bridging-Header.h */,
 			);
 			path = Trashare;
 			sourceTree = "<group>";
@@ -255,7 +285,7 @@
 					};
 					EA1FB89A1BE7774600CFFAD2 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = HBS2B82CVU;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -296,6 +326,7 @@
 				EA1FB8A51BE7774600CFFAD2 /* Assets.xcassets in Resources */,
 				EA1FB8A81BE7774600CFFAD2 /* LaunchScreen.storyboard in Resources */,
 				EA1FB8B31BE79C3700CFFAD2 /* HomeViewController.xib in Resources */,
+				9C3C9F981C3D42B9002CDB3C /* Keys.plist in Resources */,
 				9CEF78F11BE7B191002AC095 /* TrashareCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +355,7 @@
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
 				9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */,
 				9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */,
+				9C81D5862251454A00EFA3BA /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +384,7 @@
 		9CA7CA6F1BFA2B2000ED42C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -366,6 +399,7 @@
 		9CA7CA701BFA2B2000ED42C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -380,6 +414,7 @@
 		EA1FB8AA1BE7774600CFFAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -397,6 +432,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -416,6 +452,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Trashare;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -423,6 +460,7 @@
 		EA1FB8AB1BE7774600CFFAD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -440,6 +478,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -452,6 +491,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Trashare;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -461,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -469,9 +510,12 @@
 				);
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.mar;
+				PRODUCT_BUNDLE_IDENTIFIER = me1.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trashare/Trashare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -479,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -487,9 +532,11 @@
 				);
 				INFOPLIST_FILE = Trashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.mar;
+				PRODUCT_BUNDLE_IDENTIFIER = me1.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trashare/Trashare-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

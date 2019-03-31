@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
+//#import <Parse/Parse.h>
+//#import <ParseUI/ParseUI.h>
 #import "HomeViewController.h"
 #import "DetailViewController.h"
 
