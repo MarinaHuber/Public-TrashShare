@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 #import "MapAnnotation.h"
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"

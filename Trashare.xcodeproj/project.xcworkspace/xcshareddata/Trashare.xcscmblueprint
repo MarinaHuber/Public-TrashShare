@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "19783923033E34D288C2019888D09181BC0E42A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "19783923033E34D288C2019888D09181BC0E42A1" : 0,
+    "BD6C55BE01B18D051F0365C8CCB94870BE72B797" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B474246E-BD67-407E-90E4-34CDD1E9FDF7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "19783923033E34D288C2019888D09181BC0E42A1" : "TrashareRepo\/",
+    "BD6C55BE01B18D051F0365C8CCB94870BE72B797" : "TrashareRepo\/Trashare\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Trashare",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Trashare.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AppAcademyNL\/Trashare.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "19783923033E34D288C2019888D09181BC0E42A1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MarinaHuber\/Trashare-iOS-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BD6C55BE01B18D051F0365C8CCB94870BE72B797"
+    }
+  ]
+}

@@ -85,20 +85,19 @@
 }
 
 
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    //why is this twice?
     [self reloadParseData];
     
     [self.tableView reloadData];
-   //[self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
+//   [self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
 
     
 }
 
-- (void)reloadParseData
-{
+- (void)reloadParseData {
     PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
     self.objectsArray = [query findObjects];
     
@@ -127,7 +126,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //forcing xcode to keep pfimageview valid
-    [PFImageView class];
+//    [PFImageView class];
     
     PFObject *object = self.sortedArray[indexPath.row];
     
@@ -138,10 +137,10 @@
     }
     
     // Configure the cell
-     PFFile *thumbnail = [object objectForKey:@"imageFile"];
+//     PFFile *thumbnail = [object objectForKey:@"imageFile"];
  
-    cell.thumbnailImageView.file = thumbnail;
-    [cell.thumbnailImageView loadInBackground];
+//    cell.thumbnailImageView.file = thumbnail;
+//    [cell.thumbnailImageView loadInBackground];
     
     NSString *currentTitle = object[@"titleTrashare"];
 
@@ -174,9 +173,9 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     NSString *descriptionString1 = object[@"titleTrashare"];
     
     
-    PFFile *showImage = object[@"imageFile"];
+//    PFFile *showImage = object[@"imageFile"];
     
-    detailVC.file = showImage;
+//    detailVC.file = showImage;
    
     
     NSDate *trashDate = object.createdAt;
@@ -329,12 +328,12 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 //            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
 //            self.coordinate = coord;
             
-            PFFile *file = mapAnno.object[@"imageFile"];
+//            PFFile *file = mapAnno.object[@"imageFile"];
             
-            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
-            iconView.file = file;
-                             [iconView loadInBackground];
-            pinView.leftCalloutAccessoryView = iconView;
+//            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+//            iconView.file = file;
+//                             [iconView loadInBackground];
+//            pinView.leftCalloutAccessoryView = iconView;
             
         }
         else  {

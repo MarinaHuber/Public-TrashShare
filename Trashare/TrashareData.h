@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
+
 @interface TrashareData : PFObject
 
 @property (nonatomic, strong) NSString *titleTrashare; // title
-@property (nonatomic, strong) PFFile *imageFile; // image
+@property (nonatomic, strong) PFFileObject *imageFile; // image
 //subclass problem
 //@property (nonatomic) CLLocationDistance distance; //calculation from homevc
 

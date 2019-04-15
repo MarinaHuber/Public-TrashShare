@@ -17,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    PFObject *gameScore = [PFObject objectWithClassName:@"firstClass"];
+    gameScore[@"playerName"] = @"Sean Plott";
+    gameScore[@"cheatMode"] = @NO;
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            printf("The object has been saved.");
+        } else {
+            printf("Problem saving ParseObject");
+        }
+    }];
     
     [self.mapView setShowsUserLocation:YES];
     
@@ -44,7 +54,7 @@
     //[locationManager startUpdatingLocation];
     
     [self.locationManager requestWhenInUseAuthorization];
-    //    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
    
     
    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
