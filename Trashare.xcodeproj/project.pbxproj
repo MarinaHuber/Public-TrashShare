@@ -17,6 +17,10 @@
 		9C39E5461BECAE7500658F0E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C39E5441BECAE7400658F0E /* DetailViewController.m */; };
 		9C39E5471BECAE7500658F0E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C39E5451BECAE7400658F0E /* DetailViewController.xib */; };
 		9C3C9F981C3D42B9002CDB3C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C9F971C3D42B9002CDB3C /* Keys.plist */; };
+<<<<<<< HEAD
+=======
+		9C81D5862251454A00EFA3BA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C81D5852251454A00EFA3BA /* Image.swift */; };
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 		9CA7CA6A1BFA2B2000ED42C2 /* TrashareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */; };
 		9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; };
 		9CA7CA751BFA2DF900ED42C2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */; };
@@ -61,6 +65,11 @@
 		9C39E5441BECAE7400658F0E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9C39E5451BECAE7400658F0E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		9C3C9F971C3D42B9002CDB3C /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		9C81D5842251454900EFA3BA /* Trashare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trashare-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C81D5852251454A00EFA3BA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 		9CA7CA671BFA2B2000ED42C2 /* TrashareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA7CA691BFA2B2000ED42C2 /* TrashareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrashareTests.m; sourceTree = "<group>"; };
 		9CA7CA6B1BFA2B2000ED42C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +122,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		03EB07CE66E34DF80A484AB4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,8 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 		82D315BA2235C0EC005FAA40 /* WelcomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,8 @@
 				EA1FB8A61BE7774600CFFAD2 /* LaunchScreen.storyboard */,
 				EA1FB8A91BE7774600CFFAD2 /* Info.plist */,
 				EA1FB89E1BE7774600CFFAD2 /* Supporting Files */,
+				9C81D5852251454A00EFA3BA /* Image.swift */,
+				9C81D5842251454900EFA3BA /* Trashare-Bridging-Header.h */,
 			);
 			path = Trashare;
 			sourceTree = "<group>";
@@ -303,8 +317,12 @@
 					};
 					EA1FB89A1BE7774600CFFAD2 = {
 						CreatedOnToolsVersion = 7.1;
+<<<<<<< HEAD
 						DevelopmentTeam = D2A8ZV8F9B;
 						ProvisioningStyle = Manual;
+=======
+						LastSwiftMigration = 1000;
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 					};
 				};
 			};
@@ -445,6 +463,7 @@
 				EA1FB8B21BE79C3700CFFAD2 /* HomeViewController.m in Sources */,
 				9CEF78F01BE7B191002AC095 /* TrashareCell.m in Sources */,
 				9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */,
+				9C81D5862251454A00EFA3BA /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1D1C0EF37C182322646860D /* Pods-TrashareTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -489,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FAD38AC80792C3C585DAAF6 /* Pods-TrashareTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -503,6 +524,7 @@
 		EA1FB8AA1BE7774600CFFAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -530,6 +552,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -549,6 +572,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Trashare;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -556,6 +580,7 @@
 		EA1FB8AB1BE7774600CFFAD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -583,6 +608,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -595,6 +621,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Trashare;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -605,6 +632,7 @@
 			baseConfigurationReference = 8262BEBAAD3215ECFB6C61FA /* Pods-Trashare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -618,7 +646,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me1.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE_SPECIFIER = AF_Wildcard_Development;
+=======
+				SWIFT_OBJC_BRIDGING_HEADER = "Trashare/Trashare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 			};
 			name = Debug;
 		};
@@ -627,6 +661,7 @@
 			baseConfigurationReference = 6CB7DC4B681CB8EA31A4A4A3 /* Pods-Trashare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -640,7 +675,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me1.mar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE_SPECIFIER = "";
+=======
+				SWIFT_OBJC_BRIDGING_HEADER = "Trashare/Trashare-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 			};
 			name = Release;
 		};

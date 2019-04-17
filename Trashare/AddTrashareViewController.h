@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 #import <Parse/Parse.h>
+=======
+//#import <Parse/Parse.h>
+//#import <ParseUI/ParseUI.h>
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
 #import "HomeViewController.h"
 #import "DetailViewController.h"
 

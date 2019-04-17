@@ -21,12 +21,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
     
+<<<<<<< HEAD
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"trashareParseServer";
         configuration.clientKey = @"trashare1";
         configuration.server = @"https://trashareparse.azurewebsites.net/parse";
     }]];
 
+=======
+  
+    
+    [Parse setApplicationId:@"kOOs7L2Oxn1mCavhD6fsFO7EB6qt2eNOCYTTA9oR"
+                  clientKey:@"CGxfJflFGVP7BFg1cuWRAILuLWJLo3o9Oj82P4VX"];
+>>>>>>> 9fb6cda9e1781f1b39549ac53739fffb8134333e
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
