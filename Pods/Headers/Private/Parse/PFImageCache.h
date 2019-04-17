@@ -1,1 +1,0 @@
-../../../Parse/ParseUI/Classes/Internal/PFImageCache.h
