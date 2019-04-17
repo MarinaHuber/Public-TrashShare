@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
-#import <ParseUI/ParseUI.h>
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"
 
@@ -27,9 +26,9 @@
 
 @property (nonatomic, strong) NSString *dateCreated;
 @property (nonatomic, strong) NSString *descriptionString;
-@property (nonatomic, strong) PFFile *file;
-
-@property (strong, nonatomic) IBOutlet PFImageView *showImage;
+//@property (nonatomic, strong) PFFileObject *file;
+// PFFileObject representes a file of binary data stored on the Parse servers.
+@property (strong, nonatomic) IBOutlet PFFileObject *showImage;
 @property (strong, nonatomic) IBOutlet UILabel *titleTrash;
 
 - (IBAction)tap:(id)sender;

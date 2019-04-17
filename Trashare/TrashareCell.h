@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
 
 @interface TrashareCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, weak) IBOutlet PFImageView *thumbnailImageView;
+@property (nonatomic, weak) IBOutlet PFFileObject *thumbnailImageView;
 @property (copy, nonatomic) void (^actionBlock)(void); //what is this?
 @property (nonatomic, weak) IBOutlet UILabel *calculateText;
 

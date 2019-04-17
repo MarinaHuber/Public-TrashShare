@@ -26,7 +26,7 @@
    
     self.dateTrash.text = self.dateCreated;
     
-    self.showImage.file = self.file;
+	self.showImage.getFilePathInBackground;
     
 
 }
@@ -39,6 +39,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
+	self.view.backgroundColor = [UIColor blackColor];
     
 }
 
@@ -46,9 +48,7 @@
 
     
         self.showImage.contentMode = UIViewContentModeScaleAspectFit;
-        self.view.backgroundColor = [UIColor blackColor];
-    
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     
         if (!isFullScreen) {
             [UIView animateWithDuration:0.4 delay:0 options:0 animations:^{

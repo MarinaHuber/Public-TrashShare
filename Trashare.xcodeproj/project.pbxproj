@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192710A7DE2B954E00BAB77E /* libPods-TrashareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DC9531247AA2385FC7E912 /* libPods-TrashareTests.a */; };
+		58EDC30AE39D87C359ABF52C /* libPods-Trashare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AA719E75015CC6E7DF4A80 /* libPods-Trashare.a */; };
 		9C05F56D1BE7C4CB005216FD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */; };
 		9C05F56E1BE7C4CB005216FD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */; };
 		9C39E5161BEA1AE300658F0E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEF78E31BE7A55F002AC095 /* MapKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14AA719E75015CC6E7DF4A80 /* libPods-Trashare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Trashare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		226A8AD26543705492B653FA /* Pods-TrashareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrashareTests.release.xcconfig"; path = "Target Support Files/Pods-TrashareTests/Pods-TrashareTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B019B0788BF566DC146E7A0 /* Pods-Trashare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trashare.release.xcconfig"; path = "Target Support Files/Pods-Trashare/Pods-Trashare.release.xcconfig"; sourceTree = "<group>"; };
 		9C05F56A1BE7C4CB005216FD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9C05F56B1BE7C4CB005216FD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9C05F56C1BE7C4CB005216FD /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +79,8 @@
 		9CEF78ED1BE7B191002AC095 /* TrashareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrashareCell.h; sourceTree = "<group>"; };
 		9CEF78EE1BE7B191002AC095 /* TrashareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrashareCell.m; sourceTree = "<group>"; };
 		9CEF78EF1BE7B191002AC095 /* TrashareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrashareCell.xib; sourceTree = "<group>"; };
+		BCA4A296DC1FCCDCEB436C59 /* Pods-TrashareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrashareTests.debug.xcconfig"; path = "Target Support Files/Pods-TrashareTests/Pods-TrashareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6DC9531247AA2385FC7E912 /* libPods-TrashareTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrashareTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FB89B1BE7774600CFFAD2 /* Trashare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trashare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FB89F1BE7774600CFFAD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA1FB8A11BE7774600CFFAD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +94,7 @@
 		EA1FB8B41BE7A23A00CFFAD2 /* AddTrashareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTrashareViewController.h; sourceTree = "<group>"; };
 		EA1FB8B51BE7A23A00CFFAD2 /* AddTrashareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTrashareViewController.m; sourceTree = "<group>"; };
 		EA1FB8B61BE7A23A00CFFAD2 /* AddTrashareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTrashareViewController.xib; sourceTree = "<group>"; };
+		EF5CBE6D94A59E7F7DF4872B /* Pods-Trashare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trashare.debug.xcconfig"; path = "Target Support Files/Pods-Trashare/Pods-Trashare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 				9CA7CA721BFA2DCD00ED42C2 /* ParseUI.framework in Frameworks */,
 				9CA7CA741BFA2DF500ED42C2 /* MapKit.framework in Frameworks */,
 				9CA7CA711BFA2D1900ED42C2 /* Parse.framework in Frameworks */,
+				192710A7DE2B954E00BAB77E /* libPods-TrashareTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,12 +123,25 @@
 				9C39E5211BEA1BF300658F0E /* ParseUI.framework in Frameworks */,
 				9CEF78E61BE7A56C002AC095 /* CoreLocation.framework in Frameworks */,
 				9C39E5161BEA1AE300658F0E /* MapKit.framework in Frameworks */,
+				58EDC30AE39D87C359ABF52C /* libPods-Trashare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90DB84F94D07B7882A38F327 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF5CBE6D94A59E7F7DF4872B /* Pods-Trashare.debug.xcconfig */,
+				2B019B0788BF566DC146E7A0 /* Pods-Trashare.release.xcconfig */,
+				BCA4A296DC1FCCDCEB436C59 /* Pods-TrashareTests.debug.xcconfig */,
+				226A8AD26543705492B653FA /* Pods-TrashareTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9CA7CA681BFA2B2000ED42C2 /* TrashareTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +162,8 @@
 				9C39E51E1BEA1BF300658F0E /* ParseUI.framework */,
 				9CEF78E51BE7A56C002AC095 /* CoreLocation.framework */,
 				9CEF78E31BE7A55F002AC095 /* MapKit.framework */,
+				14AA719E75015CC6E7DF4A80 /* libPods-Trashare.a */,
+				E6DC9531247AA2385FC7E912 /* libPods-TrashareTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +175,7 @@
 				9CA7CA681BFA2B2000ED42C2 /* TrashareTests */,
 				9CEF78E71BE7A583002AC095 /* Frameworks */,
 				EA1FB89C1BE7774600CFFAD2 /* Products */,
+				90DB84F94D07B7882A38F327 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CA7CA6E1BFA2B2000ED42C2 /* Build configuration list for PBXNativeTarget "TrashareTests" */;
 			buildPhases = (
+				DE12AFF1FDF9789C66E0DE76 /* [CP] Check Pods Manifest.lock */,
 				9CA7CA631BFA2B2000ED42C2 /* Sources */,
 				9CA7CA641BFA2B2000ED42C2 /* Frameworks */,
 				9CA7CA651BFA2B2000ED42C2 /* Resources */,
@@ -228,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA1FB8AC1BE7774600CFFAD2 /* Build configuration list for PBXNativeTarget "Trashare" */;
 			buildPhases = (
+				3DC33CEE3BCF79A1021EB4C1 /* [CP] Check Pods Manifest.lock */,
 				EA1FB8971BE7774600CFFAD2 /* Sources */,
 				EA1FB8981BE7774600CFFAD2 /* Frameworks */,
 				EA1FB8991BE7774600CFFAD2 /* Resources */,
+				AE725CA9A1D3F5B618F8A343 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,6 +330,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DC33CEE3BCF79A1021EB4C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trashare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE725CA9A1D3F5B618F8A343 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trashare/Pods-Trashare-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trashare/Pods-Trashare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE12AFF1FDF9789C66E0DE76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrashareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CA7CA631BFA2B2000ED42C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -351,6 +448,7 @@
 /* Begin XCBuildConfiguration section */
 		9CA7CA6F1BFA2B2000ED42C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCA4A296DC1FCCDCEB436C59 /* Pods-TrashareTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -365,6 +463,7 @@
 		};
 		9CA7CA701BFA2B2000ED42C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 226A8AD26543705492B653FA /* Pods-TrashareTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,6 +558,7 @@
 		};
 		EA1FB8AD1BE7774600CFFAD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF5CBE6D94A59E7F7DF4872B /* Pods-Trashare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -477,6 +577,7 @@
 		};
 		EA1FB8AE1BE7774600CFFAD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B019B0788BF566DC146E7A0 /* Pods-Trashare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
