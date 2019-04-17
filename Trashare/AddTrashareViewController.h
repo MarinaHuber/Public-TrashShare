@@ -10,15 +10,15 @@
 #import <Parse/Parse.h>
 #import "HomeViewController.h"
 #import "DetailViewController.h"
+#import "Trashare-Swift.h"
 
 @interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) UIImage *picture;
 @property(nonatomic, readonly, strong) UINavigationController *navigationController;
 
-//@property (strong, nonatomic) UITextField *textField;
+@property (strong, nonatomic) UITextField *textField;
 
-//@property(strong, nonatomic) UIScrollView *scrollView;
-//@property(strong, nonatomic) UITextField *textField;
+@property(strong, nonatomic) UIScrollView *scrollView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 

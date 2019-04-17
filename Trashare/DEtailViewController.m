@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Trashare-Swift.h"
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController () 
@@ -25,9 +26,6 @@
     self.titleTrash.text = self.descriptionString;
    
     self.dateTrash.text = self.dateCreated;
-    
-	self.showImage.getFilePathInBackground;
-    
 
 }
 
@@ -45,10 +43,6 @@
 }
 
 - (IBAction)tap:(id)sender {
-
-    
-        self.showImage.contentMode = UIViewContentModeScaleAspectFit;
-
     
         if (!isFullScreen) {
             [UIView animateWithDuration:0.4 delay:0 options:0 animations:^{
@@ -62,9 +56,7 @@
         else{
             self.titleTrash.alpha = 1.0;
             self.dateTrash.alpha = 1.0;
-            self.showImage.contentMode = UIViewContentModeScaleAspectFill;
-            self.view.backgroundColor = [UIColor blackColor];
-    
+
             [self.navigationController setNavigationBarHidden:NO animated:YES];
             [UIView animateWithDuration:4 delay:0 options:0 animations:^{
                 [self.showImage setFrame:prevFrame];
