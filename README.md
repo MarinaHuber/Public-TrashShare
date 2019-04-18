@@ -6,7 +6,7 @@
 ## Swift 4, Obj C. Parse
 Casual service iOS app insprired by Parse server options and location base apps(prototype)
 
-🚧 The app is currently in development 🚧
+🚧 The app is currently in development due to the Parse.com shutdown and refactoring of existing database 🚧
 
 Notes:
 
