@@ -10,8 +10,12 @@ Casual service iOS app insprired by Parse server options and location base apps(
 
 Notes:
 
-Objective-C
-Swift, UIKit, CoreLocation, Parse Server
+Objective-C,
+
+Swift, 
+CoreLocation, 
+Parse Server
+
 Note: This project is partly removed to prevent cloning. Also needs a good cleanup/refactoring.
 Main usage:
 PFFileObject
