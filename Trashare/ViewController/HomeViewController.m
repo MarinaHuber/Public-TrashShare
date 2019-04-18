@@ -8,30 +8,17 @@
 
 #import "HomeViewController.h"
 #import "AddTrashareViewController.h"
+#import "Trashare-Swift.h"
 #import "TrashareCell.h"
 #import "TrashareData.h"
 
+
 @interface HomeViewController () <CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate, UITableViewDelegate, MKAnnotation>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong)  NSArray *objectsArray;
-@property (nonatomic, strong) NSArray *sortedArray;
-
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) IBOutlet MKMapView *mapView;
-
-@property (nonatomic) PFObject *originalObject;
-@property (nonatomic) float meters;
-
-
-@property (nonatomic, strong) NSDate *dateCreated;
-@property (nonatomic, strong) NSDate *timeCreated;
-
-
 @end
 
 @implementation HomeViewController
-
+@synthesize tableView = _tableView;
+@synthesize trashareCell = _trashareCell;
 
 #pragma mark -viewDidLoad
 
@@ -40,9 +27,9 @@
     [super viewDidLoad];
     [self.mapView setDelegate:self];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"simpleTable"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
     
-    [self reloadParseData];
+//    [self reloadParseData];
 
     
  //for every PFObject loop over and find elements in mapObject
@@ -85,13 +72,16 @@
 }
 
 
+
+
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
     //why is this twice?
-    [self reloadParseData];
-    
-    [self.tableView reloadData];
+//    [self reloadParseData];
+
+//    [self.tableView reloadData];
    //[self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
 
     
@@ -103,8 +93,8 @@
     self.objectsArray = [query findObjects];
     
     //sort by date
-    NSSortDescriptor *ageDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
-    NSArray *sortDescriptors = @[ageDescriptor];
+    NSSortDescriptor *dateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
+    NSArray *sortDescriptors = @[dateDescriptor];
     self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
     
     
@@ -120,39 +110,41 @@
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-    return self.sortedArray.count;
+	return 4;//self.sortedArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //forcing xcode to keep pfimageview valid
-    [PFImageView class];
-    
+//    [PFImageView class];
+
     PFObject *object = self.sortedArray[indexPath.row];
     
-    TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"simpleTable" forIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
-    }
+//    TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrashareCell" forIndexPath:indexPath];
+//
+//    if (cell == nil) {
+//        cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
+//    }
+	TrashareCell *cell = (TrashareCell *)[tableView dequeueReusableCellWithIdentifier:[TrashareCell reuseIdentifier]];
+	if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:self options:nil];
+		cell = _trashareCell;
+		_trashareCell = nil;
+	}
     
     // Configure the cell
-     PFFile *thumbnail = [object objectForKey:@"imageFile"];
- 
-    cell.thumbnailImageView.file = thumbnail;
-    [cell.thumbnailImageView loadInBackground];
+//     PFFileObject *thumbnail = [object objectForKey:@"imageFile"];
+
+//    cell.thumbnailImageView.file = thumbnail;
+//    [cell.thumbnailImageView loadInBackground];
     
-    NSString *currentTitle = object[@"titleTrashare"];
+//    NSString *currentTitle = object[@"titleTrashare"];
 
     
-    cell.descriptionLabel.text = currentTitle;
-    cell.calculateText.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"distance1"]];
-  
-   
-    
+	cell.descriptionLabel.text = @"test cell"; //currentTitle;
+//    cell.calculateText.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"distance1"]];
 
-    
     return cell;
 //}  else {
 //    alert('please enable location services')
@@ -174,10 +166,10 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     NSString *descriptionString1 = object[@"titleTrashare"];
     
     
-    PFFile *showImage = object[@"imageFile"];
+    PFFileObject *showImage = object[@"imageFile"];
     
-    detailVC.file = showImage;
-   
+//    detailVC.file = showImage;
+
     
     NSDate *trashDate = object.createdAt;
 
@@ -186,8 +178,8 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     [timeFormatter setDateFormat:@"HH:mm"];
     NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
     
-    detailVC.descriptionString = descriptionString1;
-    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
+//    detailVC.descriptionString = descriptionString1;
+//    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
     
    // this is declared as @property in detailviewcontroller and passed on in view did load
     
@@ -329,13 +321,13 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 //            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
 //            self.coordinate = coord;
             
-            PFFile *file = mapAnno.object[@"imageFile"];
-            
-            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
-            iconView.file = file;
-                             [iconView loadInBackground];
-            pinView.leftCalloutAccessoryView = iconView;
-            
+//            PFFile *file = mapAnno.object[@"imageFile"];
+
+//            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+//            iconView.file = file;
+//                             [iconView loadInBackground];
+//            pinView.leftCalloutAccessoryView = iconView;
+
         }
         else  {
             pinView.annotation = annotation;
@@ -347,5 +339,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 }
 
 
+
+@synthesize coordinate;
 
 @end

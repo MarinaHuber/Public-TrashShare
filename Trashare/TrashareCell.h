@@ -12,6 +12,7 @@
 
 @interface TrashareCell : UITableViewCell
 
++ (NSString *)reuseIdentifier;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet PFFileObject *thumbnailImageView;
 @property (copy, nonatomic) void (^actionBlock)(void); //what is this?

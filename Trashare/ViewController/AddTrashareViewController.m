@@ -87,7 +87,7 @@
    
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     NSUUID *randomName = [NSUUID UUID];
-    PFFile *imageFile = [PFFile fileWithName:randomName.UUIDString data:imageData];
+    PFFileObject *imageFile = [PFFileObject fileObjectWithName:randomName.UUIDString data:imageData];
     //saving geo points from parse
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint * _Nullable geoPoint, NSError * _Nullable error) {
     

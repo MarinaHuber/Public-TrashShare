@@ -12,6 +12,9 @@
 
 @implementation TrashareCell
 
++ (NSString *)reuseIdentifier {
+	return @"TrashareCell";
+}
 //what is this?
 - (IBAction)showImage:(id)sender
 {

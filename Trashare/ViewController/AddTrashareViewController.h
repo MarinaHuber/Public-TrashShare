@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "HomeViewController.h"
-#import "DetailViewController.h"
-#import "Trashare-Swift.h"
+//#import "Trashare-Swift.h"
 
 @interface AddTrashareViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) UIImage *picture;
