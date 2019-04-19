@@ -83,7 +83,7 @@
 
     //[self.buttonName dismissViewController:map animated:YES];
     
-    PFObject *trashare = [PFObject objectWithClassName:@"TrashareData"];
+    PFObject *trashare = [PFObject objectWithClassName:@"trashareData"];
    
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     NSUUID *randomName = [NSUUID UUID];

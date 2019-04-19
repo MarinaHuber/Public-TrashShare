@@ -28,8 +28,18 @@
     [self.mapView setDelegate:self];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
-    
-//    [self reloadParseData];
+//	[self reloadParseData];
+//	PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
+//	[query getObjectInBackgroundWithId:@"oQNnBf0MXJ" block:^(PFObject *trash, NSError *error) {
+//		// Do something with the returned PFObject in the gameScore variable.
+//		NSLog(@"ITEMS TRASH %@", trash);
+//		NSString *title = trash[@"titleTrashare"];
+//		NSLog(@"RETRIEVED ITEMS TRASH TITLE: %@", title);
+//	}];
+
+
+//	self.objectsArray = [query findObjects];
+//	NSLog(@"RETRIEVED ITEMS TRASH: %lu", (unsigned long)self.objectsArray.count);
 
     
  //for every PFObject loop over and find elements in mapObject
@@ -75,21 +85,19 @@
 
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     //why is this twice?
 //    [self reloadParseData];
 
-//    [self.tableView reloadData];
+    [self.tableView reloadData];
    //[self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
 
     
 }
 
-- (void)reloadParseData
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"TrashareData"];
+- (void)reloadParseData {
+    PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
     self.objectsArray = [query findObjects];
     
     //sort by date
@@ -110,28 +118,30 @@
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-	return 4;//self.sortedArray.count;
+	return 8;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //forcing xcode to keep pfimageview valid
-//    [PFImageView class];
+//    [PFFileObject class];
 
-    PFObject *object = self.sortedArray[indexPath.row];
-    
-//    TrashareCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrashareCell" forIndexPath:indexPath];
-//
-//    if (cell == nil) {
-//        cell = [[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:nil options:nil] objectAtIndex:0];
-//    }
+//    PFObject *object = self.objectsArray[indexPath.row];
+
 	TrashareCell *cell = (TrashareCell *)[tableView dequeueReusableCellWithIdentifier:[TrashareCell reuseIdentifier]];
 	if (cell == nil) {
 		[[NSBundle mainBundle] loadNibNamed:@"TrashareCell" owner:self options:nil];
 		cell = _trashareCell;
 		_trashareCell = nil;
 	}
+	//Using the indexpath's row value we can go ahead and grab that from your myArray array
+	PFObject * trashObject = [self.objectsArray objectAtIndex:indexPath.row];
+
+	[trashObject fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error){
+		NSLog(@"retrieved related trash: %@", trashObject);
+		cell.descriptionLabel.text = [trashObject objectForKey:@"titleTrashare"];
+	}];
     
     // Configure the cell
 //     PFFileObject *thumbnail = [object objectForKey:@"imageFile"];
@@ -140,9 +150,9 @@
 //    [cell.thumbnailImageView loadInBackground];
     
 //    NSString *currentTitle = object[@"titleTrashare"];
-
-    
-	cell.descriptionLabel.text = @"test cell"; //currentTitle;
+//
+//
+//	cell.descriptionLabel.text = currentTitle;
 //    cell.calculateText.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"distance1"]];
 
     return cell;

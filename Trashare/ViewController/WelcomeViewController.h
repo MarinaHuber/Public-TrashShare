@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "HomeViewController.h"
+#import <Parse/Parse.h>
 
 
 @interface WelcomeViewController : UIViewController

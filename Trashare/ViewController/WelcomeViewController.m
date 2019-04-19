@@ -20,7 +20,15 @@
     
     [self.mapView setShowsUserLocation:YES];
     
-    // Do any additional setup after loading the view from its nib.
+	PFObject *trash = [PFObject objectWithClassName:@"test"];
+	trash[@"titleTrash"] = @"aaaloha";
+	[trash saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+		if (succeeded) {
+			NSLog(@"UPLOAD ITEMS TRASH TITLE: %@", trash);
+		} else {
+			NSLog(@"PROOOOBLEM");
+		}
+	}];
     self.navigationController.navigationBarHidden = YES;
     
 }
@@ -41,10 +49,10 @@
     // regardless of how much time/power it takes
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     // Tell our manager to start looking for its location immediately
-    //[locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
     
     [self.locationManager requestWhenInUseAuthorization];
-    //    [self.locationManager requestAlwaysAuthorization];
+	[self.locationManager requestAlwaysAuthorization];
    
     
    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
@@ -59,14 +67,14 @@
 }
 
 ////this needed for storing location do get user location from this method instead of MKUserLocation
-//- (void)locationManager:(CLLocationManager * _Nonnull)manager
-//     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
-//{
-//    
-//    //HomeViewController *home = [[HomeViewController alloc] init];
-//    
-//    
-//   }
+- (void)locationManager:(CLLocationManager * _Nonnull)manager
+     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
+{
+
+//    HomeViewController *home = [[HomeViewController alloc] init];
+
+
+   }
 
 
 
