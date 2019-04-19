@@ -23,7 +23,9 @@
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration
 			configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-
+				configuration.applicationId = @"trashareParseServer";
+				configuration.clientKey = @"trashare1";
+				configuration.server = @"https://trashareparse.azurewebsites.net/parse";
 			}]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

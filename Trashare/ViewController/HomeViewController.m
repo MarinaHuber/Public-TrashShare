@@ -124,14 +124,8 @@
 			cell.thumbnailImageView.image = image;
 		}
 	}];
-//    cell.thumbnailImageView.file = thumbnail;
-//    [cell.thumbnailImageView loadInBackground];
-    
-//    NSString *currentTitle = object[@"titleTrashare"];
-//
-//
-//	cell.descriptionLabel.text = currentTitle;
-//    cell.calculateText.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"distance1"]];
+
+    cell.calculateText.text = [NSString stringWithFormat:@"%@", [trashObject objectForKey:@"distance1"]];
 
     return cell;
 //}  else {

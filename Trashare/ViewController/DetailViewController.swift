@@ -14,7 +14,7 @@ import UIKit
 	var tap: UIPinchGestureRecognizer?
 	var isFullScreen: Bool = false
 	var prevFrame = CGRect.zero
-
+	var fileImage: PFFileObject?
 	var myScrollView: UIScrollView?
 	@IBOutlet var dateTrash: UILabel!
 
@@ -27,23 +27,25 @@ import UIKit
 
 		let query = PFQuery(className: "trashareData")
 		query.findObjectsInBackground { (objects, error) in
-				if let returnedObjects = objects {
-					for object in returnedObjects {
+			if let returnedObjects = objects {
+				for object in returnedObjects {
+				self.fileImage = object["imageFile"] as? PFFileObject
+				if let image = self.fileImage {
+					self.getImageFromData(data: image)
 
-						let fileA = object["imageFile"] as? PFFileObject
-						fileA?.getDataInBackground {
-							(imageData, error) -> Void in
-
-							if error == nil {
-								let image = UIImage(data: imageData!)
-
-								self.showImage.image = image
-
-							} else {}
-						}}
+						}
 					}
 			}
+		}
 
+	}
+
+	func getImageFromData(data: PFFileObject) {
+		self.fileImage?.getDataInBackground {(data: Data?, error: Error?) in
+			if let data = data, let image = UIImage(data: data) {
+				self.showImage.image = image
+			} else {}
+		}
 	}
 
 
