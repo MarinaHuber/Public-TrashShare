@@ -30,6 +30,7 @@
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
 @property (nonatomic) PFObject *originalObject;
+@property (nonatomic, weak) UIImage *originalImage;
 @property (nonatomic) float meters;
 
 @property (nonatomic, strong) NSDate *dateCreated;

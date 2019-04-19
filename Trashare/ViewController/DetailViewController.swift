@@ -7,36 +7,43 @@
 //
 
 import UIKit
+//import Parse
 
 @objc class DetailViewController: UIViewController, UINavigationControllerDelegate, UIScrollViewDelegate {
 
 	var tap: UIPinchGestureRecognizer?
-	var isFullScreen = false
+	var isFullScreen: Bool = false
 	var prevFrame = CGRect.zero
 
 	var myScrollView: UIScrollView?
 	@IBOutlet var dateTrash: UILabel!
-	var dateCreated = ""
-	var descriptionString = ""
-	var file: PFFileObject?
+
 	// PFFileObject representes a file of binary data stored on the Parse servers.
 	@IBOutlet var showImage: UIImageView!
 	@IBOutlet var titleTrash: UILabel!
 
-	@objc override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
-		titleTrash.text = descriptionString
 
-		dateTrash.text = dateCreated
-//		showImage.file = file
-// 		let imageFile = object["imageFile"] as? PFFile
-//		imageFile?.getDataInBackground (block: { (data, error) -> Void in
-//			if error == nil {
-//				if let imageData = data {
-//					self.myImage = UIImage(data:imageData)
-//				}
-//			}
-//		})
+		let query = PFQuery(className: "trashareData")
+		query.findObjectsInBackground { (objects, error) in
+				if let returnedObjects = objects {
+					for object in returnedObjects {
+
+						let fileA = object["imageFile"] as? PFFileObject
+						fileA?.getDataInBackground {
+							(imageData, error) -> Void in
+
+							if error == nil {
+								let image = UIImage(data: imageData!)
+
+								self.showImage.image = image
+
+							} else {}
+						}}
+					}
+			}
+
 	}
 
 

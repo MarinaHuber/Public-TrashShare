@@ -7,3 +7,4 @@
 #import "AddTrashareViewController.h"
 #import "MapAnnotation.h"
 #import "TrashareData.h"
+#import <Parse/Parse.h>

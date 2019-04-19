@@ -20,9 +20,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
- 
-    [Parse setApplicationId:@"kOOs7L2Oxn1mCavhD6fsFO7EB6qt2eNOCYTTA9oR"
-                  clientKey:@"CGxfJflFGVP7BFg1cuWRAILuLWJLo3o9Oj82P4VX"];
+
+    [Parse initializeWithConfiguration:[ParseClientConfiguration
+			configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+
+			}]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

@@ -19,16 +19,6 @@
     [super viewDidLoad];
     
     [self.mapView setShowsUserLocation:YES];
-    
-	PFObject *trash = [PFObject objectWithClassName:@"test"];
-	trash[@"titleTrash"] = @"aaaloha";
-	[trash saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-		if (succeeded) {
-			NSLog(@"UPLOAD ITEMS TRASH TITLE: %@", trash);
-		} else {
-			NSLog(@"PROOOOBLEM");
-		}
-	}];
     self.navigationController.navigationBarHidden = YES;
     
 }

@@ -14,7 +14,7 @@
 
 + (NSString *)reuseIdentifier;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, weak) IBOutlet PFFileObject *thumbnailImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @property (copy, nonatomic) void (^actionBlock)(void); //what is this?
 @property (nonatomic, weak) IBOutlet UILabel *calculateText;
 

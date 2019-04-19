@@ -84,16 +84,17 @@
     //[self.buttonName dismissViewController:map animated:YES];
     
     PFObject *trashare = [PFObject objectWithClassName:@"trashareData"];
-   
+   //saving images to parse
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
     NSUUID *randomName = [NSUUID UUID];
     PFFileObject *imageFile = [PFFileObject fileObjectWithName:randomName.UUIDString data:imageData];
-    //saving geo points from parse
+    //saving geo points to parse
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint * _Nullable geoPoint, NSError * _Nullable error) {
     
         if (geoPoint) {
-            
+            //saving geo points to parse
             [trashare setObject:geoPoint forKey:@"annotationPoint"];
+			//saving images to parse
             [trashare setObject:imageFile forKey:@"imageFile"];
             [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
 

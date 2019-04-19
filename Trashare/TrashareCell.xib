@@ -11,15 +11,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrashareCell" rowHeight="64" id="KGk-i7-Jjw" customClass="TrashareCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrashareCell" rowHeight="78" id="KGk-i7-Jjw" customClass="TrashareCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="59.666666666666664"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-Bm-hHs">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-Bm-hHs">
                         <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="66"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="66" id="2OD-qm-OyE"/>
                         </constraints>
@@ -64,6 +65,7 @@
                     <constraint firstItem="Cdr-G8-R8w" firstAttribute="leading" secondItem="gG1-9e-C5S" secondAttribute="leading" constant="100" id="HyR-HQ-pbo"/>
                     <constraint firstItem="GQr-6f-zK9" firstAttribute="top" secondItem="Cdr-G8-R8w" secondAttribute="bottom" constant="1" id="IUk-PL-KIu"/>
                     <constraint firstItem="5Pp-Bm-hHs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IlI-Zo-RHw"/>
+                    <constraint firstAttribute="bottom" secondItem="5Pp-Bm-hHs" secondAttribute="bottom" id="MIx-As-JWs"/>
                     <constraint firstItem="Cdr-G8-R8w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Nmk-NV-eUC"/>
                     <constraint firstAttribute="trailing" secondItem="GQr-6f-zK9" secondAttribute="trailing" id="Xgg-JQ-vEB"/>
                     <constraint firstAttribute="trailing" secondItem="Cdr-G8-R8w" secondAttribute="trailing" constant="45" id="fdL-ID-HXE"/>

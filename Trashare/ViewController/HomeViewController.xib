@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,28 +19,28 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="qv0-KZ-fQX"/>
-                    </constraints>
-                    <items>
-                        <navigationItem title="Trashare" id="8ju-TV-HqU"/>
-                    </items>
-                </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
-                    <rect key="frame" x="0.0" y="310" width="375" height="313"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="20" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMF-Dq-gxq">
+                    <rect key="frame" x="0.0" y="322" width="375" height="441"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="zyI-WN-9KA"/>
                         <outlet property="delegate" destination="-1" id="deT-E3-7dw"/>
                     </connections>
                 </tableView>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
+                    <rect key="frame" x="0.0" y="60" width="375" height="262"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="262" id="wIm-J6-h3u"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0KS-jJ-JX0"/>
+                    </connections>
+                </mapView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cae-Nt-Zsc">
-                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="763" width="375" height="49"/>
                     <items>
                         <barButtonItem tag="1" image="camera@1x copy" id="XMK-YZ-gFG">
                             <color key="tintColor" red="0.066386950989999999" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,15 +50,15 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
-                    <rect key="frame" x="0.0" y="60" width="375" height="250"/>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-H0-z1V">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="wxw-t4-Qp6"/>
+                        <constraint firstAttribute="height" constant="60" id="qv0-KZ-fQX"/>
                     </constraints>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="0KS-jJ-JX0"/>
-                    </connections>
-                </mapView>
+                    <items>
+                        <navigationItem title="Trashare" id="8ju-TV-HqU"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

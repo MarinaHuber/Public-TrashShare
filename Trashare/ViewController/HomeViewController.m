@@ -28,59 +28,35 @@
     [self.mapView setDelegate:self];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
-//	[self reloadParseData];
-//	PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
-//	[query getObjectInBackgroundWithId:@"oQNnBf0MXJ" block:^(PFObject *trash, NSError *error) {
-//		// Do something with the returned PFObject in the gameScore variable.
-//		NSLog(@"ITEMS TRASH %@", trash);
-//		NSString *title = trash[@"titleTrashare"];
-//		NSLog(@"RETRIEVED ITEMS TRASH TITLE: %@", title);
-//	}];
+	[self reloadParseDataSorted];
 
-
-//	self.objectsArray = [query findObjects];
-//	NSLog(@"RETRIEVED ITEMS TRASH: %lu", (unsigned long)self.objectsArray.count);
-
-    
- //for every PFObject loop over and find elements in mapObject
-    
-    
-    NSMutableArray *pointArray = [[NSMutableArray alloc] init];
-    
-    
-    for (PFObject *pfObjectDictionary in self.objectsArray) {
-        
-
-        PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
-        NSString *title = pfObjectDictionary[@"titleTrashare"];
-        
-            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
-
-            //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
-//
-//            
-            [pointArray addObject:annotation];
-
-        PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
-
-        if (pin) {
-  
-            //this creates corresponding map object
-            MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
-            
-            
-            [pointArray addObject:annotation];
-            
-        }
-       
-
-        
-        [self.mapView addAnnotations:pointArray];
-        
-    }
+	[self loadParseObjectOnMap];
 }
 
+- (void)loadParseObjectOnMap {
+	NSMutableArray *pointArray = [[NSMutableArray alloc] init];
+	 //for every PFObject loop over and find elements in mapObject
+	for (PFObject *pfObjectDictionary in self.objectsArray) {
+		PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
+		NSString *title = pfObjectDictionary[@"titleTrashare"];
+		CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+
+		MapAnnotation *annotation = [[MapAnnotation alloc] initWithCoordinate:coord title:title];
+		[pointArray addObject:annotation];
+
+		PFGeoPoint *pin = pfObjectDictionary[@"annotationPoint"];
+
+		if (pin) {
+
+			//this creates corresponding map object
+			MapAnnotation *annotation = [[MapAnnotation alloc] initwithObject: pfObjectDictionary];
+			[pointArray addObject:annotation];
+
+		}
+		[self.mapView addAnnotations:pointArray];
+
+	}
+}
 
 
 
@@ -91,12 +67,13 @@
 //    [self reloadParseData];
 
     [self.tableView reloadData];
-   //[self.mapViewWillStartLoadingMap:mapView didUpdateUserLocation:userLocation]
+	//is this helpful?
+	[self mapViewWillStartLoadingMap:self.mapView];
 
     
 }
 
-- (void)reloadParseData {
+- (void)reloadParseDataSorted {
     PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
     self.objectsArray = [query findObjects];
     
@@ -110,24 +87,22 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-	return 8;
+	return self.objectsArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //forcing xcode to keep pfimageview valid
-//    [PFFileObject class];
+    //forcing xcode to keep pfimageview valid??
+   [PFFileObject class];
 
-//    PFObject *object = self.objectsArray[indexPath.row];
 
 	TrashareCell *cell = (TrashareCell *)[tableView dequeueReusableCellWithIdentifier:[TrashareCell reuseIdentifier]];
 	if (cell == nil) {
@@ -135,17 +110,20 @@
 		cell = _trashareCell;
 		_trashareCell = nil;
 	}
-	//Using the indexpath's row value we can go ahead and grab that from your myArray array
 	PFObject * trashObject = [self.objectsArray objectAtIndex:indexPath.row];
 
 	[trashObject fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error){
 		NSLog(@"retrieved related trash: %@", trashObject);
-		cell.descriptionLabel.text = [trashObject objectForKey:@"titleTrashare"];
+		cell.descriptionLabel.text = [object objectForKey:@"titleTrashare"];
 	}];
-    
-    // Configure the cell
-//     PFFileObject *thumbnail = [object objectForKey:@"imageFile"];
 
+     PFFileObject *imageCell = [trashObject objectForKey:@"imageFile"];
+	[imageCell getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+		if (!error) {
+			UIImage *image = [UIImage imageWithData:imageData];
+			cell.thumbnailImageView.image = image;
+		}
+	}];
 //    cell.thumbnailImageView.file = thumbnail;
 //    [cell.thumbnailImageView loadInBackground];
     
@@ -229,8 +207,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker
-      didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+      didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // Get picked image from info dictionary
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
@@ -247,10 +224,11 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 }
 #pragma mark - Annoting Maps
 
-//zoom working
+//is this helpful?
+- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
 
-
-
+}
+//zoom setUp
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation {
 
