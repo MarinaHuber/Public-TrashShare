@@ -20,6 +20,7 @@
     
     [self.mapView setShowsUserLocation:YES];
     self.navigationController.navigationBarHidden = YES;
+	[self mapViewWillStartLoadingMap:self.mapView];
     
 }
 // shows map location
@@ -58,13 +59,15 @@
 
 ////this needed for storing location do get user location from this method instead of MKUserLocation
 - (void)locationManager:(CLLocationManager * _Nonnull)manager
-     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations
-{
+     didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations {
 
 //    HomeViewController *home = [[HomeViewController alloc] init];
 
 
    }
+- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
+
+}
 
 
 

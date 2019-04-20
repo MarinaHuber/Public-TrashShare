@@ -21,6 +21,7 @@
 @interface HomeViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (assign, nonatomic) IBOutlet TrashareCell *trashareCell;
+@property (nonatomic, retain) PFFileObject *fileImage;
 @property (nonatomic) BOOL hasZoomed;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)  NSArray *objectsArray;

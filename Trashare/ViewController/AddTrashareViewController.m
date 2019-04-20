@@ -73,7 +73,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField
 {
-    [self.addDescription resignFirstResponder];
+    [self.addDescriptionField resignFirstResponder];
     return YES;
 }
 
@@ -81,8 +81,8 @@
 - (IBAction)addTrashare:(id)sender {
     // here disable the button after its pressed like below
 
-    //[self.buttonName dismissViewController:map animated:YES];
-    
+//    [self.buttonName dismissViewController:map animated:YES];
+
     PFObject *trashare = [PFObject objectWithClassName:@"trashareData"];
    //saving images to parse
     NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
@@ -96,7 +96,7 @@
             [trashare setObject:geoPoint forKey:@"annotationPoint"];
 			//saving images to parse
             [trashare setObject:imageFile forKey:@"imageFile"];
-            [trashare setObject:self.addDescription.text forKey:@"titleTrashare"];
+            [trashare setObject:self.addDescriptionField.text forKey:@"titleTrashare"];
 
             
             [trashare saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error)
@@ -135,20 +135,20 @@
                                            object:nil];
     
     // If you want to remove the listener completely just use this one line
-    [[NSNotificationCenter defaultCenter] removeObserver:self.view];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self.view];
 }
 
 -(void)keyboardWillShow {
     // Animate the current view out of the way
     [UIView animateWithDuration:0.3f animations:^ {
-        self.view.frame = CGRectMake(0, -100, 320, 480);
+        self.view.frame = CGRectMake(0, -100, 375, 480);
     }];
 }
 
 -(void)keyboardWillHide {
     // Animate the current view back to its original position
     [UIView animateWithDuration:0.3f animations:^ {
-        self.view.frame = CGRectMake(0, 0, 320, 480);
+        self.view.frame = CGRectMake(0, 0, 375, 480);
     }];
 }
 

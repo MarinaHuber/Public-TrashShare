@@ -23,9 +23,9 @@
 
 - (IBAction)addTrashare:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UITextField *addDescription;
+@property (weak, nonatomic) IBOutlet UITextField *addDescriptionField;
 
-//- (IBAction)takePhoto:(UIButton *)sender;
+- (IBAction)takePhoto:(UIButton *)sender;
 
 //@property CGRect frame;
 

@@ -11,20 +11,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTrashareViewController">
             <connections>
-                <outlet property="addDescription" destination="gW5-dX-lN8" id="vl9-dQ-eaI"/>
+                <outlet property="addDescriptionField" destination="gW5-dX-lN8" id="QgW-K9-hsJ"/>
                 <outlet property="imageView" destination="90n-HO-xmI" id="tSu-Pf-0SZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIControl">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90n-HO-xmI">
-                    <rect key="frame" x="13" y="88" width="349" height="314"/>
+                    <rect key="frame" x="13" y="88" width="349" height="174"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="314" id="ebu-VE-Dpj"/>
+                        <constraint firstAttribute="width" secondItem="90n-HO-xmI" secondAttribute="height" multiplier="349:174" id="X70-mj-Eik"/>
                     </constraints>
                 </imageView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-zM-BD8">
@@ -39,17 +39,17 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of Trashare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-Ao-urF">
-                    <rect key="frame" x="98" y="438" width="179" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="fNE-gw-hNn"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description of Trashare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-Ao-urF">
+                    <rect key="frame" x="98" y="298" width="179" height="116"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe the Trashare" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-dX-lN8">
-                    <rect key="frame" x="51" y="479" width="273" height="30"/>
+                    <rect key="frame" x="51" y="445" width="276" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="JPU-tx-oZP"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     <connections>
@@ -57,8 +57,12 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ges-dJ-5Ca">
-                    <rect key="frame" x="141.66666666666666" y="531" width="92" height="30"/>
+                    <rect key="frame" x="141.66666666666666" y="541" width="92" height="42"/>
                     <color key="backgroundColor" red="0.066386950987103566" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="Nes-7j-Nc8"/>
+                        <constraint firstAttribute="height" constant="42" id="sQr-FL-9lc"/>
+                    </constraints>
                     <state key="normal" title="Add Trashare">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -69,28 +73,26 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="gW5-dX-lN8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="78G-F1-hjl"/>
                 <constraint firstItem="90n-HO-xmI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7eK-yl-WO8"/>
                 <constraint firstItem="90n-HO-xmI" firstAttribute="top" secondItem="YSh-zM-BD8" secondAttribute="bottom" id="B7I-u6-wCG"/>
                 <constraint firstItem="YSh-zM-BD8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="BLi-cJ-DyQ"/>
                 <constraint firstAttribute="trailing" secondItem="YSh-zM-BD8" secondAttribute="trailing" id="ECP-Dd-hUh"/>
                 <constraint firstItem="90n-HO-xmI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="Ihe-Ak-NH9"/>
                 <constraint firstItem="0fa-Ao-urF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jbl-qZ-xow"/>
+                <constraint firstItem="ges-dJ-5Ca" firstAttribute="top" secondItem="gW5-dX-lN8" secondAttribute="bottom" constant="36" id="LR8-Pj-80J"/>
                 <constraint firstAttribute="trailing" secondItem="0fa-Ao-urF" secondAttribute="trailing" constant="98" id="Qlj-2o-aAg"/>
+                <constraint firstItem="gW5-dX-lN8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="51" id="TU9-aZ-4VK"/>
+                <constraint firstAttribute="trailing" secondItem="gW5-dX-lN8" secondAttribute="trailing" constant="48" id="Y38-1H-1p9"/>
                 <constraint firstItem="0fa-Ao-urF" firstAttribute="top" secondItem="90n-HO-xmI" secondAttribute="bottom" constant="36" id="Ycf-6d-4qb"/>
                 <constraint firstItem="0fa-Ao-urF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="98" id="abA-cK-Lge"/>
                 <constraint firstItem="YSh-zM-BD8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="avp-bU-i3e"/>
-                <constraint firstItem="ges-dJ-5Ca" firstAttribute="top" secondItem="gW5-dX-lN8" secondAttribute="bottom" constant="22" id="boI-ah-iXQ"/>
-                <constraint firstItem="gW5-dX-lN8" firstAttribute="top" secondItem="0fa-Ao-urF" secondAttribute="bottom" constant="20" id="epY-aL-wOH"/>
-                <constraint firstAttribute="trailing" secondItem="gW5-dX-lN8" secondAttribute="trailing" constant="51" id="kkK-NB-0co"/>
-                <constraint firstItem="gW5-dX-lN8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="51" id="qJa-m0-sZn"/>
+                <constraint firstItem="gW5-dX-lN8" firstAttribute="top" secondItem="0fa-Ao-urF" secondAttribute="bottom" constant="31" id="k3e-RF-1x8"/>
+                <constraint firstAttribute="bottom" secondItem="ges-dJ-5Ca" secondAttribute="bottom" constant="229" id="sgT-tJ-GDG"/>
+                <constraint firstItem="ges-dJ-5Ca" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tGj-as-OgM"/>
                 <constraint firstAttribute="trailing" secondItem="90n-HO-xmI" secondAttribute="trailing" constant="13" id="vkl-M8-IDE"/>
                 <constraint firstItem="ges-dJ-5Ca" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xVd-XA-3ET"/>
             </constraints>
-            <connections>
-                <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="5uM-g3-hyj"/>
-            </connections>
-            <point key="canvasLocation" x="543.20000000000005" y="308.86699507389164"/>
+            <point key="canvasLocation" x="543.20000000000005" y="307.38916256157637"/>
         </view>
     </objects>
 </document>

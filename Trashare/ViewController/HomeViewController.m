@@ -17,6 +17,7 @@
 @end
 
 @implementation HomeViewController
+@synthesize fileImage = _fileImage;
 @synthesize tableView = _tableView;
 @synthesize trashareCell = _trashareCell;
 
@@ -63,12 +64,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    //why is this twice?
-//    [self reloadParseData];
-
     [self.tableView reloadData];
 	//is this helpful?
-	[self mapViewWillStartLoadingMap:self.mapView];
 
     
 }
@@ -138,29 +135,22 @@
 - (void)tableView:(UITableView * _Nonnull)tableView
 didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     //selects the objects we selected touched
-
-    // this is declared as @property in detailviewcontroller and passed on in view did load
-    //for string (lable)
+	[PFFileObject class];
     PFObject *object = self.sortedArray[indexPath.row];
     
     DetailViewController *detailVC = [[DetailViewController alloc] init];
+	PFFileObject *showImage = object[@"imageFile"];
     
-    NSString *descriptionString1 = object[@"titleTrashare"];
-    
-    
-    PFFileObject *showImage = object[@"imageFile"];
-    
-//    detailVC.file = showImage;
+     detailVC.fileImage = showImage;
 
-    
     NSDate *trashDate = object.createdAt;
 
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setDateFormat:@"dd-MM-yyyy "];
     NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
-    
-//    detailVC.descriptionString = descriptionString1;
+    NSString *descriptionString1 = object[@"titleTrashare"];
+//    detailVC.titleTrash = descriptionString1;
 //    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
     
    // this is declared as @property in detailviewcontroller and passed on in view did load
@@ -169,18 +159,6 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
   
 }
 
-//this method doesnt show
-- (NSString *)dateOnlyForTest:(NSDate *)trashDate {
-
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy "];
-    NSString *dateCreated = [dateFormatter stringFromDate:trashDate];
-    
-    return dateCreated;
-
-}
 
 
 #pragma mark - ImagePicker
@@ -218,10 +196,7 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 }
 #pragma mark - Annoting Maps
 
-//is this helpful?
-- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
 
-}
 //zoom setUp
 - (void)mapView:(MKMapView *)mapView
 didUpdateUserLocation:(MKUserLocation *)userLocation {
@@ -298,14 +273,14 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             // If appropriate, customize the callout by adding accessory views (code not shown).
             
             // Add an image to the left callout.
-            //PFFile *imageFile = mapAnno.object;
+            //PFFileObject *imageFile = mapAnno.object;
             
 //            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
 //            self.coordinate = coord;
             
-//            PFFile *file = mapAnno.object[@"imageFile"];
+//            PFFileObject *file = mapAnno.object[@"imageFile"];
 
-//            PFImageView *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+//            PFileObject *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
 //            iconView.file = file;
 //                             [iconView loadInBackground];
 //            pinView.leftCalloutAccessoryView = iconView;

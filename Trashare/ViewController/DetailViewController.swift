@@ -14,7 +14,7 @@ import UIKit
 	var tap: UIPinchGestureRecognizer?
 	var isFullScreen: Bool = false
 	var prevFrame = CGRect.zero
-	var fileImage: PFFileObject?
+	@objc var fileImage: PFFileObject?
 	var myScrollView: UIScrollView?
 	@IBOutlet var dateTrash: UILabel!
 
