@@ -24,7 +24,7 @@ import UIKit
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+// redundant??? coming from homeVC
 		let query = PFQuery(className: "trashareData")
 		query.findObjectsInBackground { (objects, error) in
 			if let returnedObjects = objects {
@@ -33,8 +33,8 @@ import UIKit
 				if let image = self.fileImage {
 					self.getImageFromData(data: image)
 
-						}
 					}
+				}
 			}
 		}
 

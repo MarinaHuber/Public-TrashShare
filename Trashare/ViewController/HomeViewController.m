@@ -30,7 +30,6 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
 	[self reloadParseDataSorted];
-
 	[self loadParseObjectOnMap];
 }
 
@@ -55,7 +54,6 @@
 
 		}
 		[self.mapView addAnnotations:pointArray];
-
 	}
 }
 
@@ -65,9 +63,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     [self.tableView reloadData];
-	//is this helpful?
-
-    
 }
 
 - (void)reloadParseDataSorted {
@@ -78,6 +73,8 @@
     NSSortDescriptor *dateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
     NSArray *sortDescriptors = @[dateDescriptor];
     self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
+	[self.tableView reloadData];
+
     
     
 }
@@ -122,7 +119,7 @@
 		}
 	}];
 
-    cell.calculateText.text = [NSString stringWithFormat:@"%@", [trashObject objectForKey:@"distance1"]];
+    cell.calculateText.text = [NSString stringWithFormat:@"%@", [trashObject objectForKey:@"distance"]];
 
     return cell;
 //}  else {
@@ -226,7 +223,8 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             
             CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLoc];
             //store for object
-            [pfObjectDictionary setObject:@(distance) forKey:@"distance1"];
+            [pfObjectDictionary setObject:@(distance) forKey:@"distance"];
+			[self.tableView reloadData];
             
             
         }
