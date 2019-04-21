@@ -14,9 +14,9 @@
 @property (nonatomic, copy) NSString *titleTrashare; // title
 @property (nonatomic, strong) PFFileObject *imageFile; // image
 @property (nonatomic, strong) PFObject *object;
-@property (nonatomic) CLLocationDistance *distance; // in meters -calculation from homevc
+@property (nonatomic) UIImage *image; // in meters -calculation from homevc
 
-- (id)initWithDistance:(CLLocationDistance)location title:(NSString *)titleTrash;
+- (id)initWithImage:(PFFileObject *)image title:(NSString *)titleTrash;
 - (id)initwithImage:(PFObject *)object;
 
 

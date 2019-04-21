@@ -13,7 +13,7 @@ import UIKit
 	@IBOutlet weak var gradientView: UIView!
 	
 	var tap: UIPinchGestureRecognizer?
-	var isFullScreen: Bool = false
+	var id: String?
 	var prevFrame = CGRect.zero
 	@objc var fileImage: PFFileObject?
 	var myScrollView: UIScrollView?
@@ -70,26 +70,26 @@ import UIKit
 
 	@IBAction func tapZoom(_ sender: Any) {
 
-		if !isFullScreen {
-			UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
-				//				prevFrame = self.showImage.frame
-				//				self.showImage.frame = UIScreen.main.bounds
-			}) { finished in
-				self.isFullScreen = true
-			}
-			return
-		} else {
-			titleTrash.alpha = 1.0
-			dateTrash.alpha = 1.0
-
-			navigationController?.setNavigationBarHidden(false, animated: true)
-			UIView.animate(withDuration: 4, delay: 0, options: [], animations: {
-				//				self.showImage.frame = prevFrame
-			}) { finished in
-				self.isFullScreen = false
-			}
-			return
-		}
+//		if !isFullScreen {
+//			UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
+//				//				prevFrame = self.showImage.frame
+//				//				self.showImage.frame = UIScreen.main.bounds
+//			}) { finished in
+//				self.isFullScreen = true
+//			}
+//			return
+//		} else {
+//			titleTrash.alpha = 1.0
+//			dateTrash.alpha = 1.0
+//
+//			navigationController?.setNavigationBarHidden(false, animated: true)
+//			UIView.animate(withDuration: 4, delay: 0, options: [], animations: {
+//				//				self.showImage.frame = prevFrame
+//			}) { finished in
+//				self.isFullScreen = false
+//			}
+//			return
+//		}
 	}
 
 }

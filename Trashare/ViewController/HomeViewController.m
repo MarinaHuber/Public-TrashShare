@@ -20,6 +20,7 @@
 @synthesize fileImage = _fileImage;
 @synthesize tableView = _tableView;
 @synthesize trashareCell = _trashareCell;
+@synthesize objectsArray = objectsArray;
 
 #pragma mark -viewDidLoad
 
@@ -134,8 +135,7 @@
 	df.units = MKDistanceFormatterUnitsMetric;
 	df.unitStyle = MKDistanceFormatterUnitStyleAbbreviated;
 
-	double c = e * 0.6213;
-	NSString *o = [df stringFromDistance: c];
+	NSString *o = [df stringFromDistance: e];
 	cell.calculateText.text = o;
     return cell;
 }
@@ -152,20 +152,23 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 	PFFileObject *showImage = object[@"imageFile"];
     
      detailVC.fileImage = showImage;
-
+//	TrashareData *data = [[TrashareData alloc] initWithDistance: title:];
     NSDate *trashDate = object.createdAt;
+	NSString *id = object.objectId;
+	[object setObject:id forKey:@"objectId"];
 
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
     [timeFormatter setDateFormat:@"dd-MM-yyyy "];
     NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
-    NSString *descriptionString1 = object[@"titleTrashare"];
+    NSString *descriptionTitle = object[@"titleTrashare"];
+//	TrashareData *data = [[TrashareData alloc] initWithDistance: title: descriptionTitle];
 //    detailVC.titleTrash = descriptionString1;
 //    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
     
    // this is declared as @property in detailviewcontroller and passed on in view did load
     
-   [self.navigationController pushViewController:detailVC animated:YES];
+	[self.navigationController pushViewController:detailVC animated:YES];
   
 }
 

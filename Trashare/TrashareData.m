@@ -10,21 +10,25 @@
 
 @implementation TrashareData 
 
-- (id)initWithDistance:(CLLocationDistance)location title:(NSString *)titleTrash {
+- (id)initWithImage:(PFFileObject *)imageObject title:(NSString *)titleTrash {
 	self = [super init];
 	if (self) {
-		self.distance = &(location);
+		self.imageFile = imageObject;
 		[self setTitleTrashare:titleTrash];
 
 	}
 	return self;
 }
 
-- (id)initwithImage:(PFObject *)object{
+- (id)initwithImage:(PFObject *)object {
 
 	if (self) {
 		self.object =  object;
+		PFFileObject *objectFile = object[@"imageFile"];
+		[self setImageFile: objectFile];
 
+		NSString *title = object[@"titleTrashare"];
+		[self setTitleTrashare: title];
 	}
 	return self;
 }
