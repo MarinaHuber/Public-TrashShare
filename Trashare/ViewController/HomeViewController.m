@@ -128,16 +128,23 @@
 		}
 	}];
 	PFObject *distancePFObject = [trashObject objectForKey:@"distance"];
-	NSString *i = [NSString stringWithFormat:@"%@ km", distancePFObject];
+	NSString *i = [NSString stringWithFormat:@"%@", distancePFObject];
+	double e = [i doubleValue];
+	MKDistanceFormatter *df = [[MKDistanceFormatter alloc]init];
+	df.units = 1;
+	df.unitStyle = MKDistanceFormatterUnitStyleAbbreviated;
 
+	double c = e * 0.6213;
+	NSString *o = [df stringFromDistance: c];
+	cell.calculateText.text = o;
 
-	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-	// set to long number of decimals to accommodate whatever a user might enter
-	[numberFormatter setMaximumFractionDigits:9];
-	[numberFormatter setLocale:[NSLocale currentLocale]];
-	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-	NSString *s = [numberFormatter stringFromNumber: [NSNumber numberWithDouble:[i doubleValue]]];
-	cell.calculateText.text = s;
+//	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+//	// set to long number of decimals to accommodate whatever a user might enter
+//	[numberFormatter setMaximumFractionDigits:20];
+//	[numberFormatter setLocale:[NSLocale currentLocale]];
+//	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//	NSString *s = [numberFormatter stringFromNumber: [NSNumber numberWithDouble:[i doubleValue]]];
+//	cell.calculateText.text = s;
 
     return cell;
 //}  else {
@@ -150,6 +157,9 @@
 //	[numberFormatter setMaximumFractionDigits:1];
 //	return [numberFormatter stringFromNumber:string];
 //}
+- (BOOL)isMetric {
+	return [[[NSLocale currentLocale] objectForKey:NSLocaleUsesMetricSystem] boolValue];
+}
 
 #pragma mark - UITableVIewDelegate
 
@@ -243,9 +253,9 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             
             //creating currentLocation and other location for calculate distance
             
-            CLLocation *objectLoc = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
+            CLLocation *objectLocation = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
             
-            CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLoc];
+            CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLocation];
             //store for object
             [pfObjectDictionary setObject:@(distance) forKey:@"distance"];
 			[self.tableView reloadData];
