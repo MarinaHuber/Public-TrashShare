@@ -62,15 +62,13 @@
                         <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
                 </navigationBar>
-                <visualEffectView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fpk-2d-og2">
+                <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpk-2d-og2">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cQ5-Vf-jFo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <vibrancyEffect>
-                        <blurEffect style="dark"/>
-                    </vibrancyEffect>
+                    <blurEffect style="dark"/>
                 </visualEffectView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="84y-Ea-Duk">
                     <rect key="frame" x="162.66666666666666" y="381" width="50" height="50"/>

@@ -31,15 +31,10 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
 	[self reloadParseDataSorted];
 	[self loadParseObjectOnMap];
-	[UIView animateWithDuration:1.3 delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
+	[UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
 		self.activityIndicator.hidden = NO;
 		[self.activityIndicator startAnimating];
 		self.blurView.alpha = 0.9;
-
-//		UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-//		UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//		blurEffectView.frame = self.blurView.bounds;
-//		[self.blurView addSubview:blurEffectView];
 	} completion:^(BOOL finished) {
 		self.activityIndicator.hidden = YES;
 		[self.activityIndicator stopAnimating];

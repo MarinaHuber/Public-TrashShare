@@ -25,7 +25,12 @@
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    [super setSelected:selected animated:false];
     
+}
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	self.thumbnailImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+	self.thumbnailImageView.layer.borderWidth = 10.0f;
 }
 @end

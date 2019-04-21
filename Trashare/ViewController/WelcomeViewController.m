@@ -20,6 +20,33 @@
     
     [self.mapView setShowsUserLocation:YES];
     self.navigationController.navigationBarHidden = YES;
+
+	// Create location manager object
+	self.locationManager = [[CLLocationManager alloc] init];
+	self.mapView.delegate = self;
+
+	// There will be a warning from this line of code; ignore it for now
+	[self.locationManager setDelegate:self];
+
+	// And we want it to be as accurate as possible
+	// regardless of how much time/power it takes
+	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+	// Tell our manager to start looking for its location immediately
+	[self.locationManager startUpdatingLocation];
+
+	[self.locationManager requestWhenInUseAuthorization];
+	[self.locationManager requestAlwaysAuthorization];
+
+
+	CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+
+	if (
+		authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+		authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+
+		[self.locationManager startUpdatingLocation];
+
+	}
 	[self mapViewWillStartLoadingMap:self.mapView];
     
 }
@@ -28,33 +55,6 @@
     
     HomeViewController *map = [[HomeViewController alloc] init];
     [self.navigationController pushViewController:map animated:YES];
-    
-    // Create location manager object
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.mapView.delegate = self;
-    
-    // There will be a warning from this line of code; ignore it for now
-    [self.locationManager setDelegate:self];
-    
-    // And we want it to be as accurate as possible
-    // regardless of how much time/power it takes
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    // Tell our manager to start looking for its location immediately
-    [self.locationManager startUpdatingLocation];
-    
-    [self.locationManager requestWhenInUseAuthorization];
-	[self.locationManager requestAlwaysAuthorization];
-   
-    
-   CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
-    
-    if (
-     authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
-      authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-       
-        [self.locationManager startUpdatingLocation];
-    
-    }
 }
 
 ////this needed for storing location do get user location from this method instead of MKUserLocation
