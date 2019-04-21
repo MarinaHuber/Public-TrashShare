@@ -34,7 +34,12 @@
 	[UIView animateWithDuration:1.3 delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
 		self.activityIndicator.hidden = NO;
 		[self.activityIndicator startAnimating];
-		self.blurView.alpha = 1;
+		self.blurView.alpha = 0.9;
+
+//		UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+//		UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//		blurEffectView.frame = self.blurView.bounds;
+//		[self.blurView addSubview:blurEffectView];
 	} completion:^(BOOL finished) {
 		self.activityIndicator.hidden = YES;
 		[self.activityIndicator stopAnimating];
@@ -131,7 +136,7 @@
 	NSString *i = [NSString stringWithFormat:@"%@", distancePFObject];
 	double e = [i doubleValue];
 	MKDistanceFormatter *df = [[MKDistanceFormatter alloc]init];
-	df.units = 1;
+	df.units = MKDistanceFormatterUnitsMetric;
 	df.unitStyle = MKDistanceFormatterUnitStyleAbbreviated;
 
 	double c = e * 0.6213;
