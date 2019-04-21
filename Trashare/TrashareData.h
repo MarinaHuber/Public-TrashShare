@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface TrashareData : PFObject
+@interface TrashareData : NSObject
 
-@property (nonatomic, strong) NSString *titleTrashare; // title
+@property (nonatomic, copy) NSString *titleTrashare; // title
 @property (nonatomic, strong) PFFileObject *imageFile; // image
+@property (nonatomic, strong) PFObject *object;
 @property (nonatomic) CLLocationDistance *distance; // in meters -calculation from homevc
+
+- (id)initWithDistance:(CLLocationDistance)location title:(NSString *)titleTrash;
+- (id)initwithImage:(PFObject *)object;
 
 
 @end

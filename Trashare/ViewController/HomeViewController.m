@@ -31,7 +31,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
 	[self reloadParseDataSorted];
 	[self loadParseObjectOnMap];
-	[UIView animateWithDuration:1.5 delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
+	[UIView animateWithDuration:1.5 delay:0.1 options:UIViewAnimationOptionCurveEaseIn  animations:^{
 		self.activityIndicator.hidden = NO;
 		[self.activityIndicator startAnimating];
 		self.blurView.alpha = 0.9;
@@ -137,28 +137,7 @@
 	double c = e * 0.6213;
 	NSString *o = [df stringFromDistance: c];
 	cell.calculateText.text = o;
-
-//	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-//	// set to long number of decimals to accommodate whatever a user might enter
-//	[numberFormatter setMaximumFractionDigits:20];
-//	[numberFormatter setLocale:[NSLocale currentLocale]];
-//	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-//	NSString *s = [numberFormatter stringFromNumber: [NSNumber numberWithDouble:[i doubleValue]]];
-//	cell.calculateText.text = s;
-
     return cell;
-//}  else {
-//    alert('please enable location services')
-}
-//- (double)numberFromString:(NSString *)string {
-//	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-//	[numberFormatter setLocale:[NSLocale currentLocale]];
-//	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-//	[numberFormatter setMaximumFractionDigits:1];
-//	return [numberFormatter stringFromNumber:string];
-//}
-- (BOOL)isMetric {
-	return [[[NSLocale currentLocale] objectForKey:NSLocaleUsesMetricSystem] boolValue];
 }
 
 #pragma mark - UITableVIewDelegate
