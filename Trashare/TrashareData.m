@@ -10,25 +10,16 @@
 
 @implementation TrashareData 
 
-- (id)initWithImage:(PFFileObject *)imageObject title:(NSString *)titleTrash {
+- (id)initWithImage:(PFFileObject *)imageObject title:(NSString *)titleTrash object:(PFObject *)object {
 	self = [super init];
-	if (self) {
-		self.imageFile = imageObject;
-		[self setTitleTrashare:titleTrash];
-
-	}
-	return self;
-}
-
-- (id)initwithImage:(PFObject *)object {
-
 	if (self) {
 		self.object =  object;
 		PFFileObject *objectFile = object[@"imageFile"];
 		[self setImageFile: objectFile];
 
 		NSString *title = object[@"titleTrashare"];
-		[self setTitleTrashare: title];
+		[self setTitleTrashare:title];
+
 	}
 	return self;
 }

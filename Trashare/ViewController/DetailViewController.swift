@@ -11,13 +11,8 @@ import UIKit
 
 @objc class DetailViewController: UIViewController, UINavigationControllerDelegate, UIScrollViewDelegate {
 	@IBOutlet weak var gradientView: UIView!
-	
-	var tap: UIPinchGestureRecognizer?
-	var id: String?
-	var prevFrame = CGRect.zero
-	@objc var fileImage: PFFileObject?
-	var myScrollView: UIScrollView?
-	@IBOutlet var dateTrash: UILabel!
+	@IBOutlet private var dateTrash: UILabel!
+	@objc var currentObject : PFObject?
 
 	// PFFileObject representes a file of binary data stored on the Parse servers.
 	@IBOutlet var showImage: UIImageView!
@@ -26,70 +21,12 @@ import UIKit
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setGradientBackground()
-// redundant??? coming from homeVC
-		let query = PFQuery(className: "trashareData")
-		query.findObjectsInBackground { (objects, error) in
-			if let returnedObjects = objects {
-				for object in returnedObjects {
-				self.fileImage = object["imageFile"] as? PFFileObject
-				if let image = self.fileImage {
-					self.getImageFromData(data: image)
-
-					}
-				}
+		if let object = currentObject {
+			titleTrash.text = object["titieTrash"] as? String
+		if let fileImage = object["imageFile"] as? PFFileObject {
+			getImageFromData(dataImage: fileImage)
 			}
 		}
-
-	}
-
-	func getImageFromData(data: PFFileObject) {
-		self.fileImage?.getDataInBackground {(data: Data?, error: Error?) in
-			if let data = data, let image = UIImage(data: data) {
-				self.showImage.image = image
-			} else {}
-		}
-	}
-
-
-	func setGradientBackground() {
-		let colorTop =  UIColor(red: 209.0/255.0, green: 255.0/255.0, blue: 100.0/255.0, alpha: 1.0).cgColor
-		let colorBottom = UIColor(red: 174.0/255.0, green: 255.0/255.0, blue: 158.0/255.0, alpha: 1.0).cgColor
-
-		let gradientLayer = CAGradientLayer()
-		gradientLayer.colors = [colorTop, colorBottom]
-		gradientLayer.locations = [0.7, 1.0]
-		gradientLayer.frame = self.view.bounds
-
-		self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
-	}
-
-	@IBAction func cancel(_ sender: Any) {
-		navigationController?.popViewController(animated: true)
-	}
-
-
-	@IBAction func tapZoom(_ sender: Any) {
-
-//		if !isFullScreen {
-//			UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
-//				//				prevFrame = self.showImage.frame
-//				//				self.showImage.frame = UIScreen.main.bounds
-//			}) { finished in
-//				self.isFullScreen = true
-//			}
-//			return
-//		} else {
-//			titleTrash.alpha = 1.0
-//			dateTrash.alpha = 1.0
-//
-//			navigationController?.setNavigationBarHidden(false, animated: true)
-//			UIView.animate(withDuration: 4, delay: 0, options: [], animations: {
-//				//				self.showImage.frame = prevFrame
-//			}) { finished in
-//				self.isFullScreen = false
-//			}
-//			return
-//		}
 	}
 
 }

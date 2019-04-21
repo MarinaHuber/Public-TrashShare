@@ -151,18 +151,20 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     DetailViewController *detailVC = [[DetailViewController alloc] init];
 	PFFileObject *showImage = object[@"imageFile"];
     
-     detailVC.fileImage = showImage;
-//	TrashareData *data = [[TrashareData alloc] initWithDistance: title:];
     NSDate *trashDate = object.createdAt;
-	NSString *id = object.objectId;
-	[object setObject:id forKey:@"objectId"];
+	self.idRow = object.objectId;
+	[object setObject:self.idRow forKey:@"objectId"];
 
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
     [timeFormatter setDateFormat:@"dd-MM-yyyy "];
-    NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
+    //NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
     NSString *descriptionTitle = object[@"titleTrashare"];
-//	TrashareData *data = [[TrashareData alloc] initWithDistance: title: descriptionTitle];
+
+	TrashareData *model = [[TrashareData alloc] initWithImage:showImage title:descriptionTitle object:object];
+	NSInteger rowId = indexPath.row;
+	PFObject * currentSelected = _sortedArray[rowId];
+	detailVC.currentObject = object;
 //    detailVC.titleTrash = descriptionString1;
 //    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
     

@@ -13,11 +13,9 @@
 
 @property (nonatomic, copy) NSString *titleTrashare; // title
 @property (nonatomic, strong) PFFileObject *imageFile; // image
-@property (nonatomic, strong) PFObject *object;
-@property (nonatomic) UIImage *image; // in meters -calculation from homevc
+@property (nonatomic, strong) PFObject *object; // image
 
-- (id)initWithImage:(PFFileObject *)image title:(NSString *)titleTrash;
-- (id)initwithImage:(PFObject *)object;
+- (id)initWithImage:(PFFileObject *)imageObject title:(NSString *)titleTrash object:(PFObject *)object;
 
 
 @end
