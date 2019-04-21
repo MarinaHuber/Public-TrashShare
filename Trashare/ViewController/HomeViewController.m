@@ -31,6 +31,15 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
 	[self reloadParseDataSorted];
 	[self loadParseObjectOnMap];
+	[UIView animateWithDuration:1.3 delay:0 options:UIViewAnimationOptionCurveLinear  animations:^{
+		self.activityIndicator.hidden = NO;
+		[self.activityIndicator startAnimating];
+		self.blurView.alpha = 1;
+	} completion:^(BOOL finished) {
+		self.activityIndicator.hidden = YES;
+		[self.activityIndicator stopAnimating];
+		self.blurView.alpha = 0;
+	}];
 }
 
 - (void)loadParseObjectOnMap {
@@ -118,14 +127,29 @@
 			cell.thumbnailImageView.image = image;
 		}
 	}];
+	PFObject *distancePFObject = [trashObject objectForKey:@"distance"];
+	NSString *i = [NSString stringWithFormat:@"%@ km", distancePFObject];
 
-    cell.calculateText.text = [NSString stringWithFormat:@"%@", [trashObject objectForKey:@"distance"]];
+
+	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+	// set to long number of decimals to accommodate whatever a user might enter
+	[numberFormatter setMaximumFractionDigits:9];
+	[numberFormatter setLocale:[NSLocale currentLocale]];
+	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	NSString *s = [numberFormatter stringFromNumber: [NSNumber numberWithDouble:[i doubleValue]]];
+	cell.calculateText.text = s;
 
     return cell;
 //}  else {
 //    alert('please enable location services')
 }
-
+//- (double)numberFromString:(NSString *)string {
+//	NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+//	[numberFormatter setLocale:[NSLocale currentLocale]];
+//	[numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//	[numberFormatter setMaximumFractionDigits:1];
+//	return [numberFormatter stringFromNumber:string];
+//}
 
 #pragma mark - UITableVIewDelegate
 

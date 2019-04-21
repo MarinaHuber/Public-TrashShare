@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="activityIndicator" destination="84y-Ea-Duk" id="YQw-Es-mJm"/>
+                <outlet property="blurView" destination="Pqo-iX-JAy" id="Ako-Qg-ATf"/>
                 <outlet property="mapView" destination="mnC-IS-wa4" id="S77-qU-Q6a"/>
                 <outlet property="tableView" destination="tMF-Dq-gxq" id="Hit-yA-Rni"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,6 +34,7 @@
                 </tableView>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
                     <rect key="frame" x="0.0" y="60" width="375" height="262"/>
+                    <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="262" id="wIm-J6-h3u"/>
                     </constraints>
@@ -59,26 +62,48 @@
                         <navigationItem title="Trashare" id="8ju-TV-HqU"/>
                     </items>
                 </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqo-iX-JAy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="84y-Ea-Duk">
+                    <rect key="frame" x="162.66666666666666" y="381" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="4Zv-25-l7M"/>
+                        <constraint firstAttribute="height" constant="50" id="XC2-Ji-Bmz"/>
+                    </constraints>
+                    <color key="color" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Pqo-iX-JAy" firstAttribute="trailing" secondItem="7tM-nI-6TX" secondAttribute="trailing" id="0cK-pQ-z0M"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="5vD-5P-feN"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="83A-Lx-3QS"/>
+                <constraint firstItem="84y-Ea-Duk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SAN-Zh-il4"/>
                 <constraint firstItem="cae-Nt-Zsc" firstAttribute="leading" secondItem="tMF-Dq-gxq" secondAttribute="leading" id="SGL-53-xbK"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="trailing" secondItem="kMY-H0-z1V" secondAttribute="trailing" id="ScY-Y5-VVs"/>
                 <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tps-0O-rVF"/>
+                <constraint firstAttribute="bottom" secondItem="Pqo-iX-JAy" secondAttribute="bottom" id="W3G-Ki-XbA"/>
+                <constraint firstItem="84y-Ea-Duk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="W4q-D5-bZa"/>
                 <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W5p-aS-bHO"/>
                 <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="X96-NZ-xfl"/>
+                <constraint firstItem="Pqo-iX-JAy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a9H-KE-jZr"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="id8-I6-fuk"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" id="j51-qw-4TU"/>
+                <constraint firstItem="Pqo-iX-JAy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kwj-s8-TK4"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pbR-TF-SHX"/>
                 <constraint firstItem="mnC-IS-wa4" firstAttribute="leading" secondItem="kMY-H0-z1V" secondAttribute="leading" id="r8g-ic-Vgi"/>
                 <constraint firstItem="cae-Nt-Zsc" firstAttribute="trailing" secondItem="tMF-Dq-gxq" secondAttribute="trailing" id="tX3-5i-efa"/>
                 <constraint firstAttribute="trailing" secondItem="mnC-IS-wa4" secondAttribute="trailing" id="uIh-et-as6"/>
                 <constraint firstItem="cae-Nt-Zsc" firstAttribute="top" secondItem="tMF-Dq-gxq" secondAttribute="bottom" id="uni-yD-Sjr"/>
+                <constraint firstItem="Pqo-iX-JAy" firstAttribute="leading" secondItem="7tM-nI-6TX" secondAttribute="leading" id="yah-WX-qtC"/>
+                <constraint firstItem="Pqo-iX-JAy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="z7N-Hc-t0a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="7tM-nI-6TX"/>
-            <point key="canvasLocation" x="476" y="354.87256371814095"/>
+            <point key="canvasLocation" x="476" y="354.67980295566502"/>
         </view>
     </objects>
     <resources>
