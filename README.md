@@ -18,6 +18,8 @@ Parse Server
 
 Note: This project is partly removed to prevent cloning. Also needs a good cleanup/refactoring.
 Main usage:
+
+*Parse query works well on 64bit devices (iPhone 5S, iPhone 6, iPhone 6S), but will return empty when running on a 32bit device (iPhone4, iPhone 4S, iPhone 5).
 PFFileObject
 @interface PFFileObject : NSObject
 PFGeoPoint
