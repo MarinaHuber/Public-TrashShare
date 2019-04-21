@@ -10,7 +10,8 @@ import UIKit
 //import Parse
 
 @objc class DetailViewController: UIViewController, UINavigationControllerDelegate, UIScrollViewDelegate {
-
+	@IBOutlet weak var gradientView: UIView!
+	
 	var tap: UIPinchGestureRecognizer?
 	var isFullScreen: Bool = false
 	var prevFrame = CGRect.zero
@@ -24,6 +25,7 @@ import UIKit
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		setGradientBackground()
 // redundant??? coming from homeVC
 		let query = PFQuery(className: "trashareData")
 		query.findObjectsInBackground { (objects, error) in
@@ -49,17 +51,29 @@ import UIKit
 	}
 
 
+	func setGradientBackground() {
+		let colorTop =  UIColor(red: 209.0/255.0, green: 255.0/255.0, blue: 100.0/255.0, alpha: 1.0).cgColor
+		let colorBottom = UIColor(red: 174.0/255.0, green: 255.0/255.0, blue: 158.0/255.0, alpha: 1.0).cgColor
+
+		let gradientLayer = CAGradientLayer()
+		gradientLayer.colors = [colorTop, colorBottom]
+		gradientLayer.locations = [0.7, 1.0]
+		gradientLayer.frame = self.view.bounds
+
+		self.gradientView.layer.insertSublayer(gradientLayer, at: 0)
+	}
+
 	@IBAction func cancel(_ sender: Any) {
 		navigationController?.popViewController(animated: true)
 	}
 
 
-	@objc func tap(_ sender: Any) {
+	@IBAction func tapZoom(_ sender: Any) {
 
 		if !isFullScreen {
 			UIView.animate(withDuration: 0.4, delay: 0, options: [], animations: {
-//				prevFrame = self.showImage.frame
-//				self.showImage.frame = UIScreen.main.bounds
+				//				prevFrame = self.showImage.frame
+				//				self.showImage.frame = UIScreen.main.bounds
 			}) { finished in
 				self.isFullScreen = true
 			}
@@ -70,7 +84,7 @@ import UIKit
 
 			navigationController?.setNavigationBarHidden(false, animated: true)
 			UIView.animate(withDuration: 4, delay: 0, options: [], animations: {
-//				self.showImage.frame = prevFrame
+				//				self.showImage.frame = prevFrame
 			}) { finished in
 				self.isFullScreen = false
 			}
