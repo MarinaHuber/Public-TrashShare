@@ -21,6 +21,7 @@
 @synthesize tableView = _tableView;
 @synthesize trashareCell = _trashareCell;
 @synthesize objectsArray = objectsArray;
+@synthesize sortedArray = sortedArray;
 
 #pragma mark -viewDidLoad
 
@@ -76,7 +77,7 @@
 }
 
 - (void)reloadParseDataSorted {
-    PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
+    PFQuery *query = [PFQuery queryWithClassName:@"parseData"];
     self.objectsArray = [query findObjects];
     
     //sort by date
