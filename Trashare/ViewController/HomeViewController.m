@@ -151,8 +151,6 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     
     DetailViewController *detailVC = [[DetailViewController alloc] init];
 	detailVC.currentObject = object;
-
-    
 	[self.navigationController pushViewController:detailVC animated:YES];
   
 }
@@ -272,17 +270,19 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             // If appropriate, customize the callout by adding accessory views (code not shown).
             
             // Add an image to the left callout.
-            //PFFileObject *imageFile = mapAnno.object;
-            
-//            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(pin.latitude, pin.longitude);
-//            self.coordinate = coord;
-            
-//            PFFileObject *file = mapAnno.object[@"imageFile"];
+			for (PFObject *pfObjectDictionary in self.objectsArray) {
+				PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
+				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+				self.coordinate = coord;
+			}
 
-//            PFileObject *iconView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
-//            iconView.file = file;
+
+            PFFileObject *file = mapAnno.object[@"imageFile"];
+
+            UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+//            iconView.image =
 //                             [iconView loadInBackground];
-//            pinView.leftCalloutAccessoryView = iconView;
+            pinView.leftCalloutAccessoryView = iconView;
 
         }
         else  {
