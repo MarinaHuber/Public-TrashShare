@@ -21,6 +21,7 @@
 @synthesize tableView = _tableView;
 @synthesize trashareCell = _trashareCell;
 @synthesize objectsArray = objectsArray;
+@synthesize sortedArray = sortedArray;
 
 #pragma mark -viewDidLoad
 
@@ -41,6 +42,19 @@
 		[self.activityIndicator stopAnimating];
 		self.blurView.alpha = 0;
 	}];
+}
+- (void)reloadParseDataSorted {
+	PFQuery *query = [PFQuery queryWithClassName:@"parseData"];
+	self.objectsArray = [query findObjects];
+
+	//sort by date
+	NSSortDescriptor *dateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
+	NSArray *sortDescriptors = @[dateDescriptor];
+	self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
+	[self.tableView reloadData];
+
+
+
 }
 
 - (void)loadParseObjectOnMap {
@@ -75,19 +89,6 @@
     [self.tableView reloadData];
 }
 
-- (void)reloadParseDataSorted {
-    PFQuery *query = [PFQuery queryWithClassName:@"trashareData"];
-    self.objectsArray = [query findObjects];
-    
-    //sort by date
-    NSSortDescriptor *dateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
-    NSArray *sortDescriptors = @[dateDescriptor];
-    self.sortedArray = [self.objectsArray sortedArrayUsingDescriptors:sortDescriptors];
-	[self.tableView reloadData];
-
-    
-    
-}
 
 #pragma mark - UITableViewDataSource
 
@@ -114,7 +115,7 @@
 		cell = _trashareCell;
 		_trashareCell = nil;
 	}
-	PFObject * trashObject = [self.objectsArray objectAtIndex:indexPath.row];
+	PFObject * trashObject = [self.sortedArray objectAtIndex:indexPath.row];
 
 	[trashObject fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error){
 		NSLog(@"retrieved related trash: %@", trashObject);
@@ -149,26 +150,8 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
     PFObject *object = self.sortedArray[indexPath.row];
     
     DetailViewController *detailVC = [[DetailViewController alloc] init];
-	PFFileObject *showImage = object[@"imageFile"];
-    
-    NSDate *trashDate = object.createdAt;
-	self.idRow = object.objectId;
-	[object setObject:self.idRow forKey:@"objectId"];
-
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
-    [timeFormatter setDateFormat:@"dd-MM-yyyy "];
-    //NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
-    NSString *descriptionTitle = object[@"titleTrashare"];
-
-	TrashareData *model = [[TrashareData alloc] initWithImage:showImage title:descriptionTitle object:object];
-	NSInteger rowId = indexPath.row;
-	PFObject * currentSelected = _sortedArray[rowId];
 	detailVC.currentObject = object;
-//    detailVC.titleTrash = descriptionString1;
-//    detailVC.dateCreated = [NSString stringWithFormat:@"Added: %@", timeCreated];
-    
-   // this is declared as @property in detailviewcontroller and passed on in view did load
+
     
 	[self.navigationController pushViewController:detailVC animated:YES];
   

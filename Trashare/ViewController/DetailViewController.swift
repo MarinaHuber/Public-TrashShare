@@ -22,6 +22,11 @@ import UIKit
 		super.viewDidLoad()
 		setGradientBackground()
 		if let object = currentObject {
+			//    NSDate *trashDate = object.createdAt;
+			//    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+			//    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"CET"]];
+			//    [timeFormatter setDateFormat:@"dd-MM-yyyy "];
+			//NSString *timeCreated = [timeFormatter stringFromDate:trashDate];
 			self.titleTrash.text = object["titleTrashare"] as? String
 		if let fileImage = object["imageFile"] as? PFFileObject {
 			getImageFromData(data: fileImage)
