@@ -60,7 +60,7 @@
 - (void)loadParseObjectOnMap {
 	NSMutableArray *pointArray = [[NSMutableArray alloc] init];
 	 //for every PFObject loop over and find elements in mapObject
-	for (PFObject *pfObjectDictionary in self.objectsArray) {
+	for (PFObject *pfObjectDictionary in self.sortedArray) {
 		PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
 		NSString *title = pfObjectDictionary[@"titleTrashare"];
 		CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
@@ -270,11 +270,11 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             // If appropriate, customize the callout by adding accessory views (code not shown).
             
             // Add an image to the left callout.
-			for (PFObject *pfObjectDictionary in self.objectsArray) {
-				PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
-				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
-				self.coordinate = coord;
-			}
+//			for (PFObject *pfObjectDictionary in self.objectsArray) {
+//				PFGeoPoint *point = pfObjectDictionary[@"annotationPoint"];
+//				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+//				self.coordinate = coord;
+//			}
 
 
             PFFileObject *file = mapAnno.object[@"imageFile"];
