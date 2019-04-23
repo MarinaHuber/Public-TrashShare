@@ -194,18 +194,20 @@ didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
 
 
 //zoom setUp
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation {
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
 
     if (self.hasZoomed == NO) {
-        
-        CLLocationCoordinate2D loc = [userLocation coordinate];
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 700, 800);
-        [self.mapView setRegion:region animated:YES];
+
+		MKMapCamera *camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:1000];
+		[mapView setCamera:camera animated:YES];
+
+//        CLLocationCoordinate2D loc = [userLocation coordinate];
+//        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+//        [self.mapView setRegion:region animated:YES];
         
         self.hasZoomed = YES;
     }
-    
+
     for (PFObject *pfObjectDictionary in self.objectsArray) {
         
         
@@ -299,8 +301,6 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
     
     return nil;
 }
-
-
 
 @synthesize coordinate;
 
