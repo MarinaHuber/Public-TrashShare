@@ -28,7 +28,6 @@
 @property (nonatomic, strong) NSArray *sortedArray;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIView *blurView;
-@property (nonatomic, strong) NSString *idRow;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;

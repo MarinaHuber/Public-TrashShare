@@ -20,34 +20,31 @@
     
     [self.mapView setShowsUserLocation:YES];
     self.navigationController.navigationBarHidden = YES;
-
-	// Create location manager object
-	self.locationManager = [[CLLocationManager alloc] init];
 	self.mapView.delegate = self;
 
-	// There will be a warning from this line of code; ignore it for now
-	[self.locationManager setDelegate:self];
+//
+//	CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+//
+//	if (
+//		authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+//		authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+//
+//		[self.locationManager startUpdatingLocation];
+//
+//	}
 
-	// And we want it to be as accurate as possible
-	// regardless of how much time/power it takes
-	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-	// Tell our manager to start looking for its location immediately
-	[self.locationManager startUpdatingLocation];
-
-	[self.locationManager requestWhenInUseAuthorization];
-	[self.locationManager requestAlwaysAuthorization];
-
-
-	CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
-
-	if (
-		authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
-		authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-
-		[self.locationManager startUpdatingLocation];
-
+	if ([ CLLocationManager locationServicesEnabled]) { // Determine if the location service is turned on
+		self .locationManager = [[ CLLocationManager alloc] init]; //Initialize the locator
+		[ self .locationManager startUpdatingLocation]; // start locator
 	}
-	[self mapViewWillStartLoadingMap:self.mapView];
+	if ([ CLLocationManager locationServicesEnabled]){
+		self .locationManager = [[ CLLocationManager alloc] init]; //Initialize the locator
+		self .locationManager.delegate = self ; //Set the proxy
+		self .locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers; //Set the precision
+		self .locationManager.distanceFilter = kCLDistanceFilterNone ; //indicates that the location information is updated
+		[ self .locationManager requestWhenInUseAuthorization]; //Use the requestWhenInUseAuthorization method
+		[ self .locationManager startUpdatingLocation]; //Start locator
+	}
     
 }
 // shows map location
@@ -62,11 +59,44 @@
      didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations {
 
 //    HomeViewController *home = [[HomeViewController alloc] init];
+	[self.locationManager stopUpdatingLocation];
+	CLLocation *currentLocation = [locations lastObject];
+	CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+	[self.locationManager stopUpdatingLocation];
+
+	[geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error){
+		if (placemarks.count > 0){
+			CLPlacemark *placeMark = placemarks[0];
+		   NSLog(@"%@ this is current location???",placeMark.locality);
+		}
+		else if (error == nil&& placemarks.count ==0){
+			NSLog(@"No location and error return");
+		}
+		else if (error){
+			NSLog(@"location error: %@ ",error);
+		}
+	}];
 
 
    }
-- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+	[self showLocationAlert];
+}
+
+-(void)showLocationAlert {
+	UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"允许\"定位\"提示" message:@"请在设置中打开定位" preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction * ok = [UIAlertAction actionWithTitle:@"打开定位" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+		//打开定位设置
+		NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+		[[UIApplication sharedApplication] openURL:settingsURL];
+	}];
+	UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+	}];
+	[alertVC addAction:cancel];
+	[alertVC addAction:ok];
+	[self presentViewController:alertVC animated:YES completion:nil];
 }
 
 

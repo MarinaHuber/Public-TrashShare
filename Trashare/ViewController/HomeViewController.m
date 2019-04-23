@@ -200,7 +200,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
     if (self.hasZoomed == NO) {
         
         CLLocationCoordinate2D loc = [userLocation coordinate];
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 500, 500);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 700, 800);
         [self.mapView setRegion:region animated:YES];
         
         self.hasZoomed = YES;
@@ -218,9 +218,9 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
             
             //creating currentLocation and other location for calculate distance
             
-            CLLocation *objectLocation = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
+            CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:point.latitude  longitude:point.longitude];
             
-            CLLocationDistance distance = [userLocation.location distanceFromLocation:objectLocation];
+            CLLocationDistance distance = [userLocation.location distanceFromLocation:currentLocation];
             //store for object
             [pfObjectDictionary setObject:@(distance) forKey:@"distance"];
 			[self.tableView reloadData];
@@ -240,7 +240,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    MapAnnotation *mapAnno = (MapAnnotation *)annotation;
+    MapAnnotation *mapAnnoModel = (MapAnnotation *)annotation;
     
     // If the annotation is the user location, just return nil.
     if ([annotation isKindOfClass:[MKUserLocation class]])
@@ -254,8 +254,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
         MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView
    dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
 
-        
-        
+
         if (!pinView)
         {
             // If an existing pin view was not available, create one.
@@ -277,14 +276,21 @@ didUpdateUserLocation:(MKUserLocation *)userLocation {
 //			}
 
 
-            PFFileObject *file = mapAnno.object[@"imageFile"];
+            PFFileObject *file = mapAnnoModel.object[@"imageFile"];
 
-            UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
-//            iconView.image =
-//                             [iconView loadInBackground];
-            pinView.leftCalloutAccessoryView = iconView;
 
-        }
+			[file getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+				if (!error) {
+					UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
+					UIImage *image = [UIImage imageWithData:imageData];
+					iconView.image = image;
+					pinView.leftCalloutAccessoryView = iconView;
+				}
+			}];
+//			CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.latitude, point.longitude);
+//			self.coordinate = coord;
+
+	}
         else  {
             pinView.annotation = annotation;
         }

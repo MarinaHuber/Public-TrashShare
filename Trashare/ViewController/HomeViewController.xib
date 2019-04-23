@@ -33,11 +33,12 @@
                     </connections>
                 </tableView>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-IS-wa4">
-                    <rect key="frame" x="0.0" y="60" width="375" height="262"/>
+                    <rect key="frame" x="0.0" y="29" width="375" height="293"/>
                     <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="262" id="wIm-J6-h3u"/>
+                        <constraint firstAttribute="height" constant="293" id="wIm-J6-h3u"/>
                     </constraints>
+                    <viewLayoutGuide key="safeArea" id="BTa-4n-AhB"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="0KS-jJ-JX0"/>
                     </connections>
@@ -95,7 +96,7 @@
                 <constraint firstItem="kMY-H0-z1V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W5p-aS-bHO"/>
                 <constraint firstAttribute="bottom" secondItem="cae-Nt-Zsc" secondAttribute="bottom" id="X96-NZ-xfl"/>
                 <constraint firstItem="fpk-2d-og2" firstAttribute="leading" secondItem="7tM-nI-6TX" secondAttribute="leading" id="fSC-ba-x0m"/>
-                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" id="id8-I6-fuk"/>
+                <constraint firstItem="mnC-IS-wa4" firstAttribute="top" secondItem="kMY-H0-z1V" secondAttribute="bottom" constant="-31" id="id8-I6-fuk"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="top" secondItem="mnC-IS-wa4" secondAttribute="bottom" id="j51-qw-4TU"/>
                 <constraint firstItem="fpk-2d-og2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jdc-JV-A5K"/>
                 <constraint firstItem="tMF-Dq-gxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pbR-TF-SHX"/>
