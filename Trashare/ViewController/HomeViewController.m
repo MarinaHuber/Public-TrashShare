@@ -33,7 +33,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TrashareCell" bundle:nil] forCellReuseIdentifier:@"TrashareCell"];
 	[self reloadParseDataSorted];
 	[self loadParseObjectOnMap];
-	[UIView animateWithDuration:1.5 delay:0.1 options:UIViewAnimationOptionCurveEaseIn  animations:^{
+	[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut  animations:^{
 		self.activityIndicator.hidden = NO;
 		[self.activityIndicator startAnimating];
 		self.blurView.alpha = 0.9;
